@@ -1,0 +1,14 @@
+#nw,
+#w {
+  min-height:1px;
+  float:left;
+  width:50%;
+  }
+
+#ne,
+#e {
+  min-height:1px;
+  float:right;
+  width:50%;
+  }
+

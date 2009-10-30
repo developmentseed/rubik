@@ -1,0 +1,47 @@
+; $Id$
+name = "Rubiks"
+description = "Test theme for layouts."
+version = "0.1"
+base theme = "tao"
+core = "6.x"
+engine = "phptemplate"
+
+stylesheets[screen][] = "style.css"
+
+regions[w] = "w"
+regions[e] = "e"
+regions[c] = "c"
+regions[nw] = "nw"
+regions[ne] = "ne"
+regions[n] = "n"
+regions[se] = "se"
+regions[sw] = "sw"
+regions[s] = "s"
+
+; Default layout
+layouts[default][name] = "Default"
+layouts[default][description] = "Two column default."
+layouts[default][stylesheet] = "layout-default.css"
+layouts[default][template] = "page"
+layouts[default][regions][] = "w"
+layouts[default][regions][] = "c"
+
+; 4 grid layout
+layouts[grid][name] = "4 Pane grid"
+layouts[grid][description] = "Grid with 4 panes."
+layouts[grid][stylesheet] = "layout-grid.css"
+layouts[grid][template] = "page-grid"
+layouts[grid][regions][] = "w"
+layouts[grid][regions][] = "e"
+layouts[grid][regions][] = "nw"
+layouts[grid][regions][] = "ne"
+
+; 3 column layout
+layouts[three][name] = "3 Column"
+layouts[three][description] = "3 columns with header and footer."
+layouts[three][stylesheet] = "layout-three.css"
+layouts[three][template] = "page-three"
+layouts[three][regions][] = "w"
+layouts[three][regions][] = "e"
+layouts[three][regions][] = "n"
+layouts[three][regions][] = "s"
