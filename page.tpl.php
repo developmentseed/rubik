@@ -5,7 +5,7 @@
     <?php print $styles ?>
     <title><?php print $head_title ?></title>
   </head>
-  <body class='layout-default admin-static' <?php // print drupal_attributes($attr) ?>>
+  <body class='rubiks layout-default admin-static' <?php // print drupal_attributes($attr) ?>>
 
   <?php if ($admin) print $admin ?>
 
@@ -21,13 +21,13 @@
   </div></div>
 
   <div id='page-title' class='clear-block limiter'>
-    <?php if ($tabs): ?><ul class='tabs primary'><?php print $tabs ?></ul><?php endif; ?>
+    <?php if ($tabs): ?><?php print $tabs ?><?php endif; ?>
     <?php if ($title): ?><h2 class='page-title'><?php print $title ?></h2><?php endif; ?>
   </div>
 
   <div id='page'><div class='clear-block limiter'>
 
-    <?php if ($tabs2): ?><ul class='tabs secondary'><?php print $tabs2 ?></ul><?php endif; ?>
+    <?php if ($tabs2): ?><div class='secondary-tabs clear-block'><?php print $tabs2 ?></div><?php endif; ?>
 
     <?php if ($show_messages && $messages): ?>
       <div id='console' class='clear-block'><?php print $messages; ?></div>
