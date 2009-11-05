@@ -2,10 +2,103 @@
 // $Id$
 
 /**
+ * Implementation of hook_theme().
+ */
+function rubiks_theme() {
+  return array(
+    'node_form' => array(
+      'arguments' => array('form' => array()),
+      'template' => 'form-default',
+    ),
+    'node_type_form' => array(
+      'arguments' => array('form' => array()),
+      'template' => 'form-default',
+    ),
+    'system_settings_form' => array(
+      'arguments' => array('form' => array()),
+      'template' => 'form-default',
+    ),
+    'user_profile_form' => array(
+      'arguments' => array('form' => array()),
+      'template' => 'form-default',
+    ),
+  );
+}
+
+/**
  * Preprocessor for theme('page').
  */
 function rubiks_preprocess_page(&$vars) {
   $vars['attr']['class'] .= ' admin-static';
+}
+
+/**
+ * Preprocessor for theme('fieldset').
+ */
+function rubiks_preprocess_fieldset(&$vars) {
+  if (!empty($vars['element']['#collapsible'])) {
+    $vars['title'] = "<span class='icon'></span>" . $vars['title'];
+  }
+}
+
+/**
+ * Do preprocess form button handling for most forms.
+ */
+function _rubiks_process_form_buttons(&$vars) {
+  if (isset($vars['form']['buttons'])) {
+    $vars['buttons'] = $vars['form']['buttons'];
+    unset($vars['form']['buttons']);
+  }
+  else {
+    $vars['buttons'] = array();
+    $keys = array('save', 'submit', 'delete', 'reset');
+    foreach ($keys as $key) {
+      if (isset($vars['form'][$key], $vars['form'][$key]['#type']) && $vars['form'][$key]['#type'] == 'submit') {
+        $vars['buttons'][$key] = $vars['form'][$key];
+        unset($vars['form'][$key]);
+      }
+    }
+  }
+}
+
+/**
+ * Preprocessor for theme('node_form').
+ */
+function rubiks_preprocess_node_form(&$vars) {
+  _rubiks_process_form_buttons($vars);
+
+  // @TODO: Figure out a better way here. drupal_alter() is preferable.
+  // Allow modules to insert form elements into the sidebar,
+  // defaults to showing taxonomy in that location.
+  $vars['sidebar'] = array();
+  if (!$sidebar_fields = module_invoke_all('node_form_sidebar', $form, $form['#node'])) {
+    $sidebar_fields = array('taxonomy');
+  }
+  foreach ($sidebar_fields as $field) {
+    $vars['sidebar'][] = $vars['form'][$field];
+    unset($vars['form'][$field]);
+  }
+}
+
+/**
+ * Preprocessor for theme('node_type_form').
+ */
+function rubiks_preprocess_node_type_form(&$vars) {
+  _rubiks_process_form_buttons($vars);
+}
+
+/**
+ * Preprocessor for theme('system_settings_form').
+ */
+function rubiks_preprocess_system_settings_form(&$vars) {
+  _rubiks_process_form_buttons($vars);
+}
+
+/**
+ * Preprocessor for theme('user_profile_form').
+ */
+function rubiks_preprocess_user_profile_form(&$vars) {
+  _rubiks_process_form_buttons($vars);
 }
 
 /**
@@ -61,65 +154,6 @@ function rubiks_admin_block_content($content, $get_runstate = FALSE) {
     }
     $output .= '</ul>';
   }
-  return $output;
-}
-
-/**
- * Override of theme_system_settings_form().
- * Group buttons together @ the bottom.
- */
-function rubiks_system_settings_form($form) {
-  $buttons = '<div class="buttons">'. drupal_render($form['buttons']) .'</div>';
-  return drupal_render($form) . $buttons;
-}
-
-/**
- * Override of theme_node_form().
- */
-function rubiks_node_form($form) {
-  $buttons = '<div class="buttons">'. drupal_render($form['buttons']) .'</div>';
-  
-  // Allow modules to insert form elements into the sidebar,
-  // defaults to showing taxonomy in that location.
-  if (!$sidebar_fields = module_invoke_all('node_form_sidebar', $form, $form['#node'])) {
-    $sidebar_fields = array('taxonomy');
-  }
-  foreach ($sidebar_fields as $field) {
-    $sidebar .= drupal_render($form[$field]);
-  }
-  
-  $main = drupal_render($form);
-  return "<div class='node-form clear-block'>
-    <div class='right'>{$buttons}{$sidebar}</div>
-    <div class='left'><div class='main'>{$main}{$buttons}</div></div>
-  </div>";
-}
-
-/**
- * Override of theme_fieldset().
- */
-function rubiks_fieldset(&$element) {
-  $attr = isset($element['#attributes']) ? $element['#attributes'] : array();
-  $attr['class'] = !empty($attr['class']) ? $attr['class'] : '';
-  $attr['class'] .= ' fieldset';
-  $attr['class'] .= !empty($element['#collapsible']) || !empty($element['#collapsed']) ? ' collapsible' : '';
-  $attr['class'] .= !empty($element['#collapsed']) ? ' collapsed' : '';
-  $attr = drupal_attributes($attr);
-
-  $description = !empty($element['#description']) ? "<div class='description'>{$element['#description']}</div>" : '';
-  $children = !empty($element['#children']) ? $element['#children'] : '';
-  $value = !empty($element['#value']) ? $element['#value'] : '';
-  $content = $description . $children . $value;
-
-  $title = !empty($element['#title']) ? $element['#title'] : '';
-  if (!empty($element['#collapsible']) || !empty($element['#collapsed'])) {
-    $title = l($title, $_GET['q'], array('fragment' => 'fieldset'));
-  }
-
-  $output = "<div $attr>";
-  $output .= $title ? "<h2 class='fieldset-title'>$title</h2>" : '';
-  $output .= "<div class='fieldset-content clear-block'>$content</div>";
-  $output .= "</div>";
   return $output;
 }
 

@@ -1,11 +1,11 @@
 body.rubiks {
-  font-family:"Lucida Grande",Tahoma,Verdana,sans-serif;
+  font-family:"Lucida Grande","Trebuchet MS",Verdana,Tahoma,sans-serif;
   color:#666;
-  background:#ddd url(images/bleeds.png) 0px 0px repeat-x fixed;
+  background:#ddd url(images/bleeds.png) 0px -80px repeat-x fixed;
   }
 
 a {
-  color:#489;
+  color:#39c;
   text-decoration:none;
   }
 
@@ -17,56 +17,57 @@ hr { display:none; }
 /**
  * Generic ============================================================
  */
-#content legend { font-weight:bold; }
-#content h1,
-#content h2,
-#content h3,
-#content h4,
-#content h5,
-#content h6 {
+.page-content legend { font-weight:bold; }
+
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content h4,
+.page-content h5,
+.page-content h6 {
   font-size:15px;
   font-weight:bold;
   margin: 10px 0px;
   }
 
-#content ul,
-#content dl {
+.page-content ul,
+.page-content dl {
   margin:0px 0px 20px;
   }
 
-#content dl dt {}
-#content dl dd,
-#content dl dl {
+.page-content dl dt {}
+.page-content dl dd,
+.page-content dl dl {
   margin-left:20px;
   margin-bottom:10px;
   }
 
-#content ul li {
+.page-content ul li {
   list-style:disc;
   margin-left:20px;
   }
 
   /* Exclude some from this styling */
-  #content ul.admin-list,
-  #content ul.admin-list li,
-  #content .views-edit-view ul,
-  #content .views-edit-view ul li,
-  #content form ul,
-  #content form ul li,
-  #content ul.clear-block,
-  #content ul.clear-block li,
-  #content div.item-list ul,
-  #content div.item-list ul li,
-  #content ul.menu,
-  #content ul.menu li,
-  #content ul.links,
-  #content ul.links li {
+  .page-content ul.admin-list,
+  .page-content ul.admin-list li,
+  .page-content .views-edit-view ul,
+  .page-content .views-edit-view ul li,
+  .page-content form ul,
+  .page-content form ul li,
+  .page-content ul.clear-block,
+  .page-content ul.clear-block li,
+  .page-content div.item-list ul,
+  .page-content div.item-list ul li,
+  .page-content ul.menu,
+  .page-content ul.menu li,
+  .page-content ul.links,
+  .page-content ul.links li {
     padding:0px;
     margin:0px;
     list-style:none;
     }
 
-  #content ul.vertical-tabs-list { margin:-1px -100% -1px 0; }
+  .page-content ul.vertical-tabs-list { margin:-1px -100% -1px 0; }
 
 /**
  * Branding ===========================================================
@@ -142,8 +143,8 @@ a.help-toggle {
  */
 #console div.messages {
   -moz-border-radius:3px;
-  -moz-box-shadow:#ddd 0px 1px 5px;
-  padding:9px;
+  -moz-box-shadow:#ddd 0px 1px 3px;
+  padding:10px;
   margin:5px;
 
   color:#036;
@@ -165,16 +166,15 @@ a.help-toggle {
 
 #console div.status {
   color:#687;
-  background:#e8f8f4;
+  background:#ecf8f4;
   border-color:#f8fffc;
   }
 
 /**
  * Grouped hover states ===============================================
  */
-#content a:hover { border-bottom:1px solid #bdd; }
+div.page-content { padding:5px; }
 
-div.page-content,
 div.block {
   background:#fff;
   margin:10px 5px 10px;
@@ -184,7 +184,6 @@ div.block {
   -webkit-border-radius:3px;
   }
 
-  div.page-content { padding:9px; }
   div.block div.block-content { padding:10px 9px 9px; }
 
 #content div.block h2.block-title {
@@ -210,8 +209,9 @@ div.block {
 #page-title h2.page-title {
   padding:0px 10px 10px;
   letter-spacing:-1px;
-  font-size:24px;
+  font-size:20px;
   line-height:40px;
+  height:40px;
   color:#666;
   font-weight:normal;
   float:left;
@@ -244,8 +244,8 @@ ul.primary-tabs li a {
   }
 
 ul.primary-tabs li a:hover {
+  background:#888 url(images/bleeds.png) 0px 0px repeat-x;
   color:#fff;
-  background:#999;
   }
 
 ul.primary-tabs li.active a,
@@ -255,20 +255,22 @@ ul.primary-tabs li.active a.active {
   -webkit-border-radius:0px;
   -webkit-border-radius-top-left:3px;
   -webkit-border-radius-top-right:3px;
+  -webkit-box-shadow:#ccc 0px 0px 5px;
 
   padding:4px 15px 11px;
   color:#333;
   border-bottom:0px;
   border-color:#fff;
-  background:#eee;
+  background:#f4f4f4 url(images/bleeds.png) 0px -41px repeat-x;
   }
 
 #page div.secondary-tabs {
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
   font-size:11px;
-  line-height:20px;
-  margin:0px 5px;
-  padding:0px 0px 4px;
-  border-bottom:1px solid #ddd;
+  margin:0px 0px 5px;
+  padding:5px;
+  background:#fcfcfc;
   }
 
   ul.secondary-tabs { float:right; }
@@ -287,7 +289,7 @@ ul.primary-tabs li.active a.active {
 
   ul.secondary-tabs li a.active,
   ul.secondary-tabs li.active a {
-    background:#999;
+    background:#888 url(images/bleeds.png) 0px 0px repeat-x;
     color:#fff;
     }
 
@@ -304,7 +306,7 @@ ul.primary-tabs li.active a.active {
   min-height:180px;
   padding:4px;
   border:1px solid #fff;
-  background:#eee;
+  background:#f4f4f4;
   }
 
 #footer {
@@ -384,6 +386,7 @@ ul.primary-tabs li.active a.active {
 table {
   width:100%;
   font-size:11px;
+  line-height:15px;
   margin:0px 0px 10px;
   background-color:#fcfcfc;
   }
@@ -391,20 +394,19 @@ table {
 table.system-status-report th,
 table td,
 table th {
-  vertical-align:middle;
-  border:1px solid #ddd;
+  vertical-align:top;
+  border-width:1px;
+  border-style:solid;
+  border-color:#e8e8e8;
   padding:5px;
   }
 
   table.system-status-report th { padding-left:30px; }
 
-table th {
-  font-size:9px;
-  text-transform:uppercase;
-  background:#eee;
-  }
+table th { background:#f4f4f4; }
 
-table tr.odd { background:#fff; }
+table tr.odd td,
+table tr.odd th { background:#fff; }
 
 table td.active { background:#e4f0f8; }
 table tr.odd td.active { background:#ecf8fc; }
@@ -414,6 +416,8 @@ table tr.selected td {
   background:#ffc;
   border-color:#eeb;
   }
+
+div.fieldset table { margin:0px; }
 
 /**
  * Pagers =============================================================
@@ -473,30 +477,40 @@ table tr.selected td {
 /**
  * Forms ==============================================================
  */
-
+div.fieldset,
 div.form-item {
-  background:#fff;
-  padding:9px;
+  position:relative;
+  background:#fcfcfc;
   margin:0px 0px 10px;
-  border:1px solid #ddd;
+
+  border-width:1px;
+  border-style:solid;
+  border-color:#ddd #e8e8e8 #eee;
+
+  -moz-border-radius:3px;
+  -moz-box-shadow:#fff 0px 1px 0px;
+  -webkit-border-radius:3px;
+  -webkit-box-shadow:#fff 0px 1px 0px;
   }
+
+  div.form-item { padding:9px; }
 
 div.teaser-checkbox div.form-item,
 div.form-item div.form-item,
 div.fieldset div.form-item {
-  padding:5px 0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  background:transparent;
+  padding:5px;
   margin:0px;
   border:0px;
   }
 
-#content div.fieldset h2.fieldset-title,
 div.form-item label {
   margin:0px;
   padding:0px;
-
-  font-weight:normal;
+  font-weight:bold;
   font-size:11px;
-  text-transform:uppercase;
   }
 
   div.form-item label.option { text-transform:none; }
@@ -504,14 +518,34 @@ div.form-item label {
 div.form-item label.option { font-size:11px; }
 div.form-item label.option input { vertical-align:middle; }
 
-
-div.description,
-div.form-item div.description {
+div.page-content div.description,
+div.page-content div.form-item div.description {
   margin:5px 0px;
   line-height:15px;
   font-size:11px;
-  color:#666;
   }
+
+div.page-content div.form-item div.description {
+  position:absolute;
+  max-width:300px;
+  right:0px;
+  bottom:100%;
+  z-index:5;
+
+  color:#687;
+  background:#e8f4f0;
+  border:5px solid #f0f8f4;
+  border-bottom:0px;
+
+  margin:0px;
+  padding:10px;
+  display:none;
+  }
+
+  div.page-content div.form-item:hover,
+  div.page-content div.fieldset div.form-item:hover { background-color:#f0f8f4; }
+
+  div.page-content div.form-item:hover > div.description { display:block; }
 
 input.teaser-button,
 input.form-submit {
@@ -524,54 +558,58 @@ input.form-submit {
   font-weight:normal;
   font-family:"Lucida Grande",Verdana,sans-serif;
 
-  border:1px solid #ddd;
-  border-bottom:1px solid #ccc;
-  background:#f8f8f8;
+  border:1px solid #eee;
+  border-bottom:1px solid #ddd;
+  background:#f4f4f4 url(images/bleeds.png) 0px -41px repeat-x;
 
-  -moz-border-radius:20px;
-  -webkit-border-radius:20px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
   }
+
+  input.form-submit:hover {
+    border-color:#999 #999 #888;
+    background:#888 url(images/bleeds.png) 0px 0px repeat-x;
+    color:#fff;
+    }
 
   input.form-submit:active {
     background:#666;
     color:#fff;
-    border-color:#555;
-    text-shadow:#222 0px -1px 0px;
     }
 
   /* Teaser splitter */
   div.teaser-button-wrapper { padding:5px 5px 0px; }
   input.teaser-button { font-size:11px; }
-
-form div.buttons {
-  clear:both;
-  padding:10px 0px;
-  }
-
-  form div.form div.buttons { border-width:1px 0px 0px; }
-
-  form input#edit-delete {
-    background:#eee;
-    border-color:#fff #ddd #ccc;
-    text-shadow:none;
-    color:#999;
-    }
+  form input#edit-delete { color:#ccc; }
 
 input.form-autocomplete,
 input.form-text,
 textarea.form-textarea,
 select.form-select {
   padding:2px;
-  border:1px solid #ddd;
-  border-top-color:#999;
+  border-width:2px;
+  border-style:solid;
+  border-color:#fff;
   background:#fff;
-  color:#333;
+  color:#666;
   }
+
+  input.form-autocomplete:hover,
+  input.form-text:hover,
+  textarea.form-textarea:hover,
+  select.form-select:hover,
+  div.form-item:hover input.form-autocomplete,
+  div.form-item:hover input.form-text,
+  div.form-item:hover textarea.form-textarea,
+  div.form-item:hover select.form-select {
+    color:#333;
+    border-color:#e8e8e8;
+    }
 
   input.form-text:focus,
   textarea.form-textarea:focus,
   select.form-select:focus {
-    color:#000;
+    color:#333;
     border-color:#ace;
     }
 
@@ -584,46 +622,105 @@ select.form-select {
 
 
 /* Fieldsets */
-div.fieldset {
-  border:1px solid #ddd;
-  padding:4px 9px;
-  margin:0px 0px 10px;
-  background:#fff;
+div.fieldset,
+div.fieldset-title,
+div.fieldset-title a,
+div.fieldset-content { display:block; }
+
+h2.fieldset-title,
+div.collapsible h2.fieldset-title a {
+  -moz-border-radius:2px 2px 0px 0px;
+  -webkit-border-radius-top-left:2px;
+  -webkit-border-radius-top-right:2px;
+
+  display:block;
+  font-size:11px;
+  margin:0px;
+  padding:4px 9px 5px;
+  color:#333;
+  background:#f4f4f4;
   }
 
-  div.fieldset div.fieldset { background:#fff; }
-  div.fieldset div.fieldset div.fieldset { background:#f8f8f8; }
+  div.collapsible h2.fieldset-title { position:relative; }
+
+  div.collapsible h2.fieldset-title span.icon {
+    position:absolute;
+    left:-20px;
+    top:4px;
+    background:url(images/sprite.png) 0px -20px no-repeat;
+    width:20px;
+    height:20px;
+    display:block;
+    }
+
+    div.collapsed h2.fieldset-title span.icon { background-position:0px 0px; }
+
+    div.fieldset div.collapsible h2.fieldset-title span.icon { display:none; }
+
+  div.collapsed h2.fieldset-title a {
+    background:#eee;
+    color:#999;
+    }
+
+  div.collapsed h2.fieldset-title a:hover { color:#666; }
+
+  div.collapsible h2.fieldset-title {
+    padding:0px;
+    -moz-border-radius:0px;
+    -webkit-border-radius:0px;
+    background:transparent;
+    }
+
+  div.collapsed h2.fieldset-title a {
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    padding-bottom:4px;
+    }
+
+div.fieldset-content {
+  -moz-border-radius:0px 0px 2px 2px;
+  -webkit-border-radius-bottom-left:2px;
+  -webkit-border-radius-bottom-right:2px;
+
+  padding:10px 9px 9px;
+  background:#fcfcfc;
+  }
 
   div.collapsed div.fieldset-content { display:none; }
 
+  div.fieldset div.fieldset div.fieldset-content { background:#fff; }
+
 /**
- * Node forms =========================================================
+ * Form layout: Default ===============================================
  */
-div.node-form div.left {
+div.form-layout-default div.column-main {
   float:left;
-  width:70%;
+  width:65%;
   }
 
-div.node-form div.right {
+  div.form-layout-default div.column-main div.column-wrapper {
+    padding-right:9px;
+    border-right:1px solid #e8e8e8;
+    }
+
+div.form-layout-default div.column-side {
   float:right;
-  width:30%;
+  width:34.99%;
   }
 
-div.node-form div.right div.buttons {
-  background:#ddd;
+  div.form-layout-default div.column-side div.column-wrapper { padding-left:10px; }
+
+div.form-layout-default div.column-side div.buttons {
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+
+  background:#eee;
+  border:1px solid #e4e4e4;
   padding:9px;
   margin:0px 0px 10px;
-  border:1px solid #ccc;
   }
 
-div.node-form div.right div.form-item {
-  padding:10px 0px 9px;
-  margin:0px;
-  border:0px;
-  border-bottom:1px solid #ccc;
-  }
-
-div.node-form div.main { padding-right:20px; }
+  div.form-layout-default div.column-side div.buttons input.form-submit { margin:1px 0px; }
 
 /**
  * System =============================================================

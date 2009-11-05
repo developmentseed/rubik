@@ -20,11 +20,8 @@ regions[s] = "s"
 
 ; Default layout
 layouts[default][name] = "Default"
-layouts[default][description] = "Two column default."
-layouts[default][stylesheet] = "layout-default.css"
+layouts[default][description] = "Simple 1-column page."
 layouts[default][template] = "page"
-layouts[default][regions][] = "w"
-layouts[default][regions][] = "c"
 
 ; 4 grid layout
 layouts[grid][name] = "4 Pane grid"

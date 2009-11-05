@@ -22,7 +22,7 @@
 
   <div id='page-title' class='clear-block limiter'>
     <?php if ($tabs): ?><?php print $tabs ?><?php endif; ?>
-    <?php if ($title): ?><h2 class='page-title'><?php print $title ?></h2><?php endif; ?>
+    <h2 class='page-title'><?php if ($title) print $title ?></h2>
   </div>
 
   <div id='page'><div class='clear-block limiter'>
@@ -34,22 +34,16 @@
     <?php endif; ?>
 
     <div id='content' class='clear-block'>
-      <div class='content-middle clear-block'>
-        <div id='w'><?php print $w ?></div>
-        <div id='c'>
-          <?php print $c ?>
-          <div class='page-content'><?php print $content ?></div>
-        </div>
-      </div>
-    </div>
-
-    <div id="footer">
-      <?php print $feed_icons ?>
-      <?php print $footer ?>
-      <?php print $footer_message ?>
+      <div class='page-content'><?php print $content ?></div>
     </div>
 
   </div></div>
+
+  <div id="footer">
+    <?php print $feed_icons ?>
+    <?php print $footer ?>
+    <?php print $footer_message ?>
+  </div>
 
   <?php print $scripts ?>
   <?php print $closure ?>
