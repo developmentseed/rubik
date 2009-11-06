@@ -17,7 +17,10 @@
   <?php endif; ?>
 
   <div id='branding'><div class='clear-block limiter'>
+    <div class='breadcrumb clear-block'><?php print $breadcrumb ?></div>
+    <!--
     <?php if ($site_name): ?><h1 class='site-name'><?php print $site_name ?></h1><?php endif; ?>
+    -->
   </div></div>
 
   <div id='page-title' class='clear-block limiter'>

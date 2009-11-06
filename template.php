@@ -102,6 +102,28 @@ function rubiks_preprocess_user_profile_form(&$vars) {
 }
 
 /**
+ * Override of theme('breadcrumb').
+ */
+function rubiks_breadcrumb($breadcrumb) {
+  $output = '';
+  if (empty($breadcrumb)) {
+    $breadcrumb = array(variable_get('site_name', ''));
+  }
+  else {
+    $site_link = l(variable_get('site_name', ''), '<front>');
+    $item = menu_get_item();
+    $breadcrumb[] = $item['title'];
+  }
+  foreach ($breadcrumb as $link) {
+    if (isset($site_link) && strip_tags($link) === t('Home')) {
+      $link = $site_link;
+    }
+    $output .= "<span class='breadcrumb-link'>{$link}</span>";
+  }
+  return $output;
+}
+
+/**
  * Display the list of available node types for node creation.
  */
 function rubiks_node_add_list($content) {
@@ -168,4 +190,15 @@ function rubiks_admin_manage_options($form) {
   }
   $output .= "</div>";
   return $output;
+}
+
+/**
+ * Override of theme('textfield').
+ */
+function rubiks_textfield($element) {
+  if ($element['#size'] >= 40) {
+    $element['#size'] = '';
+    $element['#attributes']['class'] = isset($element['#attributes']['class']) ? "{$element['#attributes']['class']} fluid" : "fluid";
+  }
+  return theme_textfield($element);
 }

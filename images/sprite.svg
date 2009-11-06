@@ -40,11 +40,11 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="6.8629685"
-     inkscape:cy="174.31135"
+     inkscape:cx="191.05383"
+     inkscape:cy="10.562853"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     showgrid="true">
+     showgrid="false">
     <inkscape:grid
        type="xygrid"
        id="grid3188"
@@ -102,5 +102,10 @@
        height="8"
        x="29"
        y="-14" />
+    <path
+       style="opacity:1;fill:#c0c0c0;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 188,186 L 189,186 L 192,190 L 189,194 L 188,194 L 191,190"
+       id="path2385"
+       sodipodi:nodetypes="cccccc" />
   </g>
 </svg>

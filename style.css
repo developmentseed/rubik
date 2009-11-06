@@ -1,5 +1,9 @@
+body.rubiks,
+input,
+textarea,
+select { font-family:"Lucida Grande","Trebuchet MS",Tahoma,Verdana,sans-serif; }
+
 body.rubiks {
-  font-family:"Lucida Grande","Trebuchet MS",Verdana,Tahoma,sans-serif;
   color:#666;
   background:#ddd url(images/bleeds.png) 0px -80px repeat-x fixed;
   }
@@ -17,57 +21,12 @@ hr { display:none; }
 /**
  * Generic ============================================================
  */
-.page-content legend { font-weight:bold; }
-
-.page-content h1,
-.page-content h2,
-.page-content h3,
-.page-content h4,
-.page-content h5,
-.page-content h6 {
-  font-size:15px;
-  font-weight:bold;
-  margin: 10px 0px;
-  }
-
-.page-content ul,
-.page-content dl {
-  margin:0px 0px 20px;
-  }
-
 .page-content dl dt {}
 .page-content dl dd,
 .page-content dl dl {
   margin-left:20px;
   margin-bottom:10px;
   }
-
-.page-content ul li {
-  list-style:disc;
-  margin-left:20px;
-  }
-
-  /* Exclude some from this styling */
-  .page-content ul.admin-list,
-  .page-content ul.admin-list li,
-  .page-content .views-edit-view ul,
-  .page-content .views-edit-view ul li,
-  .page-content form ul,
-  .page-content form ul li,
-  .page-content ul.clear-block,
-  .page-content ul.clear-block li,
-  .page-content div.item-list ul,
-  .page-content div.item-list ul li,
-  .page-content ul.menu,
-  .page-content ul.menu li,
-  .page-content ul.links,
-  .page-content ul.links li {
-    padding:0px;
-    margin:0px;
-    list-style:none;
-    }
-
-  .page-content ul.vertical-tabs-list { margin:-1px -100% -1px 0; }
 
 /**
  * Branding ===========================================================
@@ -86,11 +45,19 @@ hr { display:none; }
   position:relative;
   }
 
+#branding div.breadcrumb,
 #branding h1.site-name {
-  font-size:11px;
+  font-size:10px;
   text-transform:uppercase;
   font-weight:normal;
   }
+
+  #branding div.breadcrumb span.breadcrumb-link {
+    color:#ccc;
+    float:left;
+    padding-right:20px;
+    background:url(images/sprite.png) 100% 100% no-repeat;
+    }
 
 /**
  * Help ===============================================================
@@ -170,9 +137,6 @@ a.help-toggle {
   border-color:#f8fffc;
   }
 
-/**
- * Grouped hover states ===============================================
- */
 div.page-content { padding:5px; }
 
 div.block {
@@ -208,13 +172,16 @@ div.block {
 
 #page-title h2.page-title {
   padding:0px 10px 10px;
-  letter-spacing:-1px;
-  font-size:20px;
   line-height:40px;
   height:40px;
-  color:#666;
-  font-weight:normal;
   float:left;
+
+  text-shadow:#fff 0px 1px 0px;
+  -webkit-text-shadow:#fff 0px 1px 0px;
+  
+  letter-spacing:-1px;
+  font-weight:normal;
+  font-size:20px;
   }
 
 /**
@@ -268,9 +235,9 @@ ul.primary-tabs li.active a.active {
   -moz-border-radius:2px;
   -webkit-border-radius:2px;
   font-size:11px;
-  margin:0px 0px 5px;
-  padding:5px;
-  background:#fcfcfc;
+  margin:0px -4px 5px;
+  padding:0px 10px 4px;
+  border-bottom:1px solid #e8e8e8;
   }
 
   ul.secondary-tabs { float:right; }
@@ -309,76 +276,59 @@ ul.primary-tabs li.active a.active {
   background:#f4f4f4;
   }
 
-#footer {
-  text-align:center;
-  padding:20px;
-  font-size:11px;
+/**
+ * Menus, lists =======================================================
+ */
+div.item-list li,
+ul.menu li {
+  display:block;
+  padding:5px 10px 4px;
+  border-bottom:1px solid #f4f4f4;
   }
 
-#content ul.menu li,
-#content ul.menu li a,
-#secondary-links ul.links li,
-#secondary-links ul.links li a { float:left; }
-
-#content ul.menu li,
-#secondary-links ul.links li { padding:0px 10px 10px 0px; }
-
-#content ul.menu li a,
-#secondary-links ul.links li a {
-  font-size:9px;
-  line-height:10px;
-
-  background:#777;
-  color:#fff;
-  text-align:center;
-  padding:5px;
-  height:55px;
-  width:80px;
-
-  overflow:hidden;
-
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
-  }
-
-  #secondary-links ul.links li a:hover { background:#999; }
-
-  #content ul.menu li a {
-    background:#f8f8f8;
-    color:#05a;
+  div.item-list li:last-child,
+  ul.menu li:last-child {
+    border:0px;
+    padding:5px 10px;
     }
 
-  #content ul.menu li a:hover { background:#eee; }
-
-#secondary-links ul.links li.active-trail a,
-#secondary-links ul.links li a.active { background:#333; }
-
-#content ul.admin-list li a span.icon,
-#content ul.menu li a span.icon,
-#secondary-links ul.links li a span.icon {
+ul.admin-list li a span.icon {
   margin:0px auto 5px;
   display:block;
   width:30px;
   height:30px;
   }
 
-#content ul.node-type-list li,
-#content ul.admin-list li {
+ul.node-type-list li,
+ul.admin-list li {
   position:relative;
-  padding-left:40px;
-  padding-bottom:9px;
-  border-bottom:1px solid #ccc;
-  margin-left:0px;
-  margin-bottom:10px;
+  padding:10px 5px 9px 50px;
+  margin:0px;
+  border-bottom:1px solid #e8e8e8;
   }
 
-  #content ul.admin-list li a span.icon {
-    position:absolute;
-    left:0px;
-    top:0px;
+  ul.node-type-list li:last-child,
+  ul.admin-list li:last-child {
+    padding-bottom:10px;
+    border:0px;
     }
 
-  #content ul.node-type-list label { font-size:15px; }
+  ul.admin-list li a span.icon {
+    position:absolute;
+    left:10px;
+    top:10px;
+    }
+
+  ul.node-type-list label { font-size:15px; }
+
+/**
+ * Footer =============================================================
+ */
+#footer {
+  text-align:center;
+  padding:20px;
+  font-size:11px;
+  }
 
 /**
  * Tables =============================================================
@@ -418,6 +368,9 @@ table tr.selected td {
   }
 
 div.fieldset table { margin:0px; }
+
+table td.module { font-weight:bold; }
+table td.permission { padding-left:19px; }
 
 /**
  * Pagers =============================================================
@@ -478,7 +431,10 @@ div.fieldset table { margin:0px; }
  * Forms ==============================================================
  */
 div.fieldset,
-div.form-item {
+div.form-item,
+ul.admin-list,
+ul.node-type-list,
+div.admin-panel {
   position:relative;
   background:#fcfcfc;
   margin:0px 0px 10px;
@@ -495,6 +451,7 @@ div.form-item {
 
   div.form-item { padding:9px; }
 
+div.admin-panel ul.admin-list,
 div.teaser-checkbox div.form-item,
 div.form-item div.form-item,
 div.fieldset div.form-item {
@@ -506,11 +463,15 @@ div.fieldset div.form-item {
   border:0px;
   }
 
+  div.admin-panel ul.admin-list { padding:0px; }
+
 div.form-item label {
   margin:0px;
   padding:0px;
+  color:#999;
   font-weight:bold;
-  font-size:11px;
+  font-size:9px;
+  text-transform:uppercase;
   }
 
   div.form-item label.option { text-transform:none; }
@@ -520,22 +481,31 @@ div.form-item label.option input { vertical-align:middle; }
 
 div.page-content div.description,
 div.page-content div.form-item div.description {
-  margin:5px 0px;
   line-height:15px;
   font-size:11px;
   }
 
+  div.admin-panel p.description {
+    background:#f4f4f4;
+    border-top:1px solid #e8e8e8;
+    border-bottom:1px solid #fff;
+    line-height:20px;
+    font-size:11px;
+    padding:4px 9px;
+    margin:0px;
+    }
+
 div.page-content div.form-item div.description {
   position:absolute;
-  max-width:300px;
+  max-width:60%;
   right:0px;
-  bottom:100%;
+  top:100%;
   z-index:5;
 
   color:#687;
   background:#e8f4f0;
   border:5px solid #f0f8f4;
-  border-bottom:0px;
+  border-top:0px;
 
   margin:0px;
   padding:10px;
@@ -556,8 +526,6 @@ input.form-submit {
   text-align:center;
 
   font-weight:normal;
-  font-family:"Lucida Grande",Verdana,sans-serif;
-
   border:1px solid #eee;
   border-bottom:1px solid #ddd;
   background:#f4f4f4 url(images/bleeds.png) 0px -41px repeat-x;
@@ -601,16 +569,18 @@ select.form-select {
   div.form-item:hover input.form-autocomplete,
   div.form-item:hover input.form-text,
   div.form-item:hover textarea.form-textarea,
-  div.form-item:hover select.form-select {
-    color:#333;
-    border-color:#e8e8e8;
-    }
-
+  div.form-item:hover select.form-select,
   input.form-text:focus,
   textarea.form-textarea:focus,
   select.form-select:focus {
     color:#333;
     border-color:#ace;
+    }
+
+  input.fluid {
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    width:100%;
     }
 
   html.js input.form-autocomplete { background-position:100% 7px; }
@@ -620,13 +590,13 @@ select.form-select {
   #diff-inline-form select,
   #content div.filter-options select { padding:0px; }
 
-
 /* Fieldsets */
 div.fieldset,
 div.fieldset-title,
 div.fieldset-title a,
 div.fieldset-content { display:block; }
 
+div.admin-panel h3,
 h2.fieldset-title,
 div.collapsible h2.fieldset-title a {
   -moz-border-radius:2px 2px 0px 0px;
@@ -725,37 +695,23 @@ div.form-layout-default div.column-side div.buttons {
 /**
  * System =============================================================
  */
-div.admin .right { float:right; }
-div.admin .left { float:left; }
+div.admin .right {
+  padding-left:5px;
+  float:right;
+  }
+
+div.admin .left {
+  padding-right:5px;
+  float:left;
+  }
 
 div.admin .right,
 div.admin .left {
-  width:49%;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  width:50%;
   margin:0px;
   }
-
-div.admin-panel,
-div.admin-panel .body {
-  padding:0px;
-  clear:left;
-  }
-
-div.admin-panel {
-  margin:0px 0px 20px;
-  padding:9px;
-  background:#f8f8f8;
-  border:1px solid #ddd;
-  }
-
-#content div.admin-panel h3 {
-  font-size:11px;
-  text-transform:uppercase;
-  margin:0px 0px 10px;
-  padding-bottom:9px;
-  border-bottom:1px solid #ddd;
-  }
-
-.container-inline div.fieldset { display:block; }
 
 /* admin/content/node & admin/user/user */
 #content dl.multiselect,
@@ -778,11 +734,6 @@ div.admin-options {
   margin:0px 0px 10px;
   }
 
-div.admin-options label {
-  text-transform:uppercase;
-  font:11px/30px "Lucida Grande",Verdana,sans-serif;
-  }
-
 div.admin-options label,
 div.admin-options div.form-item {
   margin-right:10px;
@@ -792,4 +743,24 @@ div.admin-options div.form-item {
 div.admin-options div.form-item {
   padding:0px;
   border:0px;
+  }
+
+/**
+ * ORPHANED MARKUP ====================================================
+ * The following selectors target markup generated by Drupal that have
+ * exactly 1 or extremely few instances. It will make a great future
+ * hitlist of markup to consolidate and generalize.
+ */
+div.compact-link {
+  font-size:11px;
+  margin:0px 0px 10px;
+  }
+
+div.compact-link a {
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border:1px solid #e8e8e8;
+  padding:4px 9px;
+  color:#666;
+  background:#fff;
   }
