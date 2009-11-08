@@ -118,23 +118,28 @@ a.help-toggle {
   border:5px solid #e4e4e4;
   }
 
+table tr.warning th,
 #console div.warning {
   color:#a84;
   background:#fff4c0;
-  border-color:#fffce4;
   }
 
+table tr.error th,
 #console div.error {
   color:#965;
   background:#ffe4e0;
-  border-color:#fff8f4;
   }
 
+table tr.ok th,
+table tr.info th,
 #console div.status {
   color:#687;
   background:#ecf8f4;
-  border-color:#f8fffc;
   }
+
+  #console div.error   { border-color:#fff8f4; }
+  #console div.warning { border-color:#fffce4; }
+  #console div.status  { border-color:#f8fffc; }
 
 div.page-content { padding:5px; }
 
@@ -175,11 +180,29 @@ div.block {
 
   text-shadow:#fff 0px 1px 0px;
   -webkit-text-shadow:#fff 0px 1px 0px;
-  
+
   letter-spacing:-1px;
   font-weight:normal;
   font-size:20px;
   }
+
+/**
+ * Pagers =============================================================
+ */
+div.pager {
+  font-weight:normal;
+  font-size:11px;
+  }
+
+  div.pager ul.pager-list { float:left; }
+  div.pager ul.pager-links { float:right; }
+
+  ul.pager a:hover {
+    background:#eee;
+    border-color:#ddd #e8e8e8 #eee;
+    -moz-box-shadow:#fff 0px 1px 0px;
+    -webkit-box-shadow:#fff 0px 1px 0px;
+    }
 
 /**
  * Tabs ===============================================================
@@ -196,22 +219,30 @@ ul.primary-tabs {
 
 ul.primary-tabs li { padding-left:5px; }
 
+ul.pager a,
+ul.pager li.pager-current,
 ul.primary-tabs li a {
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
 
+  padding:4px 9px;
+
   font-size:11px;
+  font-weight:normal;
 
   color:#999;
   background:transparent;
+
   border-width:1px;
   border-style:solid;
   border-color:transparent;
-  padding:4px 9px;
   }
 
+ul.pager li.pager-current,
 ul.primary-tabs li a:hover {
-  border-color:#999 #999 #fff;
+  -moz-box-shadow:#fff 0px 1px 0px;
+  -webkit-box-shadow:#fff 0px 1px 0px;
+  border-color:#999;
   background:#888 url(images/bleeds.png) 0px 0px repeat-x;
   color:#fff;
   }
@@ -230,7 +261,7 @@ ul.primary-tabs li.active a.active {
   background:#f4f4f4 url(images/bleeds.png) 0px -41px repeat-x;
   }
 
-#page div.secondary-tabs {
+div.secondary-tabs {
   -moz-border-radius:2px;
   -webkit-border-radius:2px;
   font-size:11px;
@@ -242,9 +273,7 @@ ul.primary-tabs li.active a.active {
   ul.secondary-tabs { float:right; }
 
   ul.secondary-tabs li a,
-  ul.secondary-tabs li a:hover,
-  ul.secondary-tabs li.active a,
-  ul.secondary-tabs li.active a.active {
+  ul.secondary-tabs li a:hover {
     color:#333;
     padding:0px 10px;
     -moz-border-radius:3px;
@@ -349,7 +378,6 @@ table {
   -webkit-box-shadow:#fff 0px 1px 0px;
   }
 
-table.system-status-report th,
 table td,
 table th {
   vertical-align:top;
@@ -359,13 +387,15 @@ table th {
   padding:5px;
   }
 
-  table.system-status-report th { padding-left:30px; }
+table th {
+  text-align:left;
+  font-weight:normal;
+  color:#666;
+  background:#eee;
+  text-shadow:#fff 0px 1px 0px;  
+  }
 
-table th { background:#f4f4f4; }
-
-table tr.odd td,
-table tr.odd th { background:#fff; }
-
+table tr.odd td { background:#fff; }
 table td.active { background:#e4f0f8; }
 table tr.odd td.active { background:#ecf8fc; }
 
@@ -379,61 +409,6 @@ div.fieldset table { margin:0px; }
 
 table td.module { font-weight:bold; }
 table td.permission { padding-left:19px; }
-
-/**
- * Pagers =============================================================
- */
-#content div.item-list ul.pager {
-  position:relative;
-  height:28px;
-  background:#f8f8f8;
-  border:1px solid #ccc;
-  padding-right:80px;
-  }
-
-#content ul.pager li,
-#content ul.pager li a { float:left; }
-
-#content ul.pager li.pager-ellipsis,
-#content ul.pager li.pager-current,
-#content ul.pager li a {
-  color:#666;
-  font-weight:normal;
-  padding:4px 10px;
-  }
-
-  #content ul.pager li { border-right:1px solid #ccc; }
-
-  #content ul.pager li.pager-current { background:#fff; }
-
-  #content ul.pager li.pager-first a,
-  #content ul.pager li.pager-previous a,
-  #content ul.pager li.pager-next a,
-  #content ul.pager li.pager-last a {
-    font-size:11px;
-    font-weight:bold;
-    width:79px;
-    padding:4px 0px;
-    text-align:center;
-    background:#eee;
-    }
-
-  #content ul.pager li.pager-next,
-  #content ul.pager li.pager-last {
-    border-left:1px solid #ccc;
-    border-right:0px;
-    float:right;
-    }
-
-  #content ul.pager li a:hover {
-    background:#999;
-    color:#fff;
-    }
-
-  /* This whole portion is to accommodate the correct order of next/last pager links. */
-  #content ul.pager li.last { position:absolute; right:0px; }
-  #content ul.pager li.pager-current,
-  #content ul.pager li.pager-item { position:static; }
 
 /**
  * Forms ==============================================================
@@ -488,6 +463,8 @@ div.form-item label {
 div.form-item label.option { font-size:11px; }
 div.form-item label.option input { vertical-align:middle; }
 
+div.page-content .password-description,
+div.page-content .password-strength,
 div.page-content div.description,
 div.page-content div.form-item div.description {
   line-height:15px;

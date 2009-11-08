@@ -5,45 +5,73 @@
  * Implementation of hook_theme().
  */
 function rubiks_theme() {
-  return array(
-    'node' => array(
-      'template' => 'object',
-      'path' => path_to_theme() .'/templates',
-    ),
-    'comment' => array(
-      'template' => 'object',
-      'path' => path_to_theme() .'/templates',
-    ),
-    'comment_wrapper' => array(
-      'template' => 'object',
-      'path' => path_to_theme() .'/templates',
-    ),
-    'confirm_form' => array(
-      'arguments' => array('form' => array()),
-      'path' => path_to_theme() .'/templates',
-      'template' => 'form-confirm',
-    ),
-    'node_form' => array(
-      'arguments' => array('form' => array()),
-      'path' => path_to_theme() .'/templates',
-      'template' => 'form-default',
-    ),
-    'node_type_form' => array(
-      'arguments' => array('form' => array()),
-      'path' => path_to_theme() .'/templates',
-      'template' => 'form-default',
-    ),
-    'system_settings_form' => array(
-      'arguments' => array('form' => array()),
-      'path' => path_to_theme() .'/templates',
-      'template' => 'form-default',
-    ),
-    'user_profile_form' => array(
-      'arguments' => array('form' => array()),
-      'path' => path_to_theme() .'/templates',
-      'template' => 'form-default',
+  $items = array();
+
+  // Content theming.
+  $items['comment'] =
+  $items['node'] = array(
+    'path' => path_to_theme() .'/templates',
+    'template' => 'object',
+  );
+
+  // Form layout: simple.
+  $items['filter_admin_overview'] =
+  $items['user_admin_perm'] = array(
+    'arguments' => array('form' => array()),
+    'path' => path_to_theme() .'/templates',
+    'template' => 'form-simple',
+    'preprocess functions' => array(
+      'rubiks_preprocess_form_buttons',
+      'rubiks_preprocess_form_legacy'
     ),
   );
+
+  // Form layout: default (2 column).
+  $items['comment_form'] =
+  $items['filter_admin_format_form'] =
+  $items['menu_edit_menu'] =
+  $items['menu_edit_item'] =
+  $items['node_type_form'] =
+  $items['system_settings_form'] =
+  $items['system_themes_form'] =
+  $items['system_modules'] =
+  $items['system_actions_configure'] =
+  $items['taxonomy_form_term'] =
+  $items['taxonomy_form_vocabulary'] =
+  $items['user_pass'] =
+  $items['user_login'] =
+  $items['user_register'] =
+  $items['user_profile_form'] =
+  $items['user_admin_access_add_form'] = array(
+    'arguments' => array('form' => array()),
+    'path' => path_to_theme() .'/templates',
+    'template' => 'form-default',
+    'preprocess functions' => array(
+      'rubiks_preprocess_form_buttons',
+      'rubiks_preprocess_form_legacy',
+    ),
+  );
+
+  // These forms require additional massaging.
+  $items['confirm_form'] = array(
+    'arguments' => array('form' => array()),
+    'path' => path_to_theme() .'/templates',
+    'template' => 'form-simple',
+    'preprocess functions' => array(
+      'rubiks_preprocess_form_confirm'
+    ),
+  );
+  $items['node_form'] = array(
+    'arguments' => array('form' => array()),
+    'path' => path_to_theme() .'/templates',
+    'template' => 'form-default',
+    'preprocess functions' => array(
+      'rubiks_preprocess_form_buttons',
+      'rubiks_preprocess_form_node'
+    ),
+  );
+
+  return $items;
 }
 
 /**
@@ -63,18 +91,30 @@ function rubiks_preprocess_fieldset(&$vars) {
 }
 
 /**
- * Do preprocess form button handling for most forms.
+ * Attempts to render a non-template based form for template rendering.
  */
-function _rubiks_process_form_buttons(&$vars) {
+function rubiks_preprocess_form_legacy(&$vars) {
+  if (isset($vars['form']['#theme']) && function_exists("theme_{$vars['form']['#theme']}")) {
+    $function = "theme_{$vars['form']['#theme']}";
+    $vars['form'] = array(
+      '#type' => 'markup',
+      '#value' => $function($vars['form'])
+    );
+  }
+}
+
+/**
+ * Preprocessor for handling form button for most forms.
+ */
+function rubiks_preprocess_form_buttons(&$vars) {
   if (isset($vars['form']['buttons'])) {
     $vars['buttons'] = $vars['form']['buttons'];
     unset($vars['form']['buttons']);
   }
   else {
     $vars['buttons'] = array();
-    $keys = array('save', 'submit', 'delete', 'reset');
-    foreach ($keys as $key) {
-      if (isset($vars['form'][$key], $vars['form'][$key]['#type']) && $vars['form'][$key]['#type'] == 'submit') {
+    foreach (element_children($vars['form']) as $key) {
+      if (isset($vars['form'][$key]['#type']) && in_array($vars['form'][$key]['#type'], array('submit', 'button'))) {
         $vars['buttons'][$key] = $vars['form'][$key];
         unset($vars['form'][$key]);
       }
@@ -83,11 +123,26 @@ function _rubiks_process_form_buttons(&$vars) {
 }
 
 /**
+ * Preprocessor for theme('confirm_form').
+ */
+function rubiks_preprocess_form_confirm(&$vars) {
+  // Move the title from the page title (usually too big and unwieldy)
+  $title = filter_xss_admin(drupal_get_title());
+  $vars['form']['description']['#type'] = 'item';
+  $vars['form']['description']['#value'] = empty($vars['form']['description']['#value']) ?
+    "<strong>{$title}</strong>" :
+    "<strong>{$title}</strong><p>{$vars['form']['description']['#value']}</p>";
+  drupal_set_title(t('Please confirm'));
+
+  // Button setup
+  $vars['buttons'] = $vars['form']['actions'];
+  unset($vars['form']['actions']);
+}
+
+/**
  * Preprocessor for theme('node_form').
  */
-function rubiks_preprocess_node_form(&$vars) {
-  _rubiks_process_form_buttons($vars);
-
+function rubiks_preprocess_form_node(&$vars) {
   // @TODO: Figure out a better way here. drupal_alter() is preferable.
   // Allow modules to insert form elements into the sidebar,
   // defaults to showing taxonomy in that location.
@@ -102,24 +157,31 @@ function rubiks_preprocess_node_form(&$vars) {
 }
 
 /**
- * Preprocessor for theme('node_type_form').
+ * Preprocessor for theme('node').
  */
-function rubiks_preprocess_node_type_form(&$vars) {
-  _rubiks_process_form_buttons($vars);
+function rubiks_preprocess_node(&$vars) {
+  $vars['layout'] = TRUE;
+  $vars['title'] = menu_get_object() === $vars['node'] ? '' : $vars['title'];
+  $vars['attr']['class'] .= ' clear-block';
 }
 
 /**
- * Preprocessor for theme('system_settings_form').
+ * Preprocessor for theme('comment').
  */
-function rubiks_preprocess_system_settings_form(&$vars) {
-  _rubiks_process_form_buttons($vars);
+function rubiks_preprocess_comment(&$vars) {
+  $vars['layout'] = TRUE;
+  $vars['attr']['class'] .= ' clear-block';
 }
 
 /**
- * Preprocessor for theme('user_profile_form').
+ * Preprocessor for theme('comment_wrapper').
  */
-function rubiks_preprocess_user_profile_form(&$vars) {
-  _rubiks_process_form_buttons($vars);
+function rubiks_preprocess_comment_wrapper(&$vars) {
+  $vars['hook'] = 'box';
+  $vars['title'] = t('Comments');
+
+  $vars['attr']['id'] = 'comments';
+  $vars['attr']['class'] .= ' clear-block';
 }
 
 /**
@@ -148,17 +210,16 @@ function rubiks_breadcrumb($breadcrumb) {
  * Display the list of available node types for node creation.
  */
 function rubiks_node_add_list($content) {
-  $output = '';
+  $output = "<ul class='admin-list'>";
   if ($content) {
-    $output = '<ul class="node-type-list">';
     foreach ($content as $item) {
-      $output .= "<li class='clear-block'>";
-      $output .= '<label>'. l($item['title'], $item['href'], $item['localized_options']) .'</label>';
+      $output .= "<li>";
+      $output .= l($item['title'], $item['href'], $item['localized_options']);
       $output .= '<div class="description">'. filter_xss_admin($item['description']) .'</div>';
       $output .= "</li>";
     }
-    $output .= '</ul>';
   }
+  $output .= "</ul>";
   return $output;
 }
 
@@ -201,23 +262,10 @@ function rubiks_admin_block_content($content, $get_runstate = FALSE) {
 }
 
 /**
- * Theme function for manage options on admin/content/node, admin/user/user.
- */
-function rubiks_admin_manage_options($form) {
-  $output = "<div class='clear-block admin-options'>";
-  $output .= "<label>{$form['#title']}</label>";
-  foreach (element_children($form) as $id) {
-    $output .= drupal_render($form[$id]);
-  }
-  $output .= "</div>";
-  return $output;
-}
-
-/**
  * Override of theme('textfield').
  */
 function rubiks_textfield($element) {
-  if ($element['#size'] >= 40) {
+  if ($element['#size'] >= 30) {
     $element['#size'] = '';
     $element['#attributes']['class'] = isset($element['#attributes']['class']) ? "{$element['#attributes']['class']} fluid" : "fluid";
   }
@@ -225,12 +273,14 @@ function rubiks_textfield($element) {
 }
 
 /**
- * Preprocessor for theme('node').
+ * Override of theme('password').
  */
-function rubiks_preprocess_node(&$vars) {
-  $vars['layout'] = TRUE;
-  $vars['title'] = menu_get_object() === $vars['node'] ? '' : $vars['title'];
-  $vars['attr']['class'] .= ' clear-block';
+function rubiks_password($element) {
+  if ($element['#size'] >= 30 || $element['#maxlength'] >= 30) {
+    $element['#size'] = '';
+    $element['#attributes']['class'] = isset($element['#attributes']['class']) ? "{$element['#attributes']['class']} fluid" : "fluid";
+  }
+  return theme_password($element);
 }
 
 /**
@@ -256,31 +306,4 @@ function _rubiks_submitted($node) {
   $byline = t('Posted by !username', array('!username' => theme('username', $node)));
   $date = format_date($node->created, 'small');
   return "<span class='byline'>{$byline}</span><span class='date'>$date</span>";
-}
-
-/**
- * Preprocessor for theme('comment').
- */
-function rubiks_preprocess_comment(&$vars) {
-  $vars['layout'] = TRUE;
-  $vars['attr']['class'] .= ' clear-block';
-}
-
-/**
- * Preprocessor for theme('comment_wrapper').
- */
-function rubiks_preprocess_comment_wrapper(&$vars) {
-  $vars['hook'] = 'box';
-  $vars['title'] = t('Comments');
-
-  $vars['attr']['id'] = 'comments';
-  $vars['attr']['class'] .= ' clear-block';
-}
-
-/**
- * Preprocessor for theme('confirm_form').
- */
-function rubiks_preprocess_confirm_form(&$vars) {
-  $vars['title'] = drupal_get_title();
-  drupal_set_title(t('Please confirm'));
 }
