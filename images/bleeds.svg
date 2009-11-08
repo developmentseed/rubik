@@ -50,11 +50,11 @@
        inkscape:collect="always"
        id="linearGradient3157">
       <stop
-         style="stop-color:#dddddd;stop-opacity:1;"
+         style="stop-color:#efefef;stop-opacity:1"
          offset="0"
          id="stop3159" />
       <stop
-         style="stop-color:#ffffff;stop-opacity:1"
+         style="stop-color:#dddddd;stop-opacity:1"
          offset="1"
          id="stop3161" />
     </linearGradient>
@@ -74,7 +74,7 @@
        x2="400"
        y2="0"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(5e-2,0,0,1,0,80)" />
+       gradientTransform="matrix(5e-2,0,0,1,0,-480)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient3160"
@@ -107,8 +107,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="-27.757808"
-     inkscape:cy="162.45457"
+     inkscape:cx="-223.75781"
+     inkscape:cy="184.45457"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false">
@@ -139,7 +139,8 @@
        width="20"
        height="400"
        x="0"
-       y="80" />
+       y="-480"
+       transform="scale(1,-1)" />
     <rect
        y="40"
        x="0"

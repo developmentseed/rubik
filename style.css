@@ -13,8 +13,7 @@ a {
   text-decoration:none;
   }
 
-div.box,
-p { margin:0px 0px 20px; }
+p:last-child { margin:0px; }
 
 hr { display:none; }
 
@@ -38,7 +37,7 @@ hr { display:none; }
 
 #branding div.limiter {
   padding:5px 10px 4px;
-  border-bottom:1px solid #eee;
+  border-bottom:1px solid #e0e0e0;
   overflow:hidden;
   line-height:20px;
   height:20px;
@@ -171,10 +170,8 @@ div.block {
   }
 
 #page-title h2.page-title {
-  padding:0px 10px 10px;
-  line-height:40px;
-  height:40px;
-  float:left;
+  padding:10px 10px 20px;
+  line-height:20px;
 
   text-shadow:#fff 0px 1px 0px;
   -webkit-text-shadow:#fff 0px 1px 0px;
@@ -190,9 +187,10 @@ div.block {
 ul.primary-tabs {
   position:absolute;
   right:0px;
+  bottom:-1px;
   overflow:hidden;
   height:36px;
-  padding:15px 40px 0px 0px;
+  padding:0px 40px 0px 0px;
   line-height:20px;
   }
 
@@ -205,12 +203,15 @@ ul.primary-tabs li a {
   font-size:11px;
 
   color:#999;
-  background:#f4f4f4;
-  border:1px solid #fff;
-  padding:4px 14px;
+  background:transparent;
+  border-width:1px;
+  border-style:solid;
+  border-color:transparent;
+  padding:4px 9px;
   }
 
 ul.primary-tabs li a:hover {
+  border-color:#999 #999 #fff;
   background:#888 url(images/bleeds.png) 0px 0px repeat-x;
   color:#fff;
   }
@@ -218,13 +219,11 @@ ul.primary-tabs li a:hover {
 ul.primary-tabs li.active a,
 ul.primary-tabs li.active a.active {
   -moz-border-radius:3px 3px 0px 0px;
-  -moz-box-shadow:#ccc 0px 0px 5px;
   -webkit-border-radius:0px;
   -webkit-border-radius-top-left:3px;
   -webkit-border-radius-top-right:3px;
-  -webkit-box-shadow:#ccc 0px 0px 5px;
 
-  padding:4px 15px 11px;
+  padding:4px 14px 11px;
   color:#333;
   border-bottom:0px;
   border-color:#fff;
@@ -267,7 +266,7 @@ ul.primary-tabs li.active a.active {
 
 #page div.limiter {
   -moz-border-radius:3px;
-  -moz-box-shadow:#ccc 0px 0px 5px;
+  /*-moz-box-shadow:#ccc 0px 0px 5px;*/
   -webkit-border-radius:3px;
   -webkit-box-shadow:#ccc 0px 0px 5px;
   min-height:180px;
@@ -281,6 +280,7 @@ ul.primary-tabs li.active a.active {
  */
 div.item-list li,
 ul.menu li {
+  float:none;
   display:block;
   padding:5px 10px 4px;
   border-bottom:1px solid #f4f4f4;
@@ -339,13 +339,21 @@ table {
   line-height:15px;
   margin:0px 0px 10px;
   background-color:#fcfcfc;
+
+  border-collapse:collapse;
+  border-color:#ddd #e8e8e8 #eee;
+  border-width:1px;
+  border-style:solid;
+
+  -moz-box-shadow:#fff 0px 1px 0px;
+  -webkit-box-shadow:#fff 0px 1px 0px;
   }
 
 table.system-status-report th,
 table td,
 table th {
   vertical-align:top;
-  border-width:1px;
+  border-width:1px 0px;
   border-style:solid;
   border-color:#e8e8e8;
   padding:5px;
@@ -450,6 +458,7 @@ div.admin-panel {
   }
 
   div.form-item { padding:9px; }
+  ul.admin-list { margin:0px; }
 
 div.admin-panel ul.admin-list,
 div.teaser-checkbox div.form-item,
@@ -494,6 +503,8 @@ div.page-content div.form-item div.description {
     padding:4px 9px;
     margin:0px;
     }
+
+div.fieldset div.description { margin:0px 0px 10px; }
 
 div.page-content div.form-item div.description {
   position:absolute;
@@ -663,34 +674,135 @@ div.fieldset-content {
 /**
  * Form layout: Default ===============================================
  */
-div.form-layout-default div.column-main {
+div.column-main {
   float:left;
   width:65%;
   }
 
-  div.form-layout-default div.column-main div.column-wrapper {
+  div.column-main div.column-wrapper {
     padding-right:9px;
     border-right:1px solid #e8e8e8;
     }
 
-div.form-layout-default div.column-side {
+div.column-side {
   float:right;
   width:34.99%;
   }
 
-  div.form-layout-default div.column-side div.column-wrapper { padding-left:10px; }
+  div.column-side div.column-wrapper { padding-left:10px; }
 
-div.form-layout-default div.column-side div.buttons {
+form div.buttons {
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
 
   background:#eee;
   border:1px solid #e4e4e4;
   padding:9px;
-  margin:0px 0px 10px;
   }
 
   div.form-layout-default div.column-side div.buttons input.form-submit { margin:1px 0px; }
+
+/**
+ * Form layout: confirm ===============================================
+ */
+div.form-confirm h2.form-title {
+  font-size:16px;
+  font-weight:normal;
+  }
+
+/**
+ * "Boxes" aka generic wrappers =======================================
+ */
+h2.box-title {
+  font-weight:normal;
+  font-size:10px;
+  text-transform:uppercase;
+
+  background:#eee;
+  border:1px solid #e8e8e8;
+  padding:4px 9px;
+  margin:0px 0px 10px;
+
+  -moz-box-shadow:#fff 0px 1px 0px;
+  -webkit-box-shadow:#fff 0px 1px 0px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  }
+
+/**
+ * Nodes, comments ====================================================
+ */
+div.comment,
+div.node {
+  border-style:solid;
+  border-width:1px;
+  border-color:#ddd #e8e8e8 #eee;
+
+  background:#fcfcfc;
+  margin:0px 0px 10px;
+
+  -moz-box-shadow:#fff 0px 1px 0px;
+  -webkit-box-shadow:#fff 0px 1px 0px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  }
+
+  div.comment {
+    border-color:#e8e8e8;
+    background:#eee;
+    }
+
+div.comment div.column-main div.column-wrapper,
+div.node div.column-main div.column-wrapper { padding:19px; }
+
+div.comment div.column-side div.column-wrapper,
+div.node div.column-side div.column-wrapper {
+  padding:9px 9px 9px 0px;
+  font-size:11px;
+  }
+
+div.node-submitted,
+div.comment-submitted {
+  padding:10px;
+  background:#f8f8f8;
+  }
+
+  div.comment-submitted { background:#e8e8e8; }
+
+div.node-submitted span,
+div.comment-submitted span { display:block; }
+
+div.comment-links,
+div.node-links { padding:10px 0px; }
+
+div.comment-links ul.links li,
+div.node-links ul.links li,
+div.comment-links ul.links a,
+div.node-links ul.links a,
+div.comment-links ul.links span,
+div.node-links ul.links span {
+  display:block;
+  float:none;
+  }
+
+div.comment-links ul.links a,
+div.node-links ul.links a,
+div.comment-links ul.links span,
+div.node-links ul.links span {
+  padding:0px 10px;
+  display:block;
+  float:none;
+  }
+
+  div.node-links ul.links a:hover { background:#fff; }
+  div.comment-links ul.links a:hover { background:#f4f4f4; }
+
+h2.comment-title,
+h2.node-title {
+  margin:0px 0px 20px;
+  font-weight:normal;
+  font-size:16px;
+  }
 
 /**
  * System =============================================================

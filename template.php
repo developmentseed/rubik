@@ -6,20 +6,41 @@
  */
 function rubiks_theme() {
   return array(
+    'node' => array(
+      'template' => 'object',
+      'path' => path_to_theme() .'/templates',
+    ),
+    'comment' => array(
+      'template' => 'object',
+      'path' => path_to_theme() .'/templates',
+    ),
+    'comment_wrapper' => array(
+      'template' => 'object',
+      'path' => path_to_theme() .'/templates',
+    ),
+    'confirm_form' => array(
+      'arguments' => array('form' => array()),
+      'path' => path_to_theme() .'/templates',
+      'template' => 'form-confirm',
+    ),
     'node_form' => array(
       'arguments' => array('form' => array()),
+      'path' => path_to_theme() .'/templates',
       'template' => 'form-default',
     ),
     'node_type_form' => array(
       'arguments' => array('form' => array()),
+      'path' => path_to_theme() .'/templates',
       'template' => 'form-default',
     ),
     'system_settings_form' => array(
       'arguments' => array('form' => array()),
+      'path' => path_to_theme() .'/templates',
       'template' => 'form-default',
     ),
     'user_profile_form' => array(
       'arguments' => array('form' => array()),
+      'path' => path_to_theme() .'/templates',
       'template' => 'form-default',
     ),
   );
@@ -201,4 +222,65 @@ function rubiks_textfield($element) {
     $element['#attributes']['class'] = isset($element['#attributes']['class']) ? "{$element['#attributes']['class']} fluid" : "fluid";
   }
   return theme_textfield($element);
+}
+
+/**
+ * Preprocessor for theme('node').
+ */
+function rubiks_preprocess_node(&$vars) {
+  $vars['layout'] = TRUE;
+  $vars['title'] = menu_get_object() === $vars['node'] ? '' : $vars['title'];
+  $vars['attr']['class'] .= ' clear-block';
+}
+
+/**
+ * Override of theme('node_submitted').
+ */
+function rubiks_node_submitted($node) {
+  return _rubiks_submitted($node);
+}
+
+/**
+ * Override of theme('comment_submitted').
+ */
+function rubiks_comment_submitted($comment) {
+  $vars = $comment;
+  $vars->created = $comment->timestamp;
+  return _rubiks_submitted($comment);
+}
+
+/**
+ * Helper function to submitted info theming functions.
+ */
+function _rubiks_submitted($node) {
+  $byline = t('Posted by !username', array('!username' => theme('username', $node)));
+  $date = format_date($node->created, 'small');
+  return "<span class='byline'>{$byline}</span><span class='date'>$date</span>";
+}
+
+/**
+ * Preprocessor for theme('comment').
+ */
+function rubiks_preprocess_comment(&$vars) {
+  $vars['layout'] = TRUE;
+  $vars['attr']['class'] .= ' clear-block';
+}
+
+/**
+ * Preprocessor for theme('comment_wrapper').
+ */
+function rubiks_preprocess_comment_wrapper(&$vars) {
+  $vars['hook'] = 'box';
+  $vars['title'] = t('Comments');
+
+  $vars['attr']['id'] = 'comments';
+  $vars['attr']['class'] .= ' clear-block';
+}
+
+/**
+ * Preprocessor for theme('confirm_form').
+ */
+function rubiks_preprocess_confirm_form(&$vars) {
+  $vars['title'] = drupal_get_title();
+  drupal_set_title(t('Please confirm'));
 }
