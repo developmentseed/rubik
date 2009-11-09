@@ -519,8 +519,8 @@ div.page-content div.form-item div.description {
   }
 
   div.admin-panel p.description {
-    background:#f4f4f4;
-    border-top:1px solid #e8e8e8;
+    background:#eee;
+    border-top:1px solid #ddd;
     border-bottom:1px solid #fff;
     line-height:20px;
     font-size:11px;
@@ -645,6 +645,8 @@ div.collapsible h2.fieldset-title a {
   color:#333;
   background:#f4f4f4;
   }
+
+  div.admin-panel h3 { background:#eee; }
 
   div.collapsible h2.fieldset-title { position:relative; }
 
