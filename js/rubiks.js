@@ -6,9 +6,30 @@ Drupal.behaviors.rubiks = function(context) {
 };
 
 Drupal.rubiksToggle = {
+  /**
+   * Stack of modifiers to retain between pages.
+   */
+  'modifiers': [],
+
+  /**
+   * Add a modifier to the stack, or remove it if it exists.
+   */
+  'toggleModifier': function(modifier) {
+    for (var i in this.modifiers) {
+      if (this.modifiers[i] == modifier) {
+        delete this.modifiers[i];
+        return true;
+      }
+    }
+    this.modifiers.push(modifier);
+    return true;
+  },
+
+  /**
+   * Initialize and attach handlers.
+   */
   'attach': function(context) {
     var args = Drupal.rubiksToggle.parseHash(window.location.hash.substring(1));
-    var modifiers = {};
     $('a.toggler:not(.rubiks-processed)', context).each(function() {
       var toggleable, params;
 
@@ -23,7 +44,7 @@ Drupal.rubiksToggle = {
           if (args[key] == 1) {
             toggleable.show();
             $(this).addClass('toggler-active');
-            modifiers[key] = key + '=' + params[key];
+            Drupal.rubiksToggle.toggleModifier(key + '=' + params[key]);
           }
           else {
             toggleable.hide();
@@ -33,7 +54,7 @@ Drupal.rubiksToggle = {
           $(this).click(function() {
             toggleable.toggle();
             $(this).toggleClass('toggler-active');
-            modifiers[key] = key + '=' + params[key];
+            Drupal.rubiksToggle.toggleModifier(key + '=' + params[key]);
             return false;
           });
         }
@@ -52,14 +73,18 @@ Drupal.rubiksToggle = {
         // Rewrite this link's hash string when clicked.
         $(this).click(function() {
           var href = $(this).attr('href').split('#');
-          href[1] = href[1] ? href[1] + '&' + modifiers.join('&') : modifiers.join('&');
-          $(this).attr('href', href.join('#'));
+          var modifiers = Drupal.rubiksToggle.modifiers.join('&');
+          if (modifiers) {
+            href[1] = href[1] ? href[1] + '&' + modifiers : modifiers;
+            $(this).attr('href', href.join('#'));
+          }
         });
         // Mark as processed.
         $(this).addClass('rubiks-processed');
       }
     });
   },
+
   /**
    * Parse a hash string.
    */
@@ -84,5 +109,5 @@ Drupal.rubiksToggle = {
       }
     }
     return parameters;
-  },
+  }
 };

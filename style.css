@@ -90,13 +90,20 @@ a#help-toggler {
   text-shadow:#fff 0px 1px 0px;
   background:#fcfcfc;
   border-bottom:1px solid #e8e8e8;
+  padding:9px;
   }
-
 
   #rubiks-help.with-tabs {
     -moz-border-radius:2px 2px 0px 0px;
     -webkit-border-top-left-radius:2px;
     -webkit-border-top-right-radius:2px;
+    }
+
+  div#rubiks-help div.column-main div.column-wrapper { padding:9px; }
+
+  div#rubiks-help div.column-side div.column-wrapper {
+    font-size:11px;
+    padding:0px;
     }
 
   #rubiks-help label.breadcrumb-label,
@@ -730,11 +737,9 @@ div.node {
     background:#eee;
     }
 
-div#rubiks-help div.column-main div.column-wrapper,
 div.comment div.column-main div.column-wrapper,
 div.node div.column-main div.column-wrapper { padding:19px; }
 
-div#rubiks-help div.column-side div.column-wrapper,
 div.comment div.column-side div.column-wrapper,
 div.node div.column-side div.column-wrapper {
   padding:9px 9px 9px 0px;
