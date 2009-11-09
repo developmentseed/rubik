@@ -9,38 +9,29 @@
 
   <?php if ($admin) print $admin ?>
 
-  <?php if ($help): ?>
-    <div id='help' class='reverse limiter'>
-      <div class='help-label'><?php print t('Help') ?></div>
-      <div class='help-wrapper clear-block limiter'><?php print $help; ?></div>
-    </div>
-  <?php endif; ?>
-
   <div id='branding'><div class='clear-block limiter'>
     <div class='breadcrumb clear-block'><?php print $breadcrumb ?></div>
-    <!--
-    <?php if ($site_name): ?><h1 class='site-name'><?php print $site_name ?></h1><?php endif; ?>
-    -->
   </div></div>
 
   <div id='page-title' class='clear-block limiter'>
+    <?php if ($help_toggler) print $help_toggler ?>
     <?php if ($tabs): ?><?php print $tabs ?><?php endif; ?>
     <h2 class='page-title'><?php if ($title) print $title ?></h2>
   </div>
 
-  <div id='page'><div class='clear-block limiter'>
-
+  <div id='page'>
     <?php if ($tabs2): ?><div class='secondary-tabs clear-block'><?php print $tabs2 ?></div><?php endif; ?>
+    <?php if ($help) print $help ?>
+    <div class='clear-block limiter'>
+      <?php if ($show_messages && $messages): ?>
+        <div id='console' class='clear-block'><?php print $messages; ?></div>
+      <?php endif; ?>
 
-    <?php if ($show_messages && $messages): ?>
-      <div id='console' class='clear-block'><?php print $messages; ?></div>
-    <?php endif; ?>
-
-    <div id='content' class='clear-block'>
-      <div class='page-content'><?php print $content ?></div>
+      <div id='content' class='clear-block'>
+        <div class='page-content'><?php print $content ?></div>
+      </div>
     </div>
-
-  </div></div>
+  </div>
 
   <div id="footer">
     <?php print $feed_icons ?>

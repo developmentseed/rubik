@@ -8,6 +8,7 @@ function rubiks_theme() {
   $items = array();
 
   // Content theming.
+  $items['help'] =
   $items['comment'] =
   $items['node'] = array(
     'path' => path_to_theme() .'/templates',
@@ -79,6 +80,14 @@ function rubiks_theme() {
  */
 function rubiks_preprocess_page(&$vars) {
   $vars['attr']['class'] .= ' admin-static';
+
+  // Help text toggler link.
+  $vars['help_toggler'] = l(t('Help'), $_GET['q'], array('attributes' => array('id' => 'help-toggler', 'class' => 'toggler'), 'fragment' => 'rubiks-help=1'));
+
+  // Clear out help text if empty.
+  if (empty($vars['help']) || !(strip_tags($vars['help']))) {
+    $vars['help'] = '';
+  }
 }
 
 /**
@@ -157,6 +166,26 @@ function rubiks_preprocess_form_node(&$vars) {
 }
 
 /**
+ * Preprocessor for theme('help').
+ */
+function rubiks_preprocess_help(&$vars) {
+  $vars['hook'] = 'help';
+  $vars['attr']['id'] = 'rubiks-help';
+  $vars['attr']['class'] .= ' clear-block toggleable';
+  $help = menu_get_active_help();
+  if (($test = strip_tags($help)) && !empty($help)) {
+    // Thankfully this is static cached.
+    $vars['attr']['class'] .= menu_secondary_local_tasks() ? ' with-tabs' : '';
+
+    $vars['is_prose'] = TRUE;
+    $vars['layout'] = TRUE;
+    $vars['content'] = $help;
+    $vars['links'] = '<label class="breadcrumb-label">'. t('Help text for') .'</label>';
+    $vars['links'] .= theme('breadcrumb', drupal_get_breadcrumb(), FALSE);
+  }
+}
+
+/**
  * Preprocessor for theme('node').
  */
 function rubiks_preprocess_node(&$vars) {
@@ -187,20 +216,30 @@ function rubiks_preprocess_comment_wrapper(&$vars) {
 /**
  * Override of theme('breadcrumb').
  */
-function rubiks_breadcrumb($breadcrumb) {
+function rubiks_breadcrumb($breadcrumb, $prepend = TRUE) {
   $output = '';
-  if (empty($breadcrumb)) {
-    $breadcrumb = array(variable_get('site_name', ''));
-  }
-  else {
-    $site_link = l(variable_get('site_name', ''), '<front>');
+
+  // Add current page onto the end.
+  if (!drupal_is_front_page()) {
     $item = menu_get_item();
-    $breadcrumb[] = $item['title'];
+    $breadcrumb[] = check_plain($item['title']);
   }
-  foreach ($breadcrumb as $link) {
-    if (isset($site_link) && strip_tags($link) === t('Home')) {
-      $link = $site_link;
+
+  // Remove the home link.
+  foreach ($breadcrumb as $key => $link) {
+    if (strip_tags($link) === t('Home')) {
+      unset($breadcrumb[$key]);
+      break;
     }
+  }
+
+  // Optional: Add the site name to the front of the stack.
+  if ($prepend) {
+    $site_name = empty($breadcrumb) ? check_plain(variable_get('site_name', '')) : l(variable_get('site_name', ''), '<front>');
+    array_unshift($breadcrumb, $site_name);
+  }
+
+  foreach ($breadcrumb as $link) {
     $output .= "<span class='breadcrumb-link'>{$link}</span>";
   }
   return $output;

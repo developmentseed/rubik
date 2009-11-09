@@ -1,3 +1,5 @@
+<?php if (!empty($content) || !empty($title)): ?>
+
 <?php if (!empty($pre_object)) print $pre_object ?>
 
 <div <?php if (!empty($attr)) print drupal_attributes($attr) ?>>
@@ -39,3 +41,5 @@
 </div>
 
 <?php if (!empty($post_object)) print $post_object ?>
+
+<?php endif; ?>

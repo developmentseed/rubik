@@ -6,6 +6,7 @@ base theme = "tao"
 core = "6.x"
 engine = "phptemplate"
 
+scripts[] = "js/rubiks.js"
 stylesheets[screen][] = "style.css"
 
 regions[w] = "w"
