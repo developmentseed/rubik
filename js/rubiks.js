@@ -61,6 +61,7 @@ Drupal.rubiksToggle = {
         // Target toggleable doesn't exist.
         else {
           $(this).addClass('toggler-disabled');
+          $(this).click(function() { return false; });
         }
       }
 

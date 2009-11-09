@@ -37,29 +37,46 @@ hr { display:none; }
  */
 #branding { padding:0px 30px; }
 
-#branding,
-#branding a { color:#666; }
-
 #branding div.limiter {
-  padding:5px 10px 4px;
+  font-size:11px;
+  text-shadow:#fff 0px 1px 0px;
+  line-height:20px;
+
+  padding:5px 0px 4px;
   border-bottom:1px solid #e0e0e0;
   overflow:hidden;
-  line-height:20px;
   height:20px;
   position:relative;
   }
 
-#branding div.breadcrumb,
-#branding h1.site-name {
-  font-size:10px;
+#branding a {
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  color:#666;
+  float:left;
+  padding:0px 10px;
+  }
+
+#branding a:hover { background:#ddd; }
+
+#branding ul.links { float:right; }
+
+#branding div.breadcrumb {
+  float:left;
   text-transform:uppercase;
   font-weight:normal;
   }
 
+  #branding div.breadcrumb strong {
+    font-weight:normal;
+    float:left;
+    padding:0px 10px;
+    }
+
   #branding div.breadcrumb span.breadcrumb-link {
     color:#ccc;
     float:left;
-    padding-right:20px;
+    padding-right:10px;
     background:url(images/sprite.png) 100% 100% no-repeat;
     }
 
@@ -110,7 +127,7 @@ a#help-toggler {
   #rubiks-help span.breadcrumb-link { display:block; }
 
   #rubiks-help span.breadcrumb-link {
-    background:url(images/sprite.png) -180px -180px no-repeat;
+    background:url(images/sprite.png) -185px -180px no-repeat;
     padding-left:20px;
     }
 
@@ -187,6 +204,7 @@ div.block {
 #page-title h2.page-title {
   padding:10px 10px 20px;
   line-height:20px;
+  min-height:20px;
 
   text-shadow:#fff 0px 1px 0px;
   -webkit-text-shadow:#fff 0px 1px 0px;
@@ -307,10 +325,7 @@ div.secondary-tabs {
   -webkit-border-radius:3px;
   }
 
-#page div.limiter {
-  padding:4px;
-  min-height:180px;
-  }
+#page div.limiter { padding:4px; }
 
 /**
  * Menus, lists =======================================================
@@ -362,10 +377,34 @@ ul.admin-list li {
  * Footer =============================================================
  */
 #footer {
-  text-align:center;
-  padding:20px;
+  padding:10px 30px 30px;
   font-size:11px;
+  text-shadow:#fff 0px 1px 0px;
   }
+
+#footer div.footer-message {
+  padding:0px 10px;
+  float:left;
+  }
+
+#footer div.feed-icons {
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+
+  /* Assume icons are 16x16 like Drupal core. */
+  line-height:16px;
+  padding:7px 5px;
+  background:#d0d0d0;
+  float:right;
+  }
+
+  #footer div.feed-icons img { display:block; }
+
+  #footer div.feed-icons label,
+  #footer div.feed-icons a {
+    padding:0px 5px;
+    float:left;
+    }
 
 /**
  * Tables =============================================================

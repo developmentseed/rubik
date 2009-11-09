@@ -79,7 +79,11 @@ function rubiks_theme() {
  * Preprocessor for theme('page').
  */
 function rubiks_preprocess_page(&$vars) {
+  // Body class for admin module.
   $vars['attr']['class'] .= ' admin-static';
+
+  // Display user account links.
+  $vars['user_links'] = _rubiks_user_links();
 
   // Help text toggler link.
   $vars['help_toggler'] = l(t('Help'), $_GET['q'], array('attributes' => array('id' => 'help-toggler', 'class' => 'toggler'), 'fragment' => 'rubiks-help=1'));
@@ -222,7 +226,7 @@ function rubiks_breadcrumb($breadcrumb, $prepend = TRUE) {
   // Add current page onto the end.
   if (!drupal_is_front_page()) {
     $item = menu_get_item();
-    $breadcrumb[] = check_plain($item['title']);
+    $breadcrumb[] = "<strong>". check_plain($item['title']) ."</strong>";
   }
 
   // Remove the home link.
@@ -235,7 +239,7 @@ function rubiks_breadcrumb($breadcrumb, $prepend = TRUE) {
 
   // Optional: Add the site name to the front of the stack.
   if ($prepend) {
-    $site_name = empty($breadcrumb) ? check_plain(variable_get('site_name', '')) : l(variable_get('site_name', ''), '<front>');
+    $site_name = empty($breadcrumb) ? "<strong>". check_plain(variable_get('site_name', '')) ."</strong>" : l(variable_get('site_name', ''), '<front>');
     array_unshift($breadcrumb, $site_name);
   }
 
@@ -345,4 +349,22 @@ function _rubiks_submitted($node) {
   $byline = t('Posted by !username', array('!username' => theme('username', $node)));
   $date = format_date($node->created, 'small');
   return "<span class='byline'>{$byline}</span><span class='date'>$date</span>";
+}
+
+/**
+ * User/account related links.
+ */
+function _rubiks_user_links() {
+  // Add user-specific links
+  global $user;
+  $user_links = array();
+  if (empty($user->uid)) {
+    $user_links['login'] = array('title' => t('Login'), 'href' => 'user');
+    $user_links['register'] = array('title' => t('Register'), 'href' => 'user/register');
+  }
+  else {
+    $user_links['account'] = array('title' => t('Hello !username', array('!username' => $user->name)), 'href' => 'user', 'html' => TRUE);
+    $user_links['logout'] = array('title' => t('Logout'), 'href' => "logout");
+  }
+  return $user_links;
 }

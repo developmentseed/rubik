@@ -90,11 +90,11 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="12.803103"
-     inkscape:cy="174.6489"
+     inkscape:cx="195.49504"
+     inkscape:cy="7.5171024"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     showgrid="false">
+     showgrid="true">
     <inkscape:grid
        type="xygrid"
        id="grid3188"
@@ -153,11 +153,6 @@
        x="29"
        y="-14" />
     <path
-       style="opacity:1;fill:#c0c0c0;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="M 188,186 L 189,186 L 192,190 L 189,194 L 188,194 L 191,190"
-       id="path2385"
-       sodipodi:nodetypes="cccccc" />
-    <path
        transform="translate(0,40)"
        sodipodi:type="arc"
        style="opacity:1;fill:#dddddd;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -204,5 +199,15 @@
        style="font-size:11px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:110.00000238000001218%;writing-mode:lr-tb;text-anchor:start;fill:#666666;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;font-family:Helvetica Neue;-inkscape-font-specification:Helvetica Neue Bold"
        d="M 28.808482,8.3789329 C 28.822162,7.4076616 29.23256,6.6005471 30.217511,6.6005471 C 30.942545,6.6005471 31.380301,6.9972648 31.380301,7.8317372 C 31.380301,8.5704506 30.915185,8.8850892 30.381669,9.3091654 C 29.834475,9.7332416 29.273598,10.266759 29.191519,11.456908 L 29.191519,12.072503 L 31.038304,12.072503 L 31.038304,11.552668 C 31.161423,10.745555 31.790699,10.389877 32.378933,9.9521203 C 32.967169,9.5006844 33.528044,8.9671668 33.528044,7.6402188 C 33.528044,6.5868682 32.707248,4.9999999 30.121751,4.9999999 C 28.12449,4.9999999 26.838578,6.4227105 26.797538,8.3789329 L 28.808482,8.3789329 M 29,15 L 31.147743,15 L 31.147743,12.893297 L 29,12.893297 L 29,15"
        id="text3160" />
+    <path
+       sodipodi:nodetypes="cccccc"
+       id="path3173"
+       d="M 193,187 L 194,187 L 197,191 L 194,195 L 193,195 L 196,191"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <path
+       style="opacity:1;fill:#c0c0c0;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 193,186 L 194,186 L 197,190 L 194,194 L 193,194 L 196,190"
+       id="path2385"
+       sodipodi:nodetypes="cccccc" />
   </g>
 </svg>

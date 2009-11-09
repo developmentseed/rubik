@@ -11,6 +11,7 @@
 
   <div id='branding'><div class='clear-block limiter'>
     <div class='breadcrumb clear-block'><?php print $breadcrumb ?></div>
+    <?php if ($user_links) print theme('links', $user_links) ?>
   </div></div>
 
   <div id='page-title' class='clear-block limiter'>
@@ -33,10 +34,14 @@
     </div>
   </div>
 
-  <div id="footer">
-    <?php print $feed_icons ?>
-    <?php print $footer ?>
-    <?php print $footer_message ?>
+  <div id='footer' class='clear-block'>
+    <?php if ($feed_icons): ?>
+      <div class='feed-icons clear-block'>
+        <label><?php print t('Feeds') ?></label>
+        <?php print $feed_icons ?>
+      </div>
+    <?php endif; ?>
+    <?php if ($footer_message): ?><div class='footer-message'><?php print $footer_message ?></div><?php endif; ?>
   </div>
 
   <?php print $scripts ?>
