@@ -29,7 +29,9 @@ function rubiks_theme() {
 
   // Form layout: default (2 column).
   $items['comment_form'] =
+  $items['contact_admin_edit'] =
   $items['filter_admin_format_form'] =
+  $items['forum_form'] =
   $items['menu_edit_menu'] =
   $items['menu_edit_item'] =
   $items['node_type_form'] =

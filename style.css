@@ -5,7 +5,7 @@ select { font-family:"Lucida Grande","Trebuchet MS",Tahoma,Verdana,sans-serif; }
 
 body.rubiks {
   color:#666;
-  background:#ddd url(images/bleeds.png) 0px -80px repeat-x fixed;
+  background:#ccc url(images/bleeds.png) 0px -80px repeat-x fixed;
   }
 
 a {
@@ -394,7 +394,7 @@ ul.admin-list li {
   /* Assume icons are 16x16 like Drupal core. */
   line-height:16px;
   padding:7px 5px;
-  background:#d0d0d0;
+  background:#c4c4c4;
   float:right;
   }
 
