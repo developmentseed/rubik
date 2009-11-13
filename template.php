@@ -37,6 +37,7 @@ function rubiks_theme() {
   $items['menu_edit_menu'] =
   $items['menu_edit_item'] =
   $items['node_type_form'] =
+  $items['path_admin_form'] =
   $items['system_settings_form'] =
   $items['system_themes_form'] =
   $items['system_modules'] =

@@ -3,6 +3,7 @@
   <head>
     <?php print $head ?>
     <?php print $styles ?>
+    <?php print $scripts ?>
     <title><?php print $head_title ?></title>
   </head>
   <body class='rubiks layout-default admin-static' <?php // print drupal_attributes($attr) ?>>
@@ -44,7 +45,6 @@
     <?php if ($footer_message): ?><div class='footer-message'><?php print $footer_message ?></div><?php endif; ?>
   </div>
 
-  <?php print $scripts ?>
   <?php print $closure ?>
 
   </body>
