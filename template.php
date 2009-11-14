@@ -84,6 +84,9 @@ function rubiks_theme() {
  * Preprocessor for theme('page').
  */
 function rubiks_preprocess_page(&$vars) {
+  // Set a page icon class.
+  $vars['page_icon_class'] = ($item = menu_get_item()) ? _rubiks_icon_classes($item['href']) : '';
+
   // Body class for admin module.
   $vars['attr']['class'] .= ' admin-static';
 
@@ -372,4 +375,20 @@ function _rubiks_user_links() {
     $user_links['logout'] = array('title' => t('Logout'), 'href' => "logout");
   }
   return $user_links;
+}
+
+/**
+ * Generate an icon class from a path.
+ */
+function _rubiks_icon_classes($path) {
+  $classes = array();
+  $args = explode('/', $path);
+  if ($args[0] === 'admin') {
+    while (count($args)) {
+      $classes[] = 'path-'. str_replace('/', '-', implode('/', $args));
+      array_pop($args);
+    }
+    return implode(' ', $classes);
+  }
+  return '';
 }

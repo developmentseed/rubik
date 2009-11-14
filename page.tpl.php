@@ -18,7 +18,10 @@
   <div id='page-title' class='clear-block limiter'>
     <?php if ($help_toggler) print $help_toggler ?>
     <?php if ($tabs): ?><?php print $tabs ?><?php endif; ?>
-    <h2 class='page-title'><?php if ($title) print $title ?></h2>
+    <h2 class='page-title <?php print $page_icon_class ?>'>
+      <?php if (!empty($page_icon_class)): ?><span class='icon'></span><?php endif; ?>
+      <?php if ($title) print $title ?>
+    </h2>
   </div>
 
   <div id='page'>

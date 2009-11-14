@@ -198,21 +198,26 @@ div.block {
  */
 #page-title {
   position:relative;
-  padding:10px 30px 0px;
+  padding:0px 30px;
   }
 
-#page-title h2.page-title {
-  padding:10px 10px 20px;
-  line-height:20px;
-  min-height:20px;
+  #page-title h2.page-title {
+    padding:10px;
+    line-height:30px;
+    min-height:30px;
 
-  text-shadow:#fff 0px 1px 0px;
-  -webkit-text-shadow:#fff 0px 1px 0px;
+    text-shadow:#fff 0px 1px 0px;
+    -webkit-text-shadow:#fff 0px 1px 0px;
 
-  letter-spacing:-1px;
-  font-weight:normal;
-  font-size:20px;
-  }
+    letter-spacing:-1px;
+    font-weight:normal;
+    font-size:20px;
+    }
+
+  #page-title h2.page-title span.icon {
+    float:left;
+    margin-right:10px;
+    }
 
 /**
  * Pagers =============================================================
