@@ -350,10 +350,9 @@ ul.menu li {
     }
 
 ul.admin-list li a span.icon {
-  margin:0px auto 5px;
-  display:block;
-  width:30px;
-  height:30px;
+  position:absolute;
+  left:10px;
+  top:10px;
   }
 
 ul.node-type-list li,
@@ -368,12 +367,6 @@ ul.admin-list li {
   ul.admin-list li:last-child {
     padding-bottom:10px;
     border:0px;
-    }
-
-  ul.admin-list li a span.icon {
-    position:absolute;
-    left:10px;
-    top:10px;
     }
 
   ul.node-type-list label { font-size:15px; }
@@ -887,6 +880,17 @@ div.admin-options div.form-item {
 div.admin-options div.form-item {
   padding:0px;
   border:0px;
+  }
+
+/**
+ * Admin toolbar ======================================================
+ */
+body.rubiks div#admin-toolbar #block-admin-menu span.menu-description { padding-left:50px; }
+
+body.rubiks div#admin-toolbar #block-admin-menu span.menu-description span.icon {
+  position:absolute;
+  left:10px;
+  top:0px;
   }
 
 /**

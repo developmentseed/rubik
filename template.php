@@ -313,6 +313,23 @@ function rubiks_admin_block_content($content, $get_runstate = FALSE) {
 }
 
 /**
+ * Override of theme('admin_menu_item_link').
+ */
+function rubiks_admin_menu_item_link($link) {
+  $link['localized_options'] = empty($link['localized_options']) ? array() : $link['localized_options'];
+  $link['localized_options']['html'] = TRUE;
+  if (isset($link['localized_options']['attributes']['class'])) {
+    $link['localized_options']['attributes']['class'] = _rubiks_icon_classes($link['href']);
+  }
+  else {
+    $link['localized_options']['attributes']['class'] .= ' '. _rubiks_icon_classes($link['href']);
+  }
+  $link['description'] = "<span class='icon'></span>" . strip_tags($link['description']);
+  $link['title'] .= !empty($link['description']) ? "<span class='menu-description'>{$link['description']}</span>" : '';
+  return l($link['title'], $link['href'], $link['localized_options']);
+}
+
+/**
  * Override of theme('textfield').
  */
 function rubiks_textfield($element) {
