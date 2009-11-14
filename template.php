@@ -4,7 +4,7 @@
 /**
  * Implementation of hook_theme().
  */
-function rubiks_theme() {
+function rubik_theme() {
   $items = array();
 
   // Content theming.
@@ -29,8 +29,8 @@ function rubiks_theme() {
     'path' => path_to_theme() .'/templates',
     'template' => 'form-simple',
     'preprocess functions' => array(
-      'rubiks_preprocess_form_buttons',
-      'rubiks_preprocess_form_legacy'
+      'rubik_preprocess_form_buttons',
+      'rubik_preprocess_form_legacy'
     ),
   );
 
@@ -64,8 +64,8 @@ function rubiks_theme() {
     'path' => path_to_theme() .'/templates',
     'template' => 'form-default',
     'preprocess functions' => array(
-      'rubiks_preprocess_form_buttons',
-      'rubiks_preprocess_form_legacy',
+      'rubik_preprocess_form_buttons',
+      'rubik_preprocess_form_legacy',
     ),
   );
 
@@ -75,7 +75,7 @@ function rubiks_theme() {
     'path' => path_to_theme() .'/templates',
     'template' => 'form-simple',
     'preprocess functions' => array(
-      'rubiks_preprocess_form_confirm'
+      'rubik_preprocess_form_confirm'
     ),
   );
   $items['node_form'] = array(
@@ -83,8 +83,8 @@ function rubiks_theme() {
     'path' => path_to_theme() .'/templates',
     'template' => 'form-default',
     'preprocess functions' => array(
-      'rubiks_preprocess_form_buttons',
-      'rubiks_preprocess_form_node'
+      'rubik_preprocess_form_buttons',
+      'rubik_preprocess_form_node'
     ),
   );
 
@@ -94,12 +94,12 @@ function rubiks_theme() {
 /**
  * Preprocessor for theme('page').
  */
-function rubiks_preprocess_page(&$vars) {
+function rubik_preprocess_page(&$vars) {
   // Set a page icon class.
-  $vars['page_icon_class'] = ($item = menu_get_item()) ? _rubiks_icon_classes($item['href']) : '';
+  $vars['page_icon_class'] = ($item = menu_get_item()) ? _rubik_icon_classes($item['href']) : '';
 
   // Add body class for theme.
-  $vars['attr']['class'] .= ' rubiks';
+  $vars['attr']['class'] .= ' rubik';
 
   // Body class for admin module.
   $vars['attr']['class'] .= ' admin-static';
@@ -110,10 +110,10 @@ function rubiks_preprocess_page(&$vars) {
   }
 
   // Display user account links.
-  $vars['user_links'] = _rubiks_user_links();
+  $vars['user_links'] = _rubik_user_links();
 
   // Help text toggler link.
-  $vars['help_toggler'] = l(t('Help'), $_GET['q'], array('attributes' => array('id' => 'help-toggler', 'class' => 'toggler'), 'fragment' => 'rubiks-help=1'));
+  $vars['help_toggler'] = l(t('Help'), $_GET['q'], array('attributes' => array('id' => 'help-toggler', 'class' => 'toggler'), 'fragment' => 'rubik-help=1'));
 
   // Clear out help text if empty.
   if (empty($vars['help']) || !(strip_tags($vars['help']))) {
@@ -124,7 +124,7 @@ function rubiks_preprocess_page(&$vars) {
 /**
  * Preprocessor for theme('fieldset').
  */
-function rubiks_preprocess_fieldset(&$vars) {
+function rubik_preprocess_fieldset(&$vars) {
   if (!empty($vars['element']['#collapsible'])) {
     $vars['title'] = "<span class='icon'></span>" . $vars['title'];
   }
@@ -133,7 +133,7 @@ function rubiks_preprocess_fieldset(&$vars) {
 /**
  * Attempts to render a non-template based form for template rendering.
  */
-function rubiks_preprocess_form_legacy(&$vars) {
+function rubik_preprocess_form_legacy(&$vars) {
   if (isset($vars['form']['#theme']) && function_exists("theme_{$vars['form']['#theme']}")) {
     $function = "theme_{$vars['form']['#theme']}";
     $vars['form'] = array(
@@ -146,7 +146,7 @@ function rubiks_preprocess_form_legacy(&$vars) {
 /**
  * Preprocessor for handling form button for most forms.
  */
-function rubiks_preprocess_form_buttons(&$vars) {
+function rubik_preprocess_form_buttons(&$vars) {
   if (isset($vars['form']['buttons'])) {
     $vars['buttons'] = $vars['form']['buttons'];
     unset($vars['form']['buttons']);
@@ -165,7 +165,7 @@ function rubiks_preprocess_form_buttons(&$vars) {
 /**
  * Preprocessor for theme('confirm_form').
  */
-function rubiks_preprocess_form_confirm(&$vars) {
+function rubik_preprocess_form_confirm(&$vars) {
   // Move the title from the page title (usually too big and unwieldy)
   $title = filter_xss_admin(drupal_get_title());
   $vars['form']['description']['#type'] = 'item';
@@ -182,7 +182,7 @@ function rubiks_preprocess_form_confirm(&$vars) {
 /**
  * Preprocessor for theme('node_form').
  */
-function rubiks_preprocess_form_node(&$vars) {
+function rubik_preprocess_form_node(&$vars) {
   // @TODO: Figure out a better way here. drupal_alter() is preferable.
   // Allow modules to insert form elements into the sidebar,
   // defaults to showing taxonomy in that location.
@@ -199,9 +199,9 @@ function rubiks_preprocess_form_node(&$vars) {
 /**
  * Preprocessor for theme('help').
  */
-function rubiks_preprocess_help(&$vars) {
+function rubik_preprocess_help(&$vars) {
   $vars['hook'] = 'help';
-  $vars['attr']['id'] = 'rubiks-help';
+  $vars['attr']['id'] = 'rubik-help';
   $vars['attr']['class'] .= ' clear-block toggleable';
   $help = menu_get_active_help();
   if (($test = strip_tags($help)) && !empty($help)) {
@@ -219,7 +219,7 @@ function rubiks_preprocess_help(&$vars) {
 /**
  * Preprocessor for theme('help_page').
  */
-function rubiks_preprocess_help_page(&$vars) {
+function rubik_preprocess_help_page(&$vars) {
   $vars['hook'] = 'help-page';
   $vars['is_prose'] = TRUE;
   $vars['layout'] = TRUE;
@@ -244,7 +244,7 @@ function rubiks_preprocess_help_page(&$vars) {
 /**
  * Preprocessor for theme('node').
  */
-function rubiks_preprocess_node(&$vars) {
+function rubik_preprocess_node(&$vars) {
   $vars['layout'] = TRUE;
   $vars['title'] = menu_get_object() === $vars['node'] ? '' : $vars['title'];
   $vars['attr']['class'] .= ' clear-block';
@@ -253,7 +253,7 @@ function rubiks_preprocess_node(&$vars) {
 /**
  * Preprocessor for theme('comment').
  */
-function rubiks_preprocess_comment(&$vars) {
+function rubik_preprocess_comment(&$vars) {
   $vars['layout'] = TRUE;
   $vars['attr']['class'] .= ' clear-block';
 }
@@ -261,7 +261,7 @@ function rubiks_preprocess_comment(&$vars) {
 /**
  * Preprocessor for theme('comment_wrapper').
  */
-function rubiks_preprocess_comment_wrapper(&$vars) {
+function rubik_preprocess_comment_wrapper(&$vars) {
   $vars['hook'] = 'box';
   $vars['title'] = t('Comments');
 
@@ -272,7 +272,7 @@ function rubiks_preprocess_comment_wrapper(&$vars) {
 /**
  * Override of theme('breadcrumb').
  */
-function rubiks_breadcrumb($breadcrumb, $prepend = TRUE) {
+function rubik_breadcrumb($breadcrumb, $prepend = TRUE) {
   $output = '';
 
   // Add current page onto the end.
@@ -304,7 +304,7 @@ function rubiks_breadcrumb($breadcrumb, $prepend = TRUE) {
 /**
  * Display the list of available node types for node creation.
  */
-function rubiks_node_add_list($content) {
+function rubik_node_add_list($content) {
   $output = "<ul class='admin-list'>";
   if ($content) {
     foreach ($content as $item) {
@@ -321,7 +321,7 @@ function rubiks_node_add_list($content) {
 /**
  * Override of theme_admin_block_content().
  */
-function rubiks_admin_block_content($content, $get_runstate = FALSE) {
+function rubik_admin_block_content($content, $get_runstate = FALSE) {
   static $has_run = FALSE;
   if ($get_runstate) {
     return $has_run;
@@ -333,10 +333,10 @@ function rubiks_admin_block_content($content, $get_runstate = FALSE) {
       $content[$k]['title'] = "<span class='icon'></span>{$item['title']}";
       $content[$k]['localized_options']['html'] = TRUE;
       if (!empty($content[$k]['localized_options']['attributes']['class'])) {
-        $content[$k]['localized_options']['attributes']['class'] .= _rubiks_icon_classes($item['href']);
+        $content[$k]['localized_options']['attributes']['class'] .= _rubik_icon_classes($item['href']);
       }
       else {
-        $content[$k]['localized_options']['attributes']['class'] = _rubiks_icon_classes($item['href']);
+        $content[$k]['localized_options']['attributes']['class'] = _rubik_icon_classes($item['href']);
       }
     }
     $output = system_admin_compact_mode() ? '<ul class="menu">' : '<ul class="admin-list">';
@@ -356,14 +356,14 @@ function rubiks_admin_block_content($content, $get_runstate = FALSE) {
 /**
  * Override of theme('admin_menu_item_link').
  */
-function rubiks_admin_menu_item_link($link) {
+function rubik_admin_menu_item_link($link) {
   $link['localized_options'] = empty($link['localized_options']) ? array() : $link['localized_options'];
   $link['localized_options']['html'] = TRUE;
   if (isset($link['localized_options']['attributes']['class'])) {
-    $link['localized_options']['attributes']['class'] = _rubiks_icon_classes($link['href']);
+    $link['localized_options']['attributes']['class'] = _rubik_icon_classes($link['href']);
   }
   else {
-    $link['localized_options']['attributes']['class'] .= ' '. _rubiks_icon_classes($link['href']);
+    $link['localized_options']['attributes']['class'] .= ' '. _rubik_icon_classes($link['href']);
   }
   $link['description'] = "<span class='icon'></span>" . strip_tags($link['description']);
   $link['title'] .= !empty($link['description']) ? "<span class='menu-description'>{$link['description']}</span>" : '';
@@ -373,7 +373,7 @@ function rubiks_admin_menu_item_link($link) {
 /**
  * Override of theme('textfield').
  */
-function rubiks_textfield($element) {
+function rubik_textfield($element) {
   if ($element['#size'] >= 30) {
     $element['#size'] = '';
     $element['#attributes']['class'] = isset($element['#attributes']['class']) ? "{$element['#attributes']['class']} fluid" : "fluid";
@@ -384,7 +384,7 @@ function rubiks_textfield($element) {
 /**
  * Override of theme('password').
  */
-function rubiks_password($element) {
+function rubik_password($element) {
   if ($element['#size'] >= 30 || $element['#maxlength'] >= 30) {
     $element['#size'] = '';
     $element['#attributes']['class'] = isset($element['#attributes']['class']) ? "{$element['#attributes']['class']} fluid" : "fluid";
@@ -395,23 +395,23 @@ function rubiks_password($element) {
 /**
  * Override of theme('node_submitted').
  */
-function rubiks_node_submitted($node) {
-  return _rubiks_submitted($node);
+function rubik_node_submitted($node) {
+  return _rubik_submitted($node);
 }
 
 /**
  * Override of theme('comment_submitted').
  */
-function rubiks_comment_submitted($comment) {
+function rubik_comment_submitted($comment) {
   $vars = $comment;
   $vars->created = $comment->timestamp;
-  return _rubiks_submitted($comment);
+  return _rubik_submitted($comment);
 }
 
 /**
  * Helper function to submitted info theming functions.
  */
-function _rubiks_submitted($node) {
+function _rubik_submitted($node) {
   $byline = t('Posted by !username', array('!username' => theme('username', $node)));
   $date = format_date($node->created, 'small');
   return "<span class='byline'>{$byline}</span><span class='date'>$date</span>";
@@ -420,7 +420,7 @@ function _rubiks_submitted($node) {
 /**
  * User/account related links.
  */
-function _rubiks_user_links() {
+function _rubik_user_links() {
   // Add user-specific links
   global $user;
   $user_links = array();
@@ -438,7 +438,7 @@ function _rubiks_user_links() {
 /**
  * Generate an icon class from a path.
  */
-function _rubiks_icon_classes($path) {
+function _rubik_icon_classes($path) {
   $classes = array();
   $args = explode('/', $path);
   if ($args[0] === 'admin') {

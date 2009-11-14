@@ -1,11 +1,11 @@
 /**
  * Implementation of Drupal behavior.
  */
-Drupal.behaviors.rubiks = function(context) {
-  Drupal.rubiksToggle.attach(context);
+Drupal.behaviors.rubik = function(context) {
+  Drupal.rubikToggle.attach(context);
 };
 
-Drupal.rubiksToggle = {
+Drupal.rubikToggle = {
   /**
    * Stack of modifiers to retain between pages.
    */
@@ -29,12 +29,12 @@ Drupal.rubiksToggle = {
    * Initialize and attach handlers.
    */
   'attach': function(context) {
-    var args = Drupal.rubiksToggle.parseHash(window.location.hash.substring(1));
-    $('a.toggler:not(.rubiks-processed)', context).each(function() {
+    var args = Drupal.rubikToggle.parseHash(window.location.hash.substring(1));
+    $('a.toggler:not(.rubik-processed)', context).each(function() {
       var toggleable, params;
 
       // Parse the hash string.
-      params = Drupal.rubiksToggle.parseHash($(this).attr('href').split('#')[1]);
+      params = Drupal.rubikToggle.parseHash($(this).attr('href').split('#')[1]);
 
       for (var key in params) {
         toggleable = $('#' + key);
@@ -44,7 +44,7 @@ Drupal.rubiksToggle = {
           if (args[key] == 1) {
             toggleable.show();
             $(this).addClass('toggler-active');
-            Drupal.rubiksToggle.toggleModifier(key + '=' + params[key]);
+            Drupal.rubikToggle.toggleModifier(key + '=' + params[key]);
           }
           else {
             toggleable.hide();
@@ -54,7 +54,7 @@ Drupal.rubiksToggle = {
           $(this).click(function() {
             toggleable.toggle();
             $(this).toggleClass('toggler-active');
-            Drupal.rubiksToggle.toggleModifier(key + '=' + params[key]);
+            Drupal.rubikToggle.toggleModifier(key + '=' + params[key]);
             return false;
           });
         }
@@ -66,22 +66,22 @@ Drupal.rubiksToggle = {
       }
 
       // Mark as processed.
-      $(this).addClass('rubiks-processed');
+      $(this).addClass('rubik-processed');
       return false;
     });
-    $('a:not(.rubiks-processed)', context).each(function() {
+    $('a:not(.rubik-processed)', context).each(function() {
       if ($(this).attr('href')) {
         // Rewrite this link's hash string when clicked.
         $(this).click(function() {
           var href = $(this).attr('href').split('#');
-          var modifiers = Drupal.rubiksToggle.modifiers.join('&');
+          var modifiers = Drupal.rubikToggle.modifiers.join('&');
           if (modifiers) {
             href[1] = href[1] ? href[1] + '&' + modifiers : modifiers;
             $(this).attr('href', href.join('#'));
           }
         });
         // Mark as processed.
-        $(this).addClass('rubiks-processed');
+        $(this).addClass('rubik-processed');
       }
     });
   },

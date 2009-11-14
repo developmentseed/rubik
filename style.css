@@ -1,9 +1,9 @@
-body.rubiks,
+body.rubik,
 input,
 textarea,
 select { font-family:"Lucida Grande","Trebuchet MS",Tahoma,Verdana,sans-serif; }
 
-body.rubiks {
+body.rubik {
   color:#333;
   background:#ccc url(images/bleeds.png) 0px -80px repeat-x fixed;
   }
@@ -105,30 +105,28 @@ a#help-toggler {
     background-position:-20px -40px;
     }
 
-#rubiks-help {
-  text-shadow:#fff 0px 1px 0px;
-  background:#fcfcfc;
+#rubik-help {
+  background:#fcfcfc url(images/vrule.png) 65% 0% repeat-y;
   border-bottom:1px solid #e8e8e8;
-  padding:9px;
   }
 
-  #rubiks-help.with-tabs {
+  #rubik-help.with-tabs {
     -moz-border-radius:2px 2px 0px 0px;
     -webkit-border-top-left-radius:2px;
     -webkit-border-top-right-radius:2px;
     }
 
-  div#rubiks-help div.column-main div.column-wrapper { padding:9px; }
+  div#rubik-help div.column-main div.column-wrapper { padding:19px; }
 
-  div#rubiks-help div.column-side div.column-wrapper {
+  div#rubik-help div.column-side div.column-wrapper {
     font-size:11px;
-    padding:0px 0px 0px 1px;
+    padding:9px 9px 9px 1px;
     }
 
-  #rubiks-help label.breadcrumb-label,
-  #rubiks-help span.breadcrumb-link { display:block; }
+  #rubik-help label.breadcrumb-label,
+  #rubik-help span.breadcrumb-link { display:block; }
 
-  #rubiks-help span.breadcrumb-link {
+  #rubik-help span.breadcrumb-link {
     background:url(images/sprite.png) -185px -180px no-repeat;
     padding-left:20px;
     }
@@ -793,7 +791,7 @@ div.node div.column-side div.column-wrapper {
   }
 
 div.help-page div.column-side .help-page-links,
-div#rubiks-help div.column-side .help-links,
+div#rubik-help div.column-side .help-links,
 div.node-submitted,
 div.comment-submitted {
   padding:10px;
@@ -900,9 +898,9 @@ div.help-items ul { margin:10px 5px; }
 /**
  * Admin toolbar ======================================================
  */
-body.rubiks div#admin-toolbar #block-admin-menu span.menu-description { padding-left:50px; }
+body.rubik div#admin-toolbar #block-admin-menu span.menu-description { padding-left:50px; }
 
-body.rubiks div#admin-toolbar #block-admin-menu span.menu-description span.icon {
+body.rubik div#admin-toolbar #block-admin-menu span.menu-description span.icon {
   position:absolute;
   left:10px;
   top:0px;
