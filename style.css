@@ -120,7 +120,7 @@ a#help-toggler {
 
   div#rubiks-help div.column-side div.column-wrapper {
     font-size:11px;
-    padding:0px;
+    padding:0px 0px 0px 1px;
     }
 
   #rubiks-help label.breadcrumb-label,
@@ -786,7 +786,7 @@ div.node div.column-main div.column-wrapper { padding:19px; }
 div.help-page div.column-side div.column-wrapper,
 div.comment div.column-side div.column-wrapper,
 div.node div.column-side div.column-wrapper {
-  padding:9px 9px 9px 0px;
+  padding:9px 9px 9px 1px;
   font-size:11px;
   }
 
@@ -825,9 +825,9 @@ div.column-side ul.links span {
   float:none;
   }
 
+  div.column-side ul.links a.active,
   div.column-side ul.links a:hover { background:#fff; }
   div.comment-links ul.links a:hover { background:#f4f4f4; }
-  div.column-side ul.links a.active { background:#999; color:#fff; }
 
 h2.comment-title,
 h2.node-title {
