@@ -43,6 +43,8 @@ function rubiks_theme() {
   $items['contact_mail_user'] =
   $items['filter_admin_format_form'] =
   $items['forum_form'] =
+  $items['locale_languages_edit_form'] =
+  $items['locale_languages_configure_form'] =
   $items['menu_edit_menu'] =
   $items['menu_edit_item'] =
   $items['node_type_form'] =

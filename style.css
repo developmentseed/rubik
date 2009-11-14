@@ -4,7 +4,7 @@ textarea,
 select { font-family:"Lucida Grande","Trebuchet MS",Tahoma,Verdana,sans-serif; }
 
 body.rubiks {
-  color:#666;
+  color:#333;
   background:#ccc url(images/bleeds.png) 0px -80px repeat-x fixed;
   }
 
@@ -52,7 +52,7 @@ hr { display:none; }
 #branding a {
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
-  color:#666;
+  color:#333;
   float:left;
   padding:0px 10px;
   }
@@ -62,21 +62,23 @@ hr { display:none; }
 #branding ul.links { float:right; }
 
 #branding div.breadcrumb {
+  padding:0px 5px;
   float:left;
   text-transform:uppercase;
   font-weight:normal;
   }
 
+  #branding div.breadcrumb a,
   #branding div.breadcrumb strong {
     font-weight:normal;
     float:left;
-    padding:0px 10px;
+    padding:0px 5px;
     }
 
   #branding div.breadcrumb span.breadcrumb-link {
-    color:#ccc;
+    color:#999;
     float:left;
-    padding-right:10px;
+    padding-right:5px;
     background:url(images/sprite.png) 100% 100% no-repeat;
     }
 
@@ -202,7 +204,7 @@ div.block {
   }
 
   #page-title h2.page-title {
-    padding:10px;
+    padding:15px 10px;
     line-height:30px;
     min-height:30px;
 

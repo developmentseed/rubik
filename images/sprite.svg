@@ -89,9 +89,9 @@
      objecttolerance="10"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="195.49504"
-     inkscape:cy="7.5171024"
+     inkscape:zoom="35.527137"
+     inkscape:cx="194.66795"
+     inkscape:cy="8.8392287"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true">
@@ -202,11 +202,11 @@
     <path
        sodipodi:nodetypes="cccccc"
        id="path3173"
-       d="M 193,187 L 194,187 L 197,191 L 194,195 L 193,195 L 196,191"
+       d="M 194,187 L 195,187 L 198,191 L 195,195 L 194,195 L 197,191"
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <path
        style="opacity:1;fill:#c0c0c0;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="M 193,186 L 194,186 L 197,190 L 194,194 L 193,194 L 196,190"
+       d="M 194,186 L 195,186 L 198,190 L 195,194 L 194,194 L 197,190"
        id="path2385"
        sodipodi:nodetypes="cccccc" />
   </g>
