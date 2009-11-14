@@ -116,13 +116,6 @@ a#help-toggler {
     -webkit-border-top-right-radius:2px;
     }
 
-  div#rubik-help div.column-main div.column-wrapper { padding:19px; }
-
-  div#rubik-help div.column-side div.column-wrapper {
-    font-size:11px;
-    padding:9px 9px 9px 1px;
-    }
-
   #rubik-help label.breadcrumb-label,
   #rubik-help span.breadcrumb-link { display:block; }
 
@@ -779,10 +772,12 @@ div.node {
     background:#eee;
     }
 
+div#rubik-help div.column-main div.column-wrapper,
 div.help-page div.column-main div.column-wrapper,
 div.comment div.column-main div.column-wrapper,
 div.node div.column-main div.column-wrapper { padding:19px; }
 
+div#rubik-help div.column-side div.column-wrapper,
 div.help-page div.column-side div.column-wrapper,
 div.comment div.column-side div.column-wrapper,
 div.node div.column-side div.column-wrapper {
