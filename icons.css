@@ -25,6 +25,11 @@
 .path-admin-settings span.icon                  { background-position:-150px 0px; }
 
 /**
+ * Help
+ */
+.path-admin-help span.icon                      { background-position:-150px -120px; }
+
+/**
  * Content
  */
 .path-admin-content-forum span.icon             { background-position:-90px -120px; }
