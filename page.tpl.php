@@ -6,7 +6,7 @@
     <?php print $scripts ?>
     <title><?php print $head_title ?></title>
   </head>
-  <body class='rubiks layout-default admin-static' <?php // print drupal_attributes($attr) ?>>
+  <body <?php print drupal_attributes($attr) ?>>
 
   <?php if ($admin) print $admin ?>
 

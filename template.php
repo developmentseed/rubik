@@ -15,6 +15,13 @@ function rubiks_theme() {
     'template' => 'object',
   );
 
+  // Help pages really need help. See preprocess_page().
+  $items['help_page'] = array(
+    'arguments' => array('content' => array()),
+    'path' => path_to_theme() .'/templates',
+    'template' => 'object',
+  );
+
   // Form layout: simple.
   $items['filter_admin_overview'] =
   $items['user_admin_perm'] = array(
@@ -87,8 +94,16 @@ function rubiks_preprocess_page(&$vars) {
   // Set a page icon class.
   $vars['page_icon_class'] = ($item = menu_get_item()) ? _rubiks_icon_classes($item['href']) : '';
 
+  // Add body class for theme.
+  $vars['attr']['class'] .= ' rubiks';
+
   // Body class for admin module.
   $vars['attr']['class'] .= ' admin-static';
+
+  // Help pages. They really do need help.
+  if (strpos($_GET['q'], 'admin/help/') === 0) {
+    $vars['content'] = theme('help_page', $vars['content']);
+  }
 
   // Display user account links.
   $vars['user_links'] = _rubiks_user_links();
@@ -195,6 +210,31 @@ function rubiks_preprocess_help(&$vars) {
     $vars['links'] = '<label class="breadcrumb-label">'. t('Help text for') .'</label>';
     $vars['links'] .= theme('breadcrumb', drupal_get_breadcrumb(), FALSE);
   }
+}
+
+/**
+ * Preprocessor for theme('help_page').
+ */
+function rubiks_preprocess_help_page(&$vars) {
+  $vars['hook'] = 'help-page';
+  $vars['is_prose'] = TRUE;
+  $vars['layout'] = TRUE;
+  $vars['attr'] = array('class' => 'help-page clear-block');
+
+  // Truly hackish way to navigate help pages.
+  $module_info = module_rebuild_cache();
+  $modules = array();
+  foreach (module_implements('help', TRUE) as $module) {
+    if (module_invoke($module, 'help', "admin/help#$module", $empty_arg)) {
+      $modules[$module] = $module_info[$module]->info['name'];
+    }
+  }
+  asort($modules);
+  $links = array();
+  foreach ($modules as $module => $name) {
+    $links[] = array('title' => $name, 'href' => "admin/help/{$module}");
+  }
+  $vars['links'] = theme('links', $links);
 }
 
 /**

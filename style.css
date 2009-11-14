@@ -335,8 +335,10 @@ div.secondary-tabs {
 /**
  * Menus, lists =======================================================
  */
+div.help-items ul li,
 form.confirmation ul li,
 div.item-list li,
+.prose div.item-list li,
 ul.menu li {
   float:none;
   display:block;
@@ -344,8 +346,10 @@ ul.menu li {
   border-bottom:1px solid #f4f4f4;
   }
 
+  div.help-items ul li:last-child,
   form.confirmation ul li:last-child,
   div.item-list li:last-child,
+  .prose div.item-list li:last-child,
   ul.menu li:last-child {
     border:0px;
     padding:5px 10px;
@@ -460,6 +464,7 @@ table td.permission { padding-left:19px; }
 /**
  * Forms ==============================================================
  */
+div.help-items ul,
 div.fieldset,
 div.form-item,
 form.confirmation ul,
@@ -704,15 +709,14 @@ div.fieldset-content {
 /**
  * Form layout: Default ===============================================
  */
+div.form-layout-default { background:url(images/vrule.png) 65% 0% repeat-y; }
+
 div.column-main {
   float:left;
   width:65%;
   }
 
-  div.column-main div.column-wrapper {
-    padding-right:9px;
-    border-right:1px solid #e8e8e8;
-    }
+  div.column-main div.column-wrapper { padding-right:10px; }
 
 div.column-side {
   float:right;
@@ -752,15 +756,16 @@ h2.box-title {
   }
 
 /**
- * Nodes, comments ====================================================
+ * Content ============================================================
  */
+div.help-page,
 div.comment,
 div.node {
   border-style:solid;
   border-width:1px;
   border-color:#ddd #e8e8e8 #eee;
 
-  background:#fcfcfc;
+  background:#fcfcfc url(images/vrule.png) 65% 0% repeat-y;
   margin:0px 0px 10px;
 
   -moz-box-shadow:#fff 0px 1px 0px;
@@ -774,15 +779,18 @@ div.node {
     background:#eee;
     }
 
+div.help-page div.column-main div.column-wrapper,
 div.comment div.column-main div.column-wrapper,
 div.node div.column-main div.column-wrapper { padding:19px; }
 
+div.help-page div.column-side div.column-wrapper,
 div.comment div.column-side div.column-wrapper,
 div.node div.column-side div.column-wrapper {
   padding:9px 9px 9px 0px;
   font-size:11px;
   }
 
+div.help-page div.column-side .help-page-links,
 div#rubiks-help div.column-side .help-links,
 div.node-submitted,
 div.comment-submitted {
@@ -798,27 +806,28 @@ div.comment-submitted span { display:block; }
 div.comment-links,
 div.node-links { padding:10px 0px; }
 
-div.comment-links ul.links li,
-div.node-links ul.links li,
-div.comment-links ul.links a,
-div.node-links ul.links a,
-div.comment-links ul.links span,
-div.node-links ul.links span {
+div.help-page div.help-page-links ul.links {
+  -moz-column-count:2;
+  -webkit-column-count:2;
+  }
+
+div.column-side ul.links li,
+div.column-side ul.links a,
+div.column-side ul.links span {
   display:block;
   float:none;
   }
 
-div.comment-links ul.links a,
-div.node-links ul.links a,
-div.comment-links ul.links span,
-div.node-links ul.links span {
+div.column-side ul.links a,
+div.column-side ul.links span {
   padding:0px 10px;
   display:block;
   float:none;
   }
 
-  div.node-links ul.links a:hover { background:#fff; }
+  div.column-side ul.links a:hover { background:#fff; }
   div.comment-links ul.links a:hover { background:#f4f4f4; }
+  div.column-side ul.links a.active { background:#999; color:#fff; }
 
 h2.comment-title,
 h2.node-title {
@@ -879,6 +888,12 @@ div.admin-options div.form-item {
   padding:0px;
   border:0px;
   }
+
+/**
+ * Help pages =========================================================
+ */
+div.help-items { float:left; width:25%; }
+div.help-items ul { margin:10px 5px; }
 
 /**
  * Admin toolbar ======================================================
