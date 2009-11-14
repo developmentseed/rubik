@@ -499,14 +499,16 @@ div.form-item label {
   padding:0px;
   color:#999;
   font-weight:bold;
-  font-size:9px;
+  font-size:10px;
   text-transform:uppercase;
   }
 
-  div.form-item label.option { text-transform:none; }
+  div.form-item label.option {
+    text-transform:none;
+    font-size:11px;
+    }
 
-div.form-item label.option { font-size:11px; }
-div.form-item label.option input { vertical-align:middle; }
+  div.form-item label.option input { vertical-align:middle; }
 
 div.page-content .password-description,
 div.page-content .password-strength,
@@ -603,6 +605,7 @@ select.form-select {
   div.form-item:hover input.form-text,
   div.form-item:hover textarea.form-textarea,
   div.form-item:hover select.form-select,
+  input.form-autocomplete:focus,
   input.form-text:focus,
   textarea.form-textarea:focus,
   select.form-select:focus {
