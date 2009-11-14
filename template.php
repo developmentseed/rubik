@@ -286,16 +286,13 @@ function rubiks_admin_block_content($content, $get_runstate = FALSE) {
   $output = '';
   if (!empty($content)) {
     foreach ($content as $k => $item) {
-      $id = str_replace('/', '-', $item['href']);
-      $class = ' path-'. $id;
-
       $content[$k]['title'] = "<span class='icon'></span>{$item['title']}";
       $content[$k]['localized_options']['html'] = TRUE;
       if (!empty($content[$k]['localized_options']['attributes']['class'])) {
-        $content[$k]['localized_options']['attributes']['class'] .= $class;
+        $content[$k]['localized_options']['attributes']['class'] .= _rubiks_icon_classes($item['href']);
       }
       else {
-        $content[$k]['localized_options']['attributes']['class'] = $class;
+        $content[$k]['localized_options']['attributes']['class'] = _rubiks_icon_classes($item['href']);
       }
     }
     $output = system_admin_compact_mode() ? '<ul class="menu">' : '<ul class="admin-list">';

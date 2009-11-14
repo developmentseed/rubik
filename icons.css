@@ -14,7 +14,15 @@
   background-repeat:no-repeat;
   }
 
-/*div.depth-1 span.icon { background:transparent url(images/icons.png) 0px 0px no-repeat; }*/
+/**
+ * Sections
+ */
+.path-admin span.icon                           { background-position:0px 0px; }
+.path-admin-content span.icon                   { background-position:-30px 0px; }
+.path-admin-build span.icon                     { background-position:-60px 0px; }
+.path-admin-user span.icon                      { background-position:-90px 0px; }
+.path-admin-reports span.icon                   { background-position:-120px 0px; }
+.path-admin-settings span.icon                  { background-position:-150px 0px; }
 
 /**
  * Content
