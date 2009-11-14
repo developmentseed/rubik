@@ -335,6 +335,7 @@ div.secondary-tabs {
 /**
  * Menus, lists =======================================================
  */
+form.confirmation ul li,
 div.item-list li,
 ul.menu li {
   float:none;
@@ -343,6 +344,7 @@ ul.menu li {
   border-bottom:1px solid #f4f4f4;
   }
 
+  form.confirmation ul li:last-child,
   div.item-list li:last-child,
   ul.menu li:last-child {
     border:0px;
@@ -460,6 +462,7 @@ table td.permission { padding-left:19px; }
  */
 div.fieldset,
 div.form-item,
+form.confirmation ul,
 ul.admin-list,
 ul.node-type-list,
 div.admin-panel {
@@ -728,14 +731,6 @@ form div.buttons {
   }
 
   div.form-layout-default div.column-side div.buttons input.form-submit { margin:1px 0px; }
-
-/**
- * Form layout: confirm ===============================================
- */
-div.form-confirm h2.form-title {
-  font-size:16px;
-  font-weight:normal;
-  }
 
 /**
  * "Boxes" aka generic wrappers =======================================
