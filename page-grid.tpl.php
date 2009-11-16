@@ -3,59 +3,61 @@
   <head>
     <?php print $head ?>
     <?php print $styles ?>
+    <?php print $scripts ?>
     <title><?php print $head_title ?></title>
   </head>
-  <body class='layout-default admin-static' <?php // print drupal_attributes($attr) ?>>
+  <body <?php print drupal_attributes($attr) ?>>
 
   <?php if ($admin) print $admin ?>
 
-  <?php if ($help): ?>
-    <div id='help' class='reverse limiter'>
-      <div class='help-label'><?php print t('Help') ?></div>
-      <div class='help-wrapper clear-block limiter'><?php print $help; ?></div>
-    </div>
-  <?php endif; ?>
-
   <div id='branding'><div class='clear-block limiter'>
-    <?php if ($site_name): ?><h1 class='site-name'><?php print $site_name ?></h1><?php endif; ?>
+    <div class='breadcrumb clear-block'><?php print $breadcrumb ?></div>
+    <?php if ($user_links) print theme('links', $user_links) ?>
   </div></div>
 
   <div id='page-title' class='clear-block limiter'>
-    <?php if ($tabs): ?><ul class='tabs primary'><?php print $tabs ?></ul><?php endif; ?>
-    <?php if ($title): ?><h2 class='page-title'><?php print $title ?></h2><?php endif; ?>
+    <?php if ($help_toggler) print $help_toggler ?>
+    <?php if ($tabs): ?><?php print $tabs ?><?php endif; ?>
+    <h2 class='page-title <?php print $page_icon_class ?>'>
+      <?php if (!empty($page_icon_class)): ?><span class='icon'></span><?php endif; ?>
+      <?php if ($title) print $title ?>
+    </h2>
   </div>
 
-  <div id='page'><div class='clear-block limiter'>
+  <div id='page'>
+    <?php if ($tabs2): ?><div class='secondary-tabs clear-block'><?php print $tabs2 ?></div><?php endif; ?>
+    <?php if ($help) print $help ?>
+    <div class='clear-block limiter'>
+      <?php if ($show_messages && $messages): ?>
+        <div id='console' class='clear-block'><?php print $messages; ?></div>
+      <?php endif; ?>
 
-    <?php if ($tabs2): ?><ul class='tabs secondary'><?php print $tabs2 ?></ul><?php endif; ?>
+      <div id='content' class='clear-block'>
+        <div class='page-content'>
+          <div class='layout-grid clear-block'>
+            <div id='nw'><div class='grid-cell clear-block'><?php print $nw ?></div></div>
+            <div id='ne'><div class='grid-cell clear-block'><?php print $ne ?></div></div>
+          </div>
+          <div class='layout-grid clear-block'>
+            <div id='sw'><div class='grid-cell clear-block'><?php print $sw ?></div></div>
+            <div id='se'><div class='grid-cell clear-block'><?php print $se ?></div></div>
+          </div>
+          <?php print $content ?>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <?php if ($show_messages && $messages): ?>
-      <div id='console' class='clear-block'><?php print $messages; ?></div>
+  <div id='footer' class='clear-block'>
+    <?php if ($feed_icons): ?>
+      <div class='feed-icons clear-block'>
+        <label><?php print t('Feeds') ?></label>
+        <?php print $feed_icons ?>
+      </div>
     <?php endif; ?>
+    <?php if ($footer_message): ?><div class='footer-message'><?php print $footer_message ?></div><?php endif; ?>
+  </div>
 
-    <div id='content' class='clear-block'>
-      <div class='content-top clear-block'>
-        <div id='nw'><?php print $nw ?></div>
-        <div id='ne'><?php print $ne ?></div>
-      </div>
-      <div class='content-middle clear-block'>
-        <div id='w'><?php print $w ?></div>
-        <div id='e'><?php print $e ?></div>
-      </div>
-      <div class='content-bottom clear-block'>
-        <div class='page-content'><?php print $content ?></div>
-      </div>
-    </div>
-
-    <div id="footer">
-      <?php print $feed_icons ?>
-      <?php print $footer ?>
-      <?php print $footer_message ?>
-    </div>
-
-  </div></div>
-
-  <?php print $scripts ?>
   <?php print $closure ?>
 
   </body>

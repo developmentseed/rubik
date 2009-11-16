@@ -1,14 +1,11 @@
 #nw,
-#w {
-  min-height:1px;
+#sw {
   float:left;
   width:50%;
   }
 
 #ne,
-#e {
-  min-height:1px;
+#se {
   float:right;
   width:50%;
   }
-
