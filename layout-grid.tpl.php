@@ -27,23 +27,21 @@
   <div id='page'>
     <?php if ($tabs2): ?><div class='secondary-tabs clear-block'><?php print $tabs2 ?></div><?php endif; ?>
     <?php if ($help) print $help ?>
-    <div class='clear-block limiter'>
+    <div class='clear-block limiter page-content'>
       <?php if ($show_messages && $messages): ?>
         <div id='console' class='clear-block'><?php print $messages; ?></div>
       <?php endif; ?>
 
-      <div id='content' class='clear-block'>
-        <div class='page-content'>
-          <div class='layout-grid clear-block'>
-            <div id='nw'><div class='grid-cell clear-block'><?php print $nw ?></div></div>
-            <div id='ne'><div class='grid-cell clear-block'><?php print $ne ?></div></div>
-          </div>
-          <div class='layout-grid clear-block'>
-            <div id='sw'><div class='grid-cell clear-block'><?php print $sw ?></div></div>
-            <div id='se'><div class='grid-cell clear-block'><?php print $se ?></div></div>
-          </div>
-          <?php print $content ?>
-        </div>
+      <div class='layout-grid clear-block'>
+        <div id='nw'><?php print $nw ?></div>
+        <div id='ne'><?php print $ne ?></div>
+      </div>
+      <div class='layout-grid clear-block'>
+        <div id='sw'><?php print $sw ?></div>
+        <div id='se'><?php print $se ?></div>
+      </div>
+      <div id='content'>
+        <div class='content-wrapper clear-block'><?php print $content ?></div>
       </div>
     </div>
   </div>

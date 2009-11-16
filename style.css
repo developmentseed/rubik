@@ -1,7 +1,7 @@
 body.rubik,
 input,
 textarea,
-select { font-family:"Lucida Grande","Trebuchet MS",Tahoma,Verdana,sans-serif; }
+select { font-family:"Lucida","Lucida Grande","Trebuchet MS",Tahoma,Verdana,sans-serif; }
 
 body.rubik {
   color:#333;
@@ -161,31 +161,6 @@ table tr.info th,
   #console div.warning { border-color:#fffce4; }
   #console div.status  { border-color:#f8fffc; }
 
-div.page-content { padding:5px; }
-
-div.block {
-  background:#fff;
-  margin:10px 5px 10px;
-  border:1px solid #e4e4e4;
-
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
-  }
-
-  div.block div.block-content { padding:10px 9px 9px; }
-
-#content div.block h2.block-title {
-  -moz-border-radius:3px 3px 0px 0px;
-  -webkit-border-radius-top-left:3px;
-  -webkit-border-radius-top-right:3px;
-
-  background:#f8f8f8;
-  font-size:13px;
-  color:#666;
-  margin:0px;
-  padding:5px 10px;
-  }
-
 /**
  * Page title =========================================================
  */
@@ -324,6 +299,8 @@ div.secondary-tabs {
   }
 
 #page div.limiter { padding:4px; }
+
+div.content-wrapper { padding:5px; }
 
 /**
  * Menus, lists =======================================================
@@ -746,6 +723,36 @@ h2.box-title {
   -webkit-box-shadow:#fff 0px 1px 0px;
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
+  }
+
+/**
+ * Blocks =============================================================
+ */
+div.block {
+  background:#fcfcfc;
+  margin:5px;
+  border-width:1px;
+  border-style:solid;
+  border-color:#ddd #e8e8e8 #eee;
+
+  -moz-box-shadow:#fff 0px 1px 0px;
+  -webkit-box-shadow:#fff 0px 1px 0px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  }
+
+  div.block div.block-content { padding:10px 9px 9px; }
+
+div.block h2.block-title {
+  -moz-border-radius:2px 2px 0px 0px;
+  -webkit-border-radius-top-left:2px;
+  -webkit-border-radius-top-right:2px;
+
+  background:#f8f8f8;
+  font-size:13px;
+  font-weight:normal;
+  margin:0px;
+  padding:4px 10px 5px;
   }
 
 /**

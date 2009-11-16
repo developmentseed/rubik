@@ -19,11 +19,18 @@ layouts[default][name] = "Default"
 layouts[default][description] = "Simple 1-column page."
 layouts[default][template] = "page"
 
+; Columns
+layouts[columns][name] = "2 columns"
+layouts[columns][description] = "2 column page."
+layouts[columns][stylesheet] = "layout-columns.css"
+layouts[columns][template] = "layout-columns"
+layouts[columns][regions][] = "ne"
+
 ; 4 grid layout
 layouts[grid][name] = "4 Pane grid"
 layouts[grid][description] = "Grid with 4 panes."
 layouts[grid][stylesheet] = "layout-grid.css"
-layouts[grid][template] = "page-grid"
+layouts[grid][template] = "layout-grid"
 layouts[grid][regions][] = "nw"
 layouts[grid][regions][] = "ne"
 layouts[grid][regions][] = "sw"
