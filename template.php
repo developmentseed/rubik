@@ -365,7 +365,8 @@ function rubik_admin_menu_item_link($link) {
   else {
     $link['localized_options']['attributes']['class'] .= ' '. _rubik_icon_classes($link['href']);
   }
-  $link['description'] = "<span class='icon'></span>" . strip_tags($link['description']);
+  $link['description'] = check_plain(truncate_utf8(strip_tags($link['description']), 150, TRUE, TRUE));
+  $link['description'] = "<span class='icon'></span>" . $link['description'];
   $link['title'] .= !empty($link['description']) ? "<span class='menu-description'>{$link['description']}</span>" : '';
   return l($link['title'], $link['href'], $link['localized_options']);
 }
