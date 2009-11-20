@@ -308,6 +308,14 @@ function rubik_node_add_list($content) {
   $output = "<ul class='admin-list'>";
   if ($content) {
     foreach ($content as $item) {
+      $item['title'] = "<span class='icon'></span>" . filter_xss_admin($item['title']);
+      if (isset($item['localized_options']['attributes']['class'])) {
+        $item['localized_options']['attributes']['class'] .= ' '. _rubik_icon_classes($item['href']);
+      }
+      else {
+        $item['localized_options']['attributes']['class'] .= _rubik_icon_classes($item['href']);
+      }
+      $item['localized_options']['html'] = TRUE;
       $output .= "<li>";
       $output .= l($item['title'], $item['href'], $item['localized_options']);
       $output .= '<div class="description">'. filter_xss_admin($item['description']) .'</div>';
@@ -442,7 +450,7 @@ function _rubik_user_links() {
 function _rubik_icon_classes($path) {
   $classes = array();
   $args = explode('/', $path);
-  if ($args[0] === 'admin') {
+  if ($args[0] === 'admin' || $args[0] === 'node' && $args[1] === 'add') {
     while (count($args)) {
       $classes[] = 'path-'. str_replace('/', '-', implode('/', $args));
       array_pop($args);
