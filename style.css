@@ -784,6 +784,17 @@ div.help-page div.column-main div.column-wrapper,
 div.comment div.column-main div.column-wrapper,
 div.node div.column-main div.column-wrapper { padding:19px; }
 
+  div#rubik-help div.column-main div.column-wrapper {
+    padding-left:59px;
+    position:relative;
+    }
+
+    div#rubik-help div.column-main div.column-wrapper span.icon {
+      position:absolute;
+      top:15px;
+      left:15px;
+      }
+
 div#rubik-help div.column-side div.column-wrapper,
 div.help-page div.column-side div.column-wrapper,
 div.comment div.column-side div.column-wrapper,

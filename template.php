@@ -202,7 +202,7 @@ function rubik_preprocess_form_node(&$vars) {
 function rubik_preprocess_help(&$vars) {
   $vars['hook'] = 'help';
   $vars['attr']['id'] = 'rubik-help';
-  $vars['attr']['class'] .= ' clear-block toggleable';
+  $vars['attr']['class'] .= 'path-admin-help clear-block toggleable';
   $help = menu_get_active_help();
   if (($test = strip_tags($help)) && !empty($help)) {
     // Thankfully this is static cached.
@@ -210,7 +210,7 @@ function rubik_preprocess_help(&$vars) {
 
     $vars['is_prose'] = TRUE;
     $vars['layout'] = TRUE;
-    $vars['content'] = $help;
+    $vars['content'] = "<span class='icon'></span>" . $help;
     $vars['links'] = '<label class="breadcrumb-label">'. t('Help text for') .'</label>';
     $vars['links'] .= theme('breadcrumb', drupal_get_breadcrumb(), FALSE);
   }
