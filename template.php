@@ -147,16 +147,18 @@ function rubik_preprocess_form_legacy(&$vars) {
  * Preprocessor for handling form button for most forms.
  */
 function rubik_preprocess_form_buttons(&$vars) {
-  if (isset($vars['form']['buttons'])) {
-    $vars['buttons'] = $vars['form']['buttons'];
-    unset($vars['form']['buttons']);
-  }
-  else {
-    $vars['buttons'] = array();
-    foreach (element_children($vars['form']) as $key) {
-      if (isset($vars['form'][$key]['#type']) && in_array($vars['form'][$key]['#type'], array('submit', 'button'))) {
-        $vars['buttons'][$key] = $vars['form'][$key];
-        unset($vars['form'][$key]);
+  if (empty($vars['buttons'])) {
+    if (isset($vars['form']['buttons'])) {
+      $vars['buttons'] = $vars['form']['buttons'];
+      unset($vars['form']['buttons']);
+    }
+    else {
+      $vars['buttons'] = array();
+      foreach (element_children($vars['form']) as $key) {
+        if (isset($vars['form'][$key]['#type']) && in_array($vars['form'][$key]['#type'], array('submit', 'button'))) {
+          $vars['buttons'][$key] = $vars['form'][$key];
+          unset($vars['form'][$key]);
+        }
       }
     }
   }
@@ -186,13 +188,15 @@ function rubik_preprocess_form_node(&$vars) {
   // @TODO: Figure out a better way here. drupal_alter() is preferable.
   // Allow modules to insert form elements into the sidebar,
   // defaults to showing taxonomy in that location.
-  $vars['sidebar'] = array();
-  if (!$sidebar_fields = module_invoke_all('node_form_sidebar', $form, $form['#node'])) {
-    $sidebar_fields = array('taxonomy');
-  }
-  foreach ($sidebar_fields as $field) {
-    $vars['sidebar'][] = $vars['form'][$field];
-    unset($vars['form'][$field]);
+  if (empty($vars['sidebar'])) {
+    $vars['sidebar'] = array();
+    if (!$sidebar_fields = module_invoke_all('node_form_sidebar', $form, $form['#node'])) {
+      $sidebar_fields = array('taxonomy');
+    }
+    foreach ($sidebar_fields as $field) {
+      $vars['sidebar'][] = $vars['form'][$field];
+      unset($vars['form'][$field]);
+    }
   }
 }
 
