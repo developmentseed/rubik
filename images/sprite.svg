@@ -17,7 +17,7 @@
    version="1.0"
    sodipodi:docname="sprite.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   inkscape:export-filename="/home/yh/d6/sites/all/themes/rubiks/images/sprite.png"
+   inkscape:export-filename="/home/yh/d6/sites/all/themes/rubik/images/sprite.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -89,12 +89,12 @@
      objecttolerance="10"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="35.527137"
-     inkscape:cx="194.66795"
-     inkscape:cy="8.8392287"
+     inkscape:zoom="1"
+     inkscape:cx="2.5320903"
+     inkscape:cy="168.76928"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     showgrid="true">
+     showgrid="false">
     <inkscape:grid
        type="xygrid"
        id="grid3188"
@@ -117,7 +117,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:#bbbbbb;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="M 3,0 C 1.338,0 -2.6111925e-18,1.338 0,3 L 0,17 C 0,18.662 1.338,20 3,20 L 20,20 L 20,0 L 3,0 z"
        id="rect3190"
        sodipodi:nodetypes="ccccccc" />
@@ -142,7 +142,7 @@
        sodipodi:nodetypes="ccccccc"
        id="path3715"
        d="M 3,20 C 1.338,20 -2.6111925e-18,21.338 0,23 L 0,37 C 0,38.662 1.338,40 3,40 L 20,40 L 20,20 L 3,20 z"
-       style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+       style="fill:#bbbbbb;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <rect
        ry="0.5"
        transform="matrix(0,1,-1,0,0,0)"
@@ -209,5 +209,13 @@
        d="M 194,186 L 195,186 L 198,190 L 195,194 L 194,194 L 197,190"
        id="path2385"
        sodipodi:nodetypes="cccccc" />
+    <path
+       style="fill:#aaaaaa;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 0 16 L 0 17 C 0 18.662 1.338 20 3 20 L 20 20 L 20 19 L 3 19 C 1.338 19 0 17.662 0 16 z "
+       id="path3190" />
+    <path
+       style="fill:#aaaaaa;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 4.4408921e-16,36 L 4.4408921e-16,37 C 4.4408921e-16,38.662 1.338,40 3,40 L 20,40 L 20,39 L 3,39 C 1.338,39 4.4408921e-16,37.662 4.4408921e-16,36 z"
+       id="path3195" />
   </g>
 </svg>
