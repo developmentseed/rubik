@@ -11,14 +11,14 @@ function rubik_theme() {
   $items['help'] =
   $items['comment'] =
   $items['node'] = array(
-    'path' => path_to_theme() .'/templates',
+    'path' => drupal_get_path('theme', 'rubik') .'/templates',
     'template' => 'object',
   );
 
   // Help pages really need help. See preprocess_page().
   $items['help_page'] = array(
     'arguments' => array('content' => array()),
-    'path' => path_to_theme() .'/templates',
+    'path' => drupal_get_path('theme', 'rubik') .'/templates',
     'template' => 'object',
   );
 
@@ -26,7 +26,7 @@ function rubik_theme() {
   $items['filter_admin_overview'] =
   $items['user_admin_perm'] = array(
     'arguments' => array('form' => array()),
-    'path' => path_to_theme() .'/templates',
+    'path' => drupal_get_path('theme', 'rubik') .'/templates',
     'template' => 'form-simple',
     'preprocess functions' => array(
       'rubik_preprocess_form_buttons',
@@ -61,7 +61,7 @@ function rubik_theme() {
   $items['user_profile_form'] =
   $items['user_admin_access_add_form'] = array(
     'arguments' => array('form' => array()),
-    'path' => path_to_theme() .'/templates',
+    'path' => drupal_get_path('theme', 'rubik') .'/templates',
     'template' => 'form-default',
     'preprocess functions' => array(
       'rubik_preprocess_form_buttons',
@@ -72,7 +72,7 @@ function rubik_theme() {
   // These forms require additional massaging.
   $items['confirm_form'] = array(
     'arguments' => array('form' => array()),
-    'path' => path_to_theme() .'/templates',
+    'path' => drupal_get_path('theme', 'rubik') .'/templates',
     'template' => 'form-simple',
     'preprocess functions' => array(
       'rubik_preprocess_form_confirm'
@@ -80,7 +80,7 @@ function rubik_theme() {
   );
   $items['node_form'] = array(
     'arguments' => array('form' => array()),
-    'path' => path_to_theme() .'/templates',
+    'path' => drupal_get_path('theme', 'rubik') .'/templates',
     'template' => 'form-default',
     'preprocess functions' => array(
       'rubik_preprocess_form_buttons',
