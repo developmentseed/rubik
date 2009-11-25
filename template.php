@@ -9,11 +9,12 @@ function rubik_theme() {
 
   // Content theming.
   $items['help'] =
-  $items['comment'] =
-  $items['node'] = array(
+  $items['node'] =
+  $items['comment'] = array(
     'path' => drupal_get_path('theme', 'rubik') .'/templates',
     'template' => 'object',
   );
+  $items['node']['template'] = 'node';
 
   // Help pages really need help. See preprocess_page().
   $items['help_page'] = array(
@@ -252,6 +253,13 @@ function rubik_preprocess_node(&$vars) {
   $vars['layout'] = TRUE;
   $vars['title'] = menu_get_object() === $vars['node'] ? '' : $vars['title'];
   $vars['attr']['class'] .= ' clear-block';
+
+  // Clear out template file suggestions if we are the active theme.
+  // Subthemes will need to manage template file suggestions on their own.
+  global $theme;
+  if ($theme === 'rubik') {
+    $vars['template_files'] = array();
+  }
 }
 
 /**
