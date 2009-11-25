@@ -13,6 +13,7 @@
   <div id='branding'><div class='clear-block limiter'>
     <div class='breadcrumb clear-block'><?php print $breadcrumb ?></div>
     <?php if ($user_links) print theme('links', $user_links) ?>
+    <?php if ($primary_links) print theme('links', $primary_links) ?>
   </div></div>
 
   <div id='page-title' class='clear-block limiter'>

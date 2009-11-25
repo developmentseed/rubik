@@ -9,6 +9,7 @@ scripts[] = "js/rubik.js"
 stylesheets[screen][] = "style.css"
 stylesheets[screen][] = "icons.css"
 
+regions[right] = "right"
 regions[nw] = "nw"
 regions[ne] = "ne"
 regions[se] = "se"
@@ -24,7 +25,7 @@ layouts[columns][name] = "2 columns"
 layouts[columns][description] = "2 column page."
 layouts[columns][stylesheet] = "layout-columns.css"
 layouts[columns][template] = "layout-columns"
-layouts[columns][regions][] = "ne"
+layouts[columns][regions][] = "right"
 
 ; 4 grid layout
 layouts[grid][name] = "4 Pane grid"
