@@ -461,13 +461,15 @@ div.admin-panel {
 div.admin-panel ul.admin-list,
 div.teaser-checkbox div.form-item,
 div.form-item div.form-item,
-div.fieldset div.form-item {
+div.fieldset div.form-item,
+table div.form-item {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   background:transparent;
   padding:5px;
   margin:0px;
   border:0px;
+  position:static;
   }
 
   div.admin-panel ul.admin-list { padding:0px; }
