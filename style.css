@@ -909,6 +909,13 @@ div.admin-options div.form-item {
   border:0px;
   }
 
+/* dependency colors */
+div.admin-dependencies,
+div.admin-required { color: #666; }
+span.admin-disabled { color: #900; }
+span.admin-enabled { color: #099; }
+span.admin-missing { color: #c30; }
+
 /**
  * Help pages =========================================================
  */
