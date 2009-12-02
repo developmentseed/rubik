@@ -127,7 +127,7 @@ a#help-toggler {
 /**
  * Console ============================================================
  */
-#console div.messages {
+div.messages {
   -moz-border-radius:3px;
   -moz-box-shadow:#ddd 0px 1px 3px;
   padding:15px;
@@ -139,27 +139,27 @@ a#help-toggler {
   }
 
 table tr.warning th,
-#console div.warning {
+div.warning {
   color:#a84;
   background:#fff4c0;
   }
 
 table tr.error th,
-#console div.error {
+div.error {
   color:#965;
   background:#ffe4e0;
   }
 
 table tr.ok th,
 table tr.info th,
-#console div.status {
+div.status {
   color:#687;
   background:#ecf8f4;
   }
 
-  #console div.error   { border-color:#fff8f4; }
-  #console div.warning { border-color:#fffce4; }
-  #console div.status  { border-color:#f8fffc; }
+  div.error   { border-color:#fff8f4; }
+  div.warning { border-color:#fffce4; }
+  div.status  { border-color:#f8fffc; }
 
 /**
  * Page title =========================================================
