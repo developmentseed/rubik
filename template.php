@@ -433,6 +433,23 @@ function rubik_comment_submitted($comment) {
 }
 
 /**
+ * Helper function for cloning and drupal_render()'ing elements.
+ */
+function rubik_render_clone($elements) {
+  static $instance;
+  if (!isset($instance)) {
+    $instance = 1;
+  }
+  foreach (element_children($elements) as $key) {
+    if (isset($elements[$key]['#id'])) {
+      $elements[$key]['#id'] = "{$elements[$key]['#id']}-{$instance}";
+    }
+  }
+  $instance++;
+  return drupal_render($elements);
+}
+
+/**
  * Helper function to submitted info theming functions.
  */
 function _rubik_submitted($node) {
