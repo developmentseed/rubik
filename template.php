@@ -194,7 +194,7 @@ function rubik_preprocess_form_node(&$vars) {
   // defaults to showing taxonomy in that location.
   if (empty($vars['sidebar'])) {
     $vars['sidebar'] = array();
-    if (!$sidebar_fields = module_invoke_all('node_form_sidebar', $form, $form['#node'])) {
+    if (!$sidebar_fields = module_invoke_all('node_form_sidebar', $vars['form'], $vars['form']['#node'])) {
       $sidebar_fields = array('taxonomy');
     }
     foreach ($sidebar_fields as $field) {
