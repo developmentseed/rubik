@@ -382,7 +382,7 @@ function rubik_admin_block_content($content, $get_runstate = FALSE) {
 function rubik_admin_menu_item_link($link) {
   $link['localized_options'] = empty($link['localized_options']) ? array() : $link['localized_options'];
   $link['localized_options']['html'] = TRUE;
-  if (isset($link['localized_options']['attributes']['class'])) {
+  if (!isset($link['localized_options']['attributes']['class'])) {
     $link['localized_options']['attributes']['class'] = _rubik_icon_classes($link['href']);
   }
   else {
