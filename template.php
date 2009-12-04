@@ -11,7 +11,6 @@ function rubik_theme() {
   $items['help'] =
   $items['node'] =
   $items['comment'] = array(
-    'arguments' => array(),
     'path' => drupal_get_path('theme', 'rubik') .'/templates',
     'template' => 'object',
   );
@@ -487,7 +486,7 @@ function _rubik_user_links() {
 function _rubik_icon_classes($path) {
   $classes = array();
   $args = explode('/', $path);
-  if ($args[0] === 'admin' || $args[0] === 'node' && $args[1] === 'add') {
+  if ($args[0] === 'admin' || (count($args) > 1 && $args[0] === 'node' && $args[1] === 'add')) {
     while (count($args)) {
       $classes[] = 'path-'. str_replace('/', '-', implode('/', $args));
       array_pop($args);
