@@ -11,6 +11,7 @@ function rubik_theme() {
   $items['help'] =
   $items['node'] =
   $items['comment'] = array(
+    'arguments' => array(),
     'path' => drupal_get_path('theme', 'rubik') .'/templates',
     'template' => 'object',
   );
@@ -113,7 +114,10 @@ function rubik_preprocess_page(&$vars) {
   // Display user account links when in admin section.
   if (arg(0) === 'admin') {
     $vars['user_links'] = _rubik_user_links();
-    unset($vars['primary_links']);
+    $vars['primary_links'] = array();
+  }
+  else {
+    $vars['user_links'] = array();
   }
 
   // Help text toggler link.
@@ -195,7 +199,7 @@ function rubik_preprocess_form_node(&$vars) {
   if (empty($vars['sidebar'])) {
     $vars['sidebar'] = array();
     if (!$sidebar_fields = module_invoke_all('node_form_sidebar', $vars['form'], $vars['form']['#node'])) {
-      $sidebar_fields = array('taxonomy');
+      $sidebar_fields = module_exists('taxonomy') ? array('taxonomy') : array();
     }
     foreach ($sidebar_fields as $field) {
       $vars['sidebar'][] = $vars['form'][$field];
@@ -210,7 +214,8 @@ function rubik_preprocess_form_node(&$vars) {
 function rubik_preprocess_help(&$vars) {
   $vars['hook'] = 'help';
   $vars['attr']['id'] = 'rubik-help';
-  $vars['attr']['class'] .= 'path-admin-help clear-block toggleable';
+  $class = 'path-admin-help clear-block toggleable';
+  $vars['attr']['class'] = isset($vars['attr']['class']) ? "{$vars['attr']['class']} $class" : $class;
   $help = menu_get_active_help();
   if (($test = strip_tags($help)) && !empty($help)) {
     // Thankfully this is static cached.
@@ -237,7 +242,7 @@ function rubik_preprocess_help_page(&$vars) {
   $module_info = module_rebuild_cache();
   $modules = array();
   foreach (module_implements('help', TRUE) as $module) {
-    if (module_invoke($module, 'help', "admin/help#$module", $empty_arg)) {
+    if (module_invoke($module, 'help', "admin/help#$module", NULL)) {
       $modules[$module] = $module_info[$module]->info['name'];
     }
   }

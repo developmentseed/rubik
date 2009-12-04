@@ -8,7 +8,7 @@
   </head>
   <body <?php print drupal_attributes($attr) ?>>
 
-  <?php if ($admin) print $admin ?>
+  <?php if (!empty($admin)) print $admin ?>
 
   <div id='branding'><div class='clear-block limiter'>
     <div class='breadcrumb clear-block'><?php print $breadcrumb ?></div>
