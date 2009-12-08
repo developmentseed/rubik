@@ -530,6 +530,7 @@ div.page-content div.form-item div.description {
   div.page-content div.form-item:hover,
   div.page-content div.fieldset div.form-item:hover { background-color:#f0f8f4; }
 
+  div.page-content div.form-item:hover { position:relative; }
   div.page-content div.form-item:hover > div.description { display:block; }
 
 input.teaser-button,
