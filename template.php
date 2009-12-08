@@ -332,7 +332,7 @@ function rubik_node_add_list($content) {
         $item['localized_options']['attributes']['class'] .= ' '. _rubik_icon_classes($item['href']);
       }
       else {
-        $item['localized_options']['attributes']['class'] .= _rubik_icon_classes($item['href']);
+        $item['localized_options']['attributes']['class'] = _rubik_icon_classes($item['href']);
       }
       $item['localized_options']['html'] = TRUE;
       $output .= "<li>";
