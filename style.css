@@ -331,6 +331,8 @@ ul.admin-list li a span.icon {
   top:10px;
   }
 
+  ul.admin-list-compact li a span.icon { top:5px; }
+
 ul.node-type-list li,
 ul.admin-list li {
   position:relative;

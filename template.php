@@ -385,7 +385,7 @@ function rubik_admin_block_content($content, $get_runstate = FALSE) {
         $content[$k]['localized_options']['attributes']['class'] = _rubik_icon_classes($item['href']);
       }
     }
-    $output = system_admin_compact_mode() ? '<ul class="menu">' : '<ul class="admin-list">';
+    $output = system_admin_compact_mode() ? '<ul class="admin-list admin-list-compact">' : '<ul class="admin-list">';
     foreach ($content as $item) {
       $output .= '<li class="leaf">';
       $output .= l($item['title'], $item['href'], $item['localized_options']);
