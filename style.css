@@ -35,18 +35,18 @@ hr { display:none; }
 /**
  * Branding ===========================================================
  */
-#branding { padding:0px 30px; }
-
-#branding div.limiter {
-  font-size:11px;
-  text-shadow:#fff 0px 1px 0px;
-  line-height:20px;
-
+#branding {
+  margin:0px 30px;
   padding:5px 0px 4px;
   border-bottom:1px solid #e0e0e0;
   overflow:hidden;
   height:20px;
   position:relative;
+
+  font-size:11px;
+  text-shadow:#fff 0px 1px 0px;
+  line-height:20px;
+  color:#999;
   }
 
 #branding a {
@@ -76,7 +76,6 @@ hr { display:none; }
     }
 
   #branding div.breadcrumb span.breadcrumb-link {
-    color:#999;
     float:left;
     padding-right:5px;
     background:url(images/sprite.png) 100% 100% no-repeat;
@@ -106,8 +105,8 @@ a#help-toggler {
     }
 
 #rubik-help {
-  background:#fcfcfc url(images/vrule.png) 65% 0% repeat-y;
-  border-bottom:1px solid #e8e8e8;
+  background:#fff url(images/vrule.png) 65% 0% repeat-y;
+  border-bottom:1px solid #ddd;
   }
 
   #rubik-help.with-tabs {
@@ -200,7 +199,7 @@ div.pager {
 
   ul.pager a:hover {
     background:#eee;
-    border-color:#ddd #e8e8e8 #eee;
+    border-color:#ccc #ddd #eee;
     -moz-box-shadow:#fff 0px 1px 0px;
     -webkit-box-shadow:#fff 0px 1px 0px;
     }
@@ -298,7 +297,7 @@ div.secondary-tabs {
   -webkit-border-radius:3px;
   }
 
-#page div.limiter { padding:4px; }
+div.page-content { padding:4px; }
 
 div.content-wrapper { margin:5px; }
 
@@ -390,10 +389,10 @@ table {
   font-size:11px;
   line-height:15px;
   margin:0px 0px 10px;
-  background-color:#fcfcfc;
+  background-color:#fff;
 
   border-collapse:collapse;
-  border-color:#ddd #e8e8e8 #eee;
+  border-color:#ccc #ddd #eee;
   border-width:1px;
   border-style:solid;
 
@@ -406,7 +405,7 @@ table th {
   vertical-align:top;
   border-width:1px 0px;
   border-style:solid;
-  border-color:#e8e8e8;
+  border-color:#ddd;
   padding:5px;
   }
 
@@ -415,8 +414,10 @@ table th {
   font-weight:normal;
   color:#666;
   background:#eee;
-  text-shadow:#fff 0px 1px 0px;  
+  text-shadow:#fff 0px 1px 0px;
   }
+
+  table thead th { border-top-color:#ccc; }
 
 table tr.odd td { background:#fff; }
 table td.active { background:#e4f0f8; }
@@ -444,12 +445,12 @@ ul.admin-list,
 ul.node-type-list,
 div.admin-panel {
   position:relative;
-  background:#fcfcfc;
+  background:#fff;
   margin:0px 0px 10px;
 
   border-width:1px;
   border-style:solid;
-  border-color:#ddd #e8e8e8 #eee;
+  border-color:#ccc #ddd #eee;
 
   -moz-border-radius:3px;
   -moz-box-shadow:#fff 0px 1px 0px;
@@ -544,8 +545,9 @@ input.form-submit {
   text-align:center;
 
   font-weight:normal;
-  border:1px solid #eee;
-  border-bottom:1px solid #ddd;
+  border-width:1px;
+  border-style:solid;
+  border-color:#ddd #ddd #ccc;
   background:#f4f4f4 url(images/bleeds.png) 0px -41px repeat-x;
 
   -moz-border-radius:3px;
@@ -679,7 +681,7 @@ div.fieldset-content {
   -webkit-border-radius-bottom-right:2px;
 
   padding:10px 9px 9px;
-  background:#fcfcfc;
+  background:#fff;
   }
 
   div.collapsed div.fieldset-content { display:none; }
@@ -710,7 +712,7 @@ form div.buttons {
   -webkit-border-radius:3px;
 
   background:#eee;
-  border:1px solid #e4e4e4;
+  border:1px solid #ddd;
   padding:9px;
   }
 
@@ -725,12 +727,10 @@ h2.box-title {
   text-transform:uppercase;
 
   background:#eee;
-  border:1px solid #e8e8e8;
+  border:1px solid #ddd;
   padding:4px 9px;
   margin:0px 0px 10px;
 
-  -moz-box-shadow:#fff 0px 1px 0px;
-  -webkit-box-shadow:#fff 0px 1px 0px;
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
   }
@@ -739,11 +739,11 @@ h2.box-title {
  * Blocks =============================================================
  */
 div.block {
-  background:#fcfcfc;
+  background:#fff;
   margin:5px;
   border-width:1px;
   border-style:solid;
-  border-color:#ddd #e8e8e8 #eee;
+  border-color:#ccc #ddd #eee;
 
   -moz-box-shadow:#fff 0px 1px 0px;
   -webkit-box-shadow:#fff 0px 1px 0px;
@@ -773,9 +773,9 @@ div.comment,
 div.node {
   border-style:solid;
   border-width:1px;
-  border-color:#ddd #e8e8e8 #eee;
+  border-color:#ccc #ddd #eee;
 
-  background:#fcfcfc url(images/vrule.png) 65% 0% repeat-y;
+  background:#fff url(images/vrule.png) 65% 0% repeat-y;
   margin:0px 0px 10px;
 
   -moz-box-shadow:#fff 0px 1px 0px;
@@ -783,11 +783,6 @@ div.node {
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
   }
-
-  div.comment {
-    border-color:#e8e8e8;
-    background:#eee;
-    }
 
 div#rubik-help div.column-main div.column-wrapper,
 div.help-page div.column-main div.column-wrapper,
@@ -809,7 +804,7 @@ div#rubik-help div.column-side div.column-wrapper,
 div.help-page div.column-side div.column-wrapper,
 div.comment div.column-side div.column-wrapper,
 div.node div.column-side div.column-wrapper {
-  padding:9px 9px 9px 1px;
+  padding:9px;
   font-size:11px;
   }
 
@@ -820,8 +815,6 @@ div.comment-submitted {
   padding:10px;
   background:#f8f8f8;
   }
-
-  div.comment-submitted { background:#e8e8e8; }
 
 div.node-submitted span,
 div.comment-submitted span { display:block; }
@@ -975,7 +968,7 @@ div.compact-link {
 div.compact-link a {
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
-  border:1px solid #e8e8e8;
+  border:1px solid #ddd;
   padding:4px 9px;
   color:#666;
   background:#fff;

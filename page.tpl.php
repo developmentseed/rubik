@@ -10,13 +10,12 @@
 
   <?php if (!empty($admin)) print $admin ?>
 
-  <div id='branding'><div class='clear-block limiter'>
+  <div id='branding' class='clear-block'>
     <div class='breadcrumb clear-block'><?php print $breadcrumb ?></div>
     <?php if ($user_links) print theme('links', $user_links) ?>
-    <?php if ($primary_links) print theme('links', $primary_links) ?>
-  </div></div>
+  </div>
 
-  <div id='page-title' class='clear-block limiter'>
+  <div id='page-title' class='clear-block'>
     <?php if ($help_toggler) print $help_toggler ?>
     <?php if ($tabs): ?><?php print $tabs ?><?php endif; ?>
     <h2 class='page-title <?php print $page_icon_class ?>'>
@@ -28,7 +27,7 @@
   <div id='page'>
     <?php if ($tabs2): ?><div class='secondary-tabs clear-block'><?php print $tabs2 ?></div><?php endif; ?>
     <?php if ($help) print $help ?>
-    <div class='clear-block limiter page-content'>
+    <div class='page-content clear-block'>
       <?php if ($show_messages && $messages): ?>
         <div id='console' class='clear-block'><?php print $messages; ?></div>
       <?php endif; ?>

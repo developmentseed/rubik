@@ -116,14 +116,8 @@ function rubik_preprocess_page(&$vars) {
     $vars['content'] = theme('help_page', $vars['content']);
   }
 
-  // Display user account links when in admin section.
-  if (arg(0) === 'admin') {
-    $vars['user_links'] = _rubik_user_links();
-    $vars['primary_links'] = array();
-  }
-  else {
-    $vars['user_links'] = array();
-  }
+  // Display user account links.
+  $vars['user_links'] = _rubik_user_links();
 
   // Help text toggler link.
   $vars['help_toggler'] = l(t('Help'), $_GET['q'], array('attributes' => array('id' => 'help-toggler', 'class' => 'toggler'), 'fragment' => 'rubik-help=1'));
