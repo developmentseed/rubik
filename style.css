@@ -300,7 +300,7 @@ div.secondary-tabs {
 
 #page div.limiter { padding:4px; }
 
-div.content-wrapper { padding:5px; }
+div.content-wrapper { margin:5px; }
 
 /**
  * Menus, lists =======================================================

@@ -34,7 +34,10 @@
       <?php endif; ?>
 
       <div id='content'>
-        <div class='content-wrapper clear-block'><?php print $content ?></div>
+        <?php if (!empty($content)): ?>
+          <div class='content-wrapper clear-block'><?php print $content ?></div>
+        <?php endif; ?>
+        <?php print $content_region ?>
       </div>
     </div>
   </div>

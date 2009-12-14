@@ -7,6 +7,9 @@
 function rubik_theme() {
   $items = array();
 
+  // theme('blocks') targeted override for content region.
+  $items['blocks_content'] = array();
+
   // Content theming.
   $items['help'] =
   $items['node'] =
@@ -96,6 +99,9 @@ function rubik_theme() {
  * Preprocessor for theme('page').
  */
 function rubik_preprocess_page(&$vars) {
+  // Split page content & content blocks.
+  $vars['content_region'] = theme('blocks_content', TRUE);
+
   // Set a page icon class.
   $vars['page_icon_class'] = ($item = menu_get_item()) ? _rubik_icon_classes($item['href']) : '';
 
@@ -286,6 +292,19 @@ function rubik_preprocess_comment_wrapper(&$vars) {
 
   $vars['attr']['id'] = 'comments';
   $vars['attr']['class'] .= ' clear-block';
+}
+
+/**
+ * Override of theme_blocks() for content region. Allows content blocks
+ * to be split away from page content in page template. See tao_blocks()
+ * for how this function is called.
+ */
+function rubik_blocks_content($doit = FALSE) {
+  static $blocks;
+  if (!isset($blocks)) {
+    $blocks = module_exists('context') && function_exists('context_blocks') ? context_blocks('content') : theme_blocks('content');
+  }
+  return $doit ? $blocks : '';
 }
 
 /**
