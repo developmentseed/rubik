@@ -7,14 +7,16 @@ engine = "phptemplate"
 
 stylesheets[screen][] = "cube.css"
 
+; Regions
 regions[header] = "Header"
 regions[content] = "Content"
 regions[left] = "Left"
 regions[right] = "Right"
 
-designkit[color][background] = "#006699"
+; DesignKit
+designkit[color][background] = "#0088cc"
 designkit[logo][logo] = "imagecache_scale:200x50"
-designkit[logo][print] = "imagecache_scale:600x300"
+designkit[logo][print] = "imagecache_scale:600x150"
 
 ; Default layout
 layouts[default][name] = "Default"

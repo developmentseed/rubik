@@ -1,4 +1,4 @@
-body.tao { background:#ccc; }
+body.tao { background:#ddd url(images/dots.png) 50% 0px repeat; }
 div.limiter { width:960px; }
 
 /**
@@ -7,7 +7,7 @@ div.limiter { width:960px; }
 #branding,
 #page-title { margin:0px auto; }
 
-#top { background:url(images/sprite.png) 0px -30px repeat-x; }
+#top { background:url(images/sprite.png) 0px -60px repeat-x; }
 
 /**
  * Header (minor) =====================================================
@@ -24,21 +24,24 @@ div.limiter { width:960px; }
   padding:0px;
   }
 
-#branding div.breadcrumb {
-  padding:5px 10px 4px 5px;
-  text-transform:none;
-  }
+  #branding a { color:#888; }
 
-#branding ul.links { padding:5px; }
+  #branding a:hover {
+    background:#222;
+    color:#fff;
+    }
 
-#branding ul.links a { padding:0px 5px; }
+  #branding div.breadcrumb {
+    padding:5px 10px 4px 5px;
+    text-transform:none;
+    }
 
-#branding a { color:#888; }
+  #branding div.breadcrumb span.breadcrumb-link {
+    background:url(images/sprite.png) 100% -35px no-repeat;
+    padding:0px 20px 0px 5px;
+    }
 
-#branding a:hover {
-  background:#111;
-  color:#fff;
-  }
+  #branding ul.links { padding:5px 10px; }
 
 /**
  * Header (major) =====================================================
@@ -76,7 +79,7 @@ div.limiter { width:960px; }
   #page-title ul.links li.active a,
   #page-title ul.links li a.active {
     color:#fff;
-    background:url(images/sprite.png) 0px -130px repeat-x;
+    background:#08c url(images/sprite.png) 0px -160px repeat-x;
     }
 
   #page-title ul.links li a:hover { color:#fff; }
@@ -87,32 +90,33 @@ div.limiter { width:960px; }
   background:#f8f8f8;
   }
 
-#tabs ul.user-links { float:right; }
+  #tabs ul.links {
+    height:30px;
+    position:static;
+    padding:0px;
+    }
 
-#tabs ul.links {
-  height:30px;
-  position:static;
-  padding:0px;
-  }
+  #tabs li { padding:0px; }
 
-#tabs li { padding:0px; }
+  #tabs li a,
+  #tabs li.active a,
+  #tabs li a.active {
+    color:#888;
+    font-size:13px;
+    -moz-border-radius:0px;
+    -webkit-border-radius:0px;
+    padding:5px 15px;
+    border:0px;
+    background:transparent;
+    }
 
-#tabs li a,
-#tabs li.active a,
-#tabs li a.active {
-  font-size:13px;
-  -moz-border-radius:0px;
-  -webkit-border-radius:0px;
-  padding:5px 15px;
-  border:0px;
-  background:transparent;
-  }
+  #tabs li a:hover { color:#333; }
 
-#tabs li.active a,
-#tabs li a.active {
-  background:#999;
-  color:#fff;
-  }
+  #tabs li.active a,
+  #tabs li a.active {
+    background:#08c url(images/sprite.png) 0px -190px repeat-x;
+    color:#fff;
+    }
 
 /**
  * Page & tabs ========================================================
@@ -126,7 +130,7 @@ div.limiter { width:960px; }
   }
 
 #page {
-  background:#ddd url(images/dots.png) 50% 0px repeat;
+  background:transparent;
   border:0px;
   border-top:2px solid #ccc;
   margin:0px;
@@ -134,10 +138,6 @@ div.limiter { width:960px; }
   }
 
 #page div.page-content {
-  /*
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
-  */
   width:949px;
   padding:5px;
   background:#f8f8f8;
@@ -155,3 +155,12 @@ ul.secondary-tabs { float:none; }
   }
 
 #footer div.feed-icons { background:#eee; }
+
+/**
+ * Form goodness
+ */
+input.form-submit:hover {
+  border-color:#08a #08a #046;
+  background:#08c url(images/sprite.png) 0px -190px repeat-x;
+  color:#fff;
+  }
