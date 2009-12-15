@@ -10,32 +10,3 @@ stylesheets[screen][] = "style.css"
 stylesheets[screen][] = "icons.css"
 
 regions[content] = "Content"
-regions[right] = "Right"
-regions[nw] = "Top left"
-regions[ne] = "Top right"
-regions[se] = "Bottom left"
-regions[sw] = "Bottom right"
-
-; Default layout
-layouts[default][name] = "Default"
-layouts[default][description] = "Simple 1-column page."
-layouts[default][template] = "page"
-
-; Columns
-layouts[columns][name] = "2 columns"
-layouts[columns][description] = "2 column page."
-layouts[columns][stylesheet] = "layout-columns.css"
-layouts[columns][template] = "layout-columns"
-layouts[columns][regions][] = "content"
-layouts[columns][regions][] = "right"
-
-; 4 grid layout
-layouts[grid][name] = "4 Pane grid"
-layouts[grid][description] = "Grid with 4 panes."
-layouts[grid][stylesheet] = "layout-grid.css"
-layouts[grid][template] = "layout-grid"
-layouts[grid][regions][] = "nw"
-layouts[grid][regions][] = "ne"
-layouts[grid][regions][] = "sw"
-layouts[grid][regions][] = "se"
-layouts[grid][regions][] = "content"
