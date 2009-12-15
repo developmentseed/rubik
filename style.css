@@ -306,7 +306,7 @@ div.content-wrapper { margin:5px; }
  */
 div.help-items ul li,
 form.confirmation ul li,
-div.item-list li,
+.item-list li,
 .prose div.item-list li,
 ul.menu li {
   float:none;
@@ -317,7 +317,7 @@ ul.menu li {
 
   div.help-items ul li:last-child,
   form.confirmation ul li:last-child,
-  div.item-list li:last-child,
+  .item-list li:last-child,
   .prose div.item-list li:last-child,
   ul.menu li:last-child {
     border:0px;
@@ -437,6 +437,7 @@ table td.permission { padding-left:19px; }
 /**
  * Forms ==============================================================
  */
+.item-list,
 div.help-items ul,
 div.fieldset,
 div.form-item,
@@ -461,6 +462,7 @@ div.admin-panel {
   div.form-item { padding:9px; }
   ul.admin-list { margin:0px; }
 
+div.block .item-list,
 div.admin-panel ul.admin-list,
 div.teaser-checkbox div.form-item,
 div.form-item div.form-item,
@@ -475,6 +477,7 @@ table div.form-item {
   position:static;
   }
 
+  div.block .item-list,
   div.admin-panel ul.admin-list { padding:0px; }
 
 div.form-item label {
@@ -816,9 +819,6 @@ div.comment-submitted {
   background:#f8f8f8;
   }
 
-div.node-submitted span,
-div.comment-submitted span { display:block; }
-
 div.comment-links,
 div.node-links { padding:10px 0px; }
 
@@ -840,6 +840,11 @@ div.column-side ul.links span {
   display:block;
   float:none;
   }
+
+  div.column-side ul.links span a {
+    padding:0px;
+    display:inline;
+    }
 
   div.column-side ul.links a.active,
   div.column-side ul.links a:hover { background:#fff; }
