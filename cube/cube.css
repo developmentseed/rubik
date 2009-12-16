@@ -160,6 +160,7 @@ div#rubik-help div.column-side .help-links { background:#222; }
   }
 
   #tabs div.page-tabs ul.links {
+    float:none;
     height:30px;
     position:static;
     padding:0px;
