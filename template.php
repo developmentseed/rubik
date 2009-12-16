@@ -323,7 +323,7 @@ function rubik_breadcrumb($breadcrumb, $prepend = TRUE) {
 
   // Optional: Add the site name to the front of the stack.
   if ($prepend) {
-    $site_name = empty($breadcrumb) ? "<strong>". check_plain(variable_get('site_name', '')) ."</strong>" : l(variable_get('site_name', ''), '<front>');
+    $site_name = empty($breadcrumb) ? "<strong>". check_plain(variable_get('site_name', '')) ."</strong>" : l(variable_get('site_name', ''), '<front>', array('purl' => array('disabled' => TRUE)));
     array_unshift($breadcrumb, $site_name);
   }
 
