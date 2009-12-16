@@ -1,4 +1,4 @@
-body.tao { background:#ddd url(images/dots.png) 50% 0px repeat; }
+body.tao { background:#eee; }
 div.limiter { width:960px; }
 
 /**
@@ -7,7 +7,7 @@ div.limiter { width:960px; }
 #branding,
 #page-title { margin:0px auto; }
 
-#top { background:url(images/sprite.png) 0px -60px repeat-x; }
+#top { background:url(images/cube.png) 0px -60px repeat-x; }
 
 /**
  * Header (minor) =====================================================
@@ -15,7 +15,7 @@ div.limiter { width:960px; }
 #branding {
   -moz-border-radius:5px 5px 0px 0px;
   -webkit-border-radius:5px 5px 0px 0px;
-  background:url(images/sprite.png) 0px 0px repeat-x;
+  background:url(images/cube.png) 0px 0px repeat-x;
 
   text-shadow:#000 0px 1px 0px;
   color:#888;
@@ -37,11 +37,56 @@ div.limiter { width:960px; }
     }
 
   #branding div.breadcrumb span.breadcrumb-link {
-    background:url(images/sprite.png) 100% -35px no-repeat;
+    background:url(images/cube.png) 100% -35px no-repeat;
     padding:0px 20px 0px 5px;
     }
 
   #branding ul.links { padding:5px 10px; }
+
+/**
+ * Help ===============================================================
+ */
+#page-help { background:#404040; }
+
+#page-help div.limiter {
+  z-index:1;
+  position:relative;
+  }
+
+a#help-toggler {
+  position:absolute;
+  right:0px;
+  bottom:-15px;
+  left:auto;
+  width:auto;
+  height:auto;
+
+  -moz-border-radius:0px 0px 3px 3px;
+  -webkit-border-radius:0px 0px 3px 3px;
+
+  color:#888;
+  background:#333;
+
+  padding:0px 15px;
+  line-height:15px;
+  height:15px;
+
+  font-size:10px;
+  text-transform:uppercase;
+  text-indent:0px;
+  }
+
+  a#help-toggler:hover { color:#fff; }
+
+div#rubik-help {
+  -moz-border-radius:0px 0px 0px 3px;
+  -webkit-border-radius:0px 0px 0px 3px;
+  color:#ccc;
+  background:#333;
+  border:0px;
+  }
+
+div#rubik-help div.column-side .help-links { background:#222; }
 
 /**
  * Header (major) =====================================================
@@ -79,28 +124,53 @@ div.limiter { width:960px; }
   #page-title ul.links li.active a,
   #page-title ul.links li a.active {
     color:#fff;
-    background:#08c url(images/sprite.png) 0px -160px repeat-x;
+    background:#08c url(images/cube.png) 0px -160px repeat-x;
     }
 
   #page-title ul.links li a:hover { color:#fff; }
 
-#tabs {
-  margin:0px auto 10px;
-  width:959px;
+/**
+ * Page elements ======================================================
+ */
+#header,
+#footer,
+#page,
+#tabs div.page-tabs {
+  background:#f8f8f8;
+  -moz-box-shadow:#ccc 0px 0px 3px;
+  -webkit-box-shadow:#ccc 0px 0px 3px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  margin:10px auto;
+  }
+
+#header {
+  width:950px;
+  padding:5px;
+  }
+
+/**
+ * Tabs ===============================================================
+ */
+#tabs div.page-tabs {
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  margin:10px auto;
   background:#f8f8f8;
   }
 
-  #tabs ul.links {
+  #tabs div.page-tabs ul.links {
     height:30px;
     position:static;
     padding:0px;
     }
 
-  #tabs li { padding:0px; }
+  #tabs div.page-tabs li { padding:0px; }
 
-  #tabs li a,
-  #tabs li.active a,
-  #tabs li a.active {
+  #tabs div.page-tabs li a,
+  #tabs div.page-tabs li a:hover,
+  #tabs div.page-tabs li.active a,
+  #tabs div.page-tabs li a.active {
     color:#888;
     font-size:13px;
     -moz-border-radius:0px;
@@ -110,57 +180,68 @@ div.limiter { width:960px; }
     background:transparent;
     }
 
-  #tabs li a:hover { color:#333; }
+  #tabs div.page-tabs li a:hover {
+    background:#fff;
+    color:#333;
+    }
 
-  #tabs li.active a,
-  #tabs li a.active {
-    background:#08c url(images/sprite.png) 0px -190px repeat-x;
+  #tabs div.page-tabs li:first-child a {
+    -moz-border-radius:5px 0px 0px 5px;
+    -webkit-border-radius:5px 0px 0px 5px;
+    }
+
+  #tabs div.page-tabs li.active a,
+  #tabs div.page-tabs li a.active {
+    background:#08c url(images/cube.png) 0px -190px repeat-x;
     color:#fff;
     }
 
 /**
- * Page & tabs ========================================================
+ * Page ===============================================================
  */
-#page,
+#page {
+  width:950px;
+  padding:5px;
+  border:0px;
+  }
+
 #page * {
   -moz-border-radius:0px;
-  -moz-box-shadow:none;
   -webkit-border-radius:0px;
+  -moz-box-shadow:none;
   -webkit-box-shadow:none;
   }
-
-#page {
-  background:transparent;
-  border:0px;
-  border-top:2px solid #ccc;
-  margin:0px;
-  padding:8px 0px 10px;
-  }
-
-#page div.page-content {
-  width:949px;
-  padding:5px;
-  background:#f8f8f8;
-  }
-
-ul.secondary-tabs { float:none; }
 
 /**
  * Footer =============================================================
  */
 #footer {
-  line-height:15px;
-  padding:20px 15px 20px 5px;
-  background:#ddd;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  padding:10px 0px;
+  margin:0px auto 60px;
+  background:#f8f8f8;
   }
 
-#footer div.feed-icons { background:#eee; }
+#footer div.feed-icons {
+  margin:0px;
+  padding:2px 5px;
+  background:transparent;
+  }
 
 /**
  * Form goodness
  */
 input.form-submit:hover {
   border-color:#08a #08a #046;
-  background:#08c url(images/sprite.png) 0px -190px repeat-x;
+  background:#08c url(images/cube.png) 0px -190px repeat-x;
+  color:#fff;
+  }
+
+/**
+ * Blocks
+ */
+div.block h2.block-title {
+  background:#08c url(images/cube.png) 0px -190px repeat-x;
   color:#fff;
   }

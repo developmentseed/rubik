@@ -8,6 +8,13 @@
   </head>
   <body <?php print drupal_attributes($attr) ?>>
 
+  <?php if ($help): ?>
+  <div id='page-help'><div class='limiter clear-block'>
+    <?php if ($help_toggler) print $help_toggler ?>
+    <?php if ($help) print $help ?>
+  </div></div>
+  <?php endif; ?>
+
   <div id='top'>
     <div id='page-title' class='limiter clear-block'>
       <!--<?php if ($help_toggler) print $help_toggler ?>-->
@@ -18,7 +25,14 @@
       </h2>
     </div>
     <div id='branding' class='limiter clear-block'>
-      <div class='breadcrumb clear-block'><?php print $breadcrumb ?></div>
       <?php if ($user_links) print theme('links', $user_links) ?>
+      <div class='breadcrumb clear-block'><?php print $breadcrumb ?></div>
     </div>
   </div>
+
+  <?php if ($tabs): ?>
+    <div id='tabs'>
+      <div class='page-tabs limiter clear-block'><?php print $tabs ?></div>
+      <?php if ($tabs2): ?><div class='page-tabs limiter clear-block'><?php print $tabs2 ?></div><?php endif; ?>
+    </div>
+  <?php endif; ?>

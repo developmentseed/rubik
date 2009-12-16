@@ -1,4 +1,4 @@
-  <div id='footer'><div class='limiter clear-block'>
+  <div id='footer' class='limiter clear-block'>
     <?php if ($feed_icons): ?>
       <div class='feed-icons clear-block'>
         <label><?php print t('Feeds') ?></label>
@@ -6,7 +6,7 @@
       </div>
     <?php endif; ?>
     <?php if ($footer_message): ?><div class='footer-message'><?php print $footer_message ?></div><?php endif; ?>
-  </div></div>
+  </div>
 
   <?php print $closure ?>
 

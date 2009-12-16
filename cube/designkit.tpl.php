@@ -1,11 +1,12 @@
 <style type='text/css'>
+div.block h2.block-title,
 #page-title ul.links li.active a,
 #page-title ul.links li a.active {
   background-color:<?php print $background ?>;
   }
 
-#tabs li.active a,
-#tabs li a.active {
+#tabs div.page-tabs li.active a,
+#tabs div.page-tabs li a.active {
   background-color:<?php print $background ?>;
   }
 
