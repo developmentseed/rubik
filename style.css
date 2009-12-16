@@ -437,6 +437,7 @@ table td.permission { padding-left:19px; }
 /**
  * Forms ==============================================================
  */
+div.block,
 .item-list,
 div.help-items ul,
 div.fieldset,
@@ -461,6 +462,7 @@ div.admin-panel {
 
   div.form-item { padding:9px; }
   ul.admin-list { margin:0px; }
+  div.block { margin:5px; }
 
 div.block .item-list,
 div.admin-panel ul.admin-list,
@@ -502,6 +504,7 @@ div.page-content div.description,
 div.page-content div.form-item div.description {
   line-height:15px;
   font-size:11px;
+  white-space:normal;
   }
 
   div.admin-panel p.description {
@@ -625,6 +628,7 @@ div.fieldset-title,
 div.fieldset-title a,
 div.fieldset-content { display:block; }
 
+div.block h2.block-title,
 div.admin-panel h3,
 h2.fieldset-title,
 div.collapsible h2.fieldset-title a {
@@ -678,6 +682,7 @@ div.collapsible h2.fieldset-title a {
     padding-bottom:4px;
     }
 
+div.block div.block-content,
 div.fieldset-content {
   -moz-border-radius:0px 0px 2px 2px;
   -webkit-border-radius-bottom-left:2px;
@@ -736,36 +741,6 @@ h2.box-title {
 
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
-  }
-
-/**
- * Blocks =============================================================
- */
-div.block {
-  background:#fff;
-  margin:5px;
-  border-width:1px;
-  border-style:solid;
-  border-color:#ccc #ddd #eee;
-
-  -moz-box-shadow:#fff 0px 1px 0px;
-  -webkit-box-shadow:#fff 0px 1px 0px;
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
-  }
-
-  div.block div.block-content { padding:10px 9px 9px; }
-
-div.block h2.block-title {
-  -moz-border-radius:2px 2px 0px 0px;
-  -webkit-border-radius-top-left:2px;
-  -webkit-border-radius-top-right:2px;
-
-  background:#f8f8f8;
-  font-size:13px;
-  font-weight:normal;
-  margin:0px;
-  padding:4px 10px 5px;
   }
 
 /**
