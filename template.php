@@ -262,9 +262,9 @@ function rubik_preprocess_node(&$vars) {
   $vars['attr']['class'] .= ' clear-block';
 
   // Clear out template file suggestions if we are the active theme.
-  // Subthemes will need to manage template file suggestions on their own.
-  global $theme;
-  if ($theme === 'rubik') {
+  // Other subthemes will need to manage template suggestions on their own.
+  global $theme_key;
+  if (in_array($theme_key, array('rubik', 'cube'), TRUE)) {
     $vars['template_files'] = array();
   }
 }
