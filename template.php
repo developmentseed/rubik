@@ -310,7 +310,10 @@ function rubik_breadcrumb($breadcrumb, $prepend = TRUE) {
   // Add current page onto the end.
   if (!drupal_is_front_page()) {
     $item = menu_get_item();
-    $breadcrumb[] = "<strong>". check_plain($item['title']) ."</strong>";
+    $end = end($breadcrumb);
+    if ($end && strip_tags($end) !== $item['title']) {
+      $breadcrumb[] = "<strong>". check_plain($item['title']) ."</strong>";
+    }
   }
 
   // Remove the home link.
