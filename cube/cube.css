@@ -132,6 +132,7 @@ div#rubik-help div.column-side .help-links { background:#222; }
 /**
  * Page elements ======================================================
  */
+div.pager,
 #header,
 #footer,
 #page,
@@ -150,7 +151,7 @@ div#rubik-help div.column-side .help-links { background:#222; }
   }
 
 /**
- * Tabs ===============================================================
+ * Tabs, pagers =======================================================
  */
 #tabs div.page-tabs {
   -moz-border-radius:5px;
@@ -158,6 +159,18 @@ div#rubik-help div.column-side .help-links { background:#222; }
   margin:10px auto;
   background:#f8f8f8;
   }
+
+  div.pager,
+  #page div.pager {
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+
+    background:#fff;
+    line-height:18px;
+    border-width:1px;
+    border-style:solid;
+    border-color:#ccc #ddd #eee;
+    }
 
   #tabs div.page-tabs ul.links {
     float:none;
@@ -168,11 +181,14 @@ div#rubik-help div.column-side .help-links { background:#222; }
 
   #tabs div.page-tabs li { padding:0px; }
 
+  div.pager a,
+  div.pager li.pager-current,
   #tabs div.page-tabs li a,
   #tabs div.page-tabs li a:hover,
   #tabs div.page-tabs li.active a,
   #tabs div.page-tabs li a.active {
     color:#888;
+    font-weight:normal;
     font-size:13px;
     -moz-border-radius:0px;
     -webkit-border-radius:0px;
@@ -181,16 +197,30 @@ div#rubik-help div.column-side .help-links { background:#222; }
     background:transparent;
     }
 
+    div.pager a,
+    div.pager li.pager-current { padding:5px 10px; }
+
+  #page div.pager a:hover,
   #tabs div.page-tabs li a:hover {
     background:#fff;
     color:#333;
     }
 
+    #page div.pager a:hover { background:#eee; }
+
+  #page div.pager ul.pager-list li:first-child a,
+  #page div.pager ul.pager-list li.pager-current:first-child,
   #tabs div.page-tabs li:first-child a {
     -moz-border-radius:5px 0px 0px 5px;
     -webkit-border-radius:5px 0px 0px 5px;
     }
 
+  #page div.pager ul.pager-links li:last-child a {
+    -moz-border-radius:0px 5px 5px 0px;
+    -webkit-border-radius:0px 5px 5px 0px;
+    }
+
+  div.pager li.pager-current,
   #tabs div.page-tabs li.active a,
   #tabs div.page-tabs li a.active {
     background:#08c url(images/cube.png) 0px -190px repeat-x;

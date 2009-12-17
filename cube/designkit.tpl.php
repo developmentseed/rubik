@@ -5,6 +5,7 @@ div.block h2.block-title,
   background-color:<?php print $background ?>;
   }
 
+div.pager li.pager-current,
 #tabs div.page-tabs li.active a,
 #tabs div.page-tabs li a.active {
   background-color:<?php print $background ?>;
