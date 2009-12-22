@@ -99,6 +99,11 @@ function rubik_theme() {
  * Preprocessor for theme('page').
  */
 function rubik_preprocess_page(&$vars) {
+  // Show a warning if base theme is not present.
+  if (!function_exists('tao_theme') && user_access('administer site configuration')) {
+    drupal_set_message(t('The Rubik theme requires the !tao base theme in order to work properly.', array('!tao' => l('Tao', 'http://code.developmentseed.org/tao'))), 'warning');
+  }
+
   // Split page content & content blocks.
   $vars['content_region'] = theme('blocks_content', TRUE);
 
