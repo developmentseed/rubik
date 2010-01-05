@@ -125,7 +125,7 @@ function rubik_preprocess_page(&$vars) {
   $vars['user_links'] = _rubik_user_links();
 
   // Help text toggler link.
-  $vars['help_toggler'] = l(t('Help'), $_GET['q'], array('attributes' => array('id' => 'help-toggler', 'class' => 'toggler'), 'fragment' => 'rubik-help=1'));
+  $vars['help_toggler'] = l(t('Help'), $_GET['q'], array('attributes' => array('id' => 'help-toggler', 'class' => 'toggler'), 'fragment' => 'help-text=1'));
 
   // Clear out help text if empty.
   if (empty($vars['help']) || !(strip_tags($vars['help']))) {
@@ -217,7 +217,7 @@ function rubik_preprocess_form_node(&$vars) {
  */
 function rubik_preprocess_help(&$vars) {
   $vars['hook'] = 'help';
-  $vars['attr']['id'] = 'rubik-help';
+  $vars['attr']['id'] = 'help-text';
   $class = 'path-admin-help clear-block toggleable';
   $vars['attr']['class'] = isset($vars['attr']['class']) ? "{$vars['attr']['class']} $class" : $class;
   $help = menu_get_active_help();

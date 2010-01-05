@@ -1,97 +1,78 @@
-body.tao { background:#eee; }
-div.limiter { width:960px; }
+body,
+input,
+textarea,
+select { font-family:"Lucida","Lucida Grande","Trebuchet MS",Tahoma,Verdana,sans-serif; }
 
-/**
- * Metrics ============================================================
- */
-#branding,
-#page-title { margin:0px auto; }
+body.rubik {
+  color:#333;
+  background:#eee;
+  }
+
+a {
+  color:#39c;
+  text-decoration:none;
+  }
+
+div.limiter { width:960px; }
 
 #top { background:url(images/cube.png) 0px -60px repeat-x; }
 
 /**
- * Header (minor) =====================================================
+ * Branding ===========================================================
  */
 #branding {
   -moz-border-radius:5px 5px 0px 0px;
   -webkit-border-radius:5px 5px 0px 0px;
   background:url(images/cube.png) 0px 0px repeat-x;
 
+  font-size:11px;
   text-shadow:#000 0px 1px 0px;
   color:#888;
-  border:0px;
   height:30px;
-  padding:0px;
   }
 
-  #branding a { color:#888; }
+#branding a {
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  color:#888;
+  float:left;
+  padding:0px 10px;
+  }
 
   #branding a:hover {
     background:#222;
     color:#fff;
     }
 
-  #branding div.breadcrumb {
-    padding:5px 10px 4px 5px;
-    text-transform:none;
-    }
+#branding ul.links {
+  float:right;
+  padding:5px 10px;
+  }
+
+#branding div.breadcrumb {
+  padding:5px 10px 4px 5px;
+  float:left;
+  font-weight:normal;
+  }
 
   #branding div.breadcrumb span.breadcrumb-link {
+    float:left;
     background:url(images/cube.png) 100% -35px no-repeat;
     padding:0px 20px 0px 5px;
     }
 
-  #branding ul.links { padding:5px 10px; }
+  #branding div.breadcrumb a,
+  #branding div.breadcrumb strong {
+    font-weight:normal;
+    float:left;
+    padding:0px 5px;
+    }
 
 /**
- * Help ===============================================================
- */
-#page-help { background:#404040; }
-
-#page-help div.limiter {
-  z-index:1;
-  position:relative;
-  }
-
-a#help-toggler {
-  position:absolute;
-  right:0px;
-  bottom:-15px;
-  left:auto;
-  width:auto;
-  height:auto;
-
-  -moz-border-radius:0px 0px 3px 3px;
-  -webkit-border-radius:0px 0px 3px 3px;
-
-  color:#888;
-  background:#333;
-
-  padding:0px 15px;
-  line-height:15px;
-  height:15px;
-
-  font-size:10px;
-  text-transform:uppercase;
-  text-indent:0px;
-  }
-
-  a#help-toggler:hover { color:#fff; }
-
-div#rubik-help {
-  -moz-border-radius:0px 0px 0px 3px;
-  -webkit-border-radius:0px 0px 0px 3px;
-  color:#ccc;
-  background:#333;
-  border:0px;
-  }
-
-div#rubik-help div.column-side .help-links { background:#222; }
-
-/**
- * Header (major) =====================================================
+ * Page title =========================================================
  */
 #page-title {
+  position:relative;
   padding:10px 0px 10px;
   color:#fff;
   text-shadow:#111 0px 1px 0px;
@@ -100,19 +81,25 @@ div#rubik-help div.column-side .help-links { background:#222; }
   #page-title a { color:#fff; }
 
   #page-title h2.page-title {
+    padding:10px;
+    line-height:30px;
+    min-height:30px;
     letter-spacing:-1px;
     font-size:24px;
     font-weight:300;
-    padding:10px;
-    text-shadow:inherit;
     }
 
-  #page-title ul.links {
-    letter-spacing:1px;
-    text-transform:uppercase;
-    float:right;
-    padding:10px 0px;
+  #page-title h2.page-title span.icon {
+    float:left;
+    margin-right:10px;
     }
+
+#page-title ul.links {
+  letter-spacing:1px;
+  text-transform:uppercase;
+  float:right;
+  padding:10px 0px;
+  }
 
   #page-title ul.links a {
     -moz-border-radius:5px;
@@ -228,12 +215,14 @@ div.pager,
     }
 
 /**
- * Page ===============================================================
+ * Page layout ========================================================
  */
 #page {
   width:950px;
   padding:5px;
-  border:0px;
+  background:#f4f4f4;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
   }
 
 #page * {
@@ -242,6 +231,10 @@ div.pager,
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   }
+
+div.page-content { padding:4px; }
+
+div.content-wrapper { margin:5px; }
 
 /**
  * Footer =============================================================
@@ -252,13 +245,35 @@ div.pager,
   padding:10px 0px;
   margin:0px auto 60px;
   background:#f8f8f8;
+  font-size:11px;
+  text-shadow:#fff 0px 1px 0px;
+  }
+
+#footer div.footer-message {
+  padding:0px 10px;
+  float:left;
   }
 
 #footer div.feed-icons {
   margin:0px;
   padding:2px 5px;
   background:transparent;
+
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+
+  /* Assume icons are 16x16 like Drupal core. */
+  line-height:16px;
+  float:right;
   }
+
+  #footer div.feed-icons img { display:block; }
+
+  #footer div.feed-icons label,
+  #footer div.feed-icons a {
+    padding:0px 5px;
+    float:left;
+    }
 
 /**
  * Form goodness
@@ -276,3 +291,48 @@ div.block h2.block-title {
   background:#08c url(images/cube.png) 0px -190px repeat-x;
   color:#fff;
   }
+
+/**
+ * Help ===============================================================
+ */
+#page-help { background:#404040; }
+
+#page-help div.limiter {
+  z-index:1;
+  position:relative;
+  }
+
+a#help-toggler {
+  position:absolute;
+  right:0px;
+  bottom:-15px;
+  left:auto;
+  width:auto;
+  height:auto;
+
+  -moz-border-radius:0px 0px 3px 3px;
+  -webkit-border-radius:0px 0px 3px 3px;
+
+  color:#888;
+  background:#333;
+
+  padding:0px 15px;
+  line-height:15px;
+  height:15px;
+
+  font-size:10px;
+  text-transform:uppercase;
+  text-indent:0px;
+  }
+
+  a#help-toggler:hover { color:#fff; }
+
+div#help-text {
+  -moz-border-radius:0px 0px 0px 3px;
+  -webkit-border-radius:0px 0px 0px 3px;
+  color:#ccc;
+  background:#333;
+  border:0px;
+  }
+
+div#help-text div.column-side .help-links { background:#222; }

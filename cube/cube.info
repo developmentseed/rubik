@@ -5,7 +5,7 @@ base theme = "rubik"
 core = "6.x"
 engine = "phptemplate"
 
-stylesheets[screen][] = "cube.css"
+stylesheets[screen][] = "style.css"
 
 ; Regions
 regions[header] = "Header"
