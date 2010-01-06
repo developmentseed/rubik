@@ -8,8 +8,6 @@
   </head>
   <body <?php print drupal_attributes($attr) ?>>
 
-  <?php if (!empty($admin)) print $admin ?>
-
   <div id='branding' class='clear-block'>
     <div class='breadcrumb clear-block'><?php print $breadcrumb ?></div>
     <?php if ($user_links) print theme('links', $user_links) ?>

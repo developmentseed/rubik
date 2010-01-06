@@ -7,7 +7,7 @@ engine = "phptemplate"
 
 scripts[] = "js/rubik.js"
 stylesheets[screen][] = "core.css"
-stylesheets[screen][] = "style.css"
 stylesheets[screen][] = "icons.css"
+stylesheets[screen][] = "style.css"
 
 regions[content] = "Content"
