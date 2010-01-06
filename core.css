@@ -215,95 +215,6 @@ table td.module { font-weight:bold; }
 table td.permission { padding-left:19px; }
 
 /**
- * Content ============================================================
- */
-div.help-page,
-div.comment,
-div.node {
-  border-style:solid;
-  border-width:1px;
-  border-color:#ccc #ddd #eee;
-
-  background:#fff url(images/vrule.png) 65% 0% repeat-y;
-  margin:0px 0px 10px;
-
-  -moz-box-shadow:#fff 0px 1px 0px;
-  -webkit-box-shadow:#fff 0px 1px 0px;
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
-  }
-
-div#help-text div.column-main div.column-wrapper,
-div.help-page div.column-main div.column-wrapper,
-div.comment div.column-main div.column-wrapper,
-div.node div.column-main div.column-wrapper { padding:19px; }
-
-  div#help-text div.column-main div.column-wrapper {
-    padding-left:59px;
-    position:relative;
-    }
-
-    div#help-text div.column-main div.column-wrapper span.icon {
-      position:absolute;
-      top:15px;
-      left:15px;
-      }
-
-div#help-text div.column-side div.column-wrapper,
-div.help-page div.column-side div.column-wrapper,
-div.comment div.column-side div.column-wrapper,
-div.node div.column-side div.column-wrapper {
-  padding:9px;
-  font-size:11px;
-  }
-
-div#help-text div.column-side .help-links,
-div.help-page div.column-side .help-page-links,
-div.node-submitted,
-div.comment-submitted {
-  padding:10px;
-  background:#f8f8f8;
-  }
-
-div.comment-links,
-div.node-links { padding:10px 0px; }
-
-div.help-page div.help-page-links ul.links {
-  -moz-column-count:2;
-  -webkit-column-count:2;
-  }
-
-div.column-side ul.links li,
-div.column-side ul.links a,
-div.column-side ul.links span {
-  display:block;
-  float:none;
-  }
-
-div.column-side ul.links a,
-div.column-side ul.links span {
-  padding:0px 10px;
-  display:block;
-  float:none;
-  }
-
-  div.column-side ul.links span a {
-    padding:0px;
-    display:inline;
-    }
-
-  div.column-side ul.links a.active,
-  div.column-side ul.links a:hover { background:#fff; }
-  div.comment-links ul.links a:hover { background:#f4f4f4; }
-
-h2.comment-title,
-h2.node-title {
-  margin:0px 0px 20px;
-  font-weight:normal;
-  font-size:16px;
-  }
-
-/**
  * Forms ==============================================================
  */
 div.block,
@@ -334,6 +245,7 @@ div.admin-panel {
   div.block { margin:5px; }
 
 div.block .item-list,
+div.block div.form-item,
 div.admin-panel ul.admin-list,
 div.teaser-checkbox div.form-item,
 div.form-item div.form-item,
@@ -593,6 +505,7 @@ form div.buttons {
   padding:9px;
   }
 
+  div.form-layout-default div.column-side div.buttons { margin:0px 0px 10px; }
   div.form-layout-default div.column-side div.buttons input.form-submit { margin:1px 0px; }
 
 /**
