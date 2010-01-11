@@ -506,6 +506,7 @@ form div.buttons {
   padding:9px;
   }
 
+  div.form-layout-default div.column-main div.buttons { display:none; }
   div.form-layout-default div.column-side div.buttons { margin:0px 0px 10px; }
   div.form-layout-default div.column-side div.buttons input.form-submit { margin:1px 0px; }
 
