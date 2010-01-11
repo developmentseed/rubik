@@ -226,7 +226,6 @@ form.confirmation ul,
 ul.admin-list,
 ul.node-type-list,
 div.admin-panel {
-  position:relative;
   background:#fff;
   margin:0px 0px 10px;
 
@@ -240,7 +239,11 @@ div.admin-panel {
   -webkit-box-shadow:#fff 0px 1px 0px;
   }
 
-  div.form-item { padding:9px; }
+  div.form-item {
+    position:relative;
+    padding:9px;
+    }
+
   ul.admin-list { margin:0px; }
   div.block { margin:5px; }
 
@@ -257,7 +260,6 @@ table div.form-item {
   padding:5px;
   margin:0px;
   border:0px;
-  position:static;
   }
 
   div.block .item-list,
@@ -423,6 +425,9 @@ div.collapsible h2.fieldset-title a {
   background:#f4f4f4;
   }
 
+  /* Explicit height for IE */
+  div.collapsible h2.fieldset-title a { height:20px; }
+
   div.admin-panel h3 { background:#eee; }
 
   div.collapsible h2.fieldset-title { position:relative; }
@@ -444,7 +449,6 @@ div.collapsible h2.fieldset-title a {
   div.collapsed h2.fieldset-title a {
     background:#eee;
     color:#999;
-    height:20px; /* Explicit height for IE */
     }
 
   div.collapsed h2.fieldset-title a:hover { color:#666; }
