@@ -372,6 +372,7 @@ select.form-select {
   border-color:#e8e8e8 #f0f0f0 #f8f8f8;
   background:#fff;
   color:#666;
+  max-width:100%;
   }
 
   input.form-autocomplete:hover,
