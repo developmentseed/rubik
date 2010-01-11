@@ -320,7 +320,7 @@ div.page-content div.form-item div.description {
   div.page-content div.form-item:hover,
   div.page-content div.fieldset div.form-item:hover { background-color:#f0f8f4; }
 
-  div.page-content div.form-item:hover { position:relative; }
+  div.page-content div.form-item:hover { z-index:1; }
   div.page-content div.form-item:hover > div.description { display:block; }
 
 input.teaser-button,
@@ -379,10 +379,6 @@ select.form-select {
   input.form-text:hover,
   textarea.form-textarea:hover,
   select.form-select:hover,
-  div.form-item:hover input.form-autocomplete,
-  div.form-item:hover input.form-text,
-  div.form-item:hover textarea.form-textarea,
-  div.form-item:hover select.form-select,
   input.form-autocomplete:focus,
   input.form-text:focus,
   textarea.form-textarea:focus,
