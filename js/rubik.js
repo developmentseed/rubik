@@ -69,7 +69,7 @@ Drupal.rubikToggle = {
       $(this).addClass('rubik-processed');
       return false;
     });
-    $('a:not(.rubik-processed)', context).each(function() {
+    $('div.help-links a:not(.rubik-processed)', context).each(function() {
       if ($(this).attr('href')) {
         // Rewrite this link's hash string when clicked.
         $(this).click(function() {
