@@ -444,6 +444,7 @@ div.collapsible h2.fieldset-title a {
   div.collapsed h2.fieldset-title a {
     background:#eee;
     color:#999;
+    height:20px; /* Explicit height for IE */
     }
 
   div.collapsed h2.fieldset-title a:hover { color:#666; }
