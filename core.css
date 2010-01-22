@@ -209,7 +209,7 @@ table tr.selected td {
   border-color:#eeb;
   }
 
-div.fieldset table { margin:0px; }
+.fieldset table { margin:0px; }
 
 table td.module { font-weight:bold; }
 table td.permission { padding-left:19px; }
@@ -217,15 +217,15 @@ table td.permission { padding-left:19px; }
 /**
  * Forms ==============================================================
  */
-div.block,
+.block,
 .item-list,
-div.help-items ul,
-div.fieldset,
-div.form-item,
+.help-items ul,
+.fieldset,
+.form-item,
 form.confirmation ul,
-ul.admin-list,
-ul.node-type-list,
-div.admin-panel {
+.admin-list,
+.node-type-list,
+.admin-panel {
   background:#fff;
   margin:0px 0px 10px;
 
@@ -239,20 +239,20 @@ div.admin-panel {
   -webkit-box-shadow:#fff 0px 1px 0px;
   }
 
-  div.form-item {
+  .form-item {
     position:relative;
     padding:9px;
     }
 
-  ul.admin-list { margin:0px; }
-  div.block { margin:5px; }
+  .admin-list { margin:0px; }
+  .block { margin:5px; }
 
-div.block .item-list,
-div.block div.form-item,
-div.admin-panel ul.admin-list,
-div.teaser-checkbox div.form-item,
-div.form-item div.form-item,
-div.fieldset div.form-item,
+.block .item-list,
+.block .form-item,
+.admin-panel .admin-list,
+.teaser-checkbox .form-item,
+.form-item .form-item,
+.fieldset .form-item,
 table div.form-item {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
@@ -262,10 +262,10 @@ table div.form-item {
   border:0px;
   }
 
-  div.block .item-list,
-  div.admin-panel ul.admin-list { padding:0px; }
+  .block .item-list,
+  .admin-panel .admin-list { padding:0px; }
 
-div.form-item label {
+.form-item label {
   margin:0px;
   padding:0px;
   color:#999;
@@ -274,23 +274,23 @@ div.form-item label {
   text-transform:uppercase;
   }
 
-  div.form-item label.option {
+  .form-item label.option {
     text-transform:none;
     font-size:11px;
     }
 
-  div.form-item label.option input { vertical-align:middle; }
+  .form-item label.option input { vertical-align:middle; }
 
-div.page-content .password-description,
-div.page-content .password-strength,
-div.page-content div.description,
-div.page-content div.form-item div.description {
+.page-content .password-description,
+.page-content .password-strength,
+.page-content div.description,
+.page-content .form-item div.description {
   line-height:15px;
   font-size:11px;
   white-space:normal;
   }
 
-  div.admin-panel p.description {
+  .admin-panel p.description {
     background:#eee;
     border-top:1px solid #ddd;
     border-bottom:1px solid #fff;
@@ -300,9 +300,9 @@ div.page-content div.form-item div.description {
     margin:0px;
     }
 
-div.fieldset div.description { margin:0px 0px 10px; }
+.fieldset div.description { margin:0px 0px 10px; }
 
-div.page-content div.form-item div.description {
+.page-content .form-item div.description {
   position:absolute;
   max-width:60%;
   right:0px;
@@ -319,11 +319,11 @@ div.page-content div.form-item div.description {
   display:none;
   }
 
-  div.page-content div.form-item:hover,
-  div.page-content div.fieldset div.form-item:hover { background-color:#f0f8f4; }
+  .page-content div.form-item:hover,
+  .page-content .fieldset div.form-item:hover { background-color:#f0f8f4; }
 
-  div.page-content div.form-item:hover { z-index:1; }
-  div.page-content div.form-item:hover > div.description { display:block; }
+  .page-content div.form-item:hover { z-index:1; }
+  .page-content div.form-item:hover > div.description { display:block; }
 
 input.teaser-button,
 input.form-submit {
@@ -403,16 +403,16 @@ select.form-select {
   #content div.filter-options select { padding:0px; }
 
 /* Fieldsets */
-div.fieldset,
-div.fieldset-title,
-div.fieldset-title a,
-div.fieldset-content { display:block; }
+.fieldset,
+.fieldset-title,
+.fieldset-title a,
+.fieldset-content { display:block; }
 
 .item-list h3,
-div.block h2.block-title,
-div.admin-panel h3,
-h2.fieldset-title,
-div.collapsible h2.fieldset-title a {
+.block .block-title,
+.admin-panel h3,
+.fieldset-title,
+.collapsible .fieldset-title a {
   -moz-border-radius:2px 2px 0px 0px;
   -webkit-border-radius-top-left:2px;
   -webkit-border-radius-top-right:2px;
@@ -426,13 +426,13 @@ div.collapsible h2.fieldset-title a {
   }
 
   /* Explicit height for IE */
-  div.collapsible h2.fieldset-title a { height:20px; }
+  .collapsible .fieldset-title a { height:20px; }
 
-  div.admin-panel h3 { background:#eee; }
+  .admin-panel h3 { background:#eee; }
 
-  div.collapsible h2.fieldset-title { position:relative; }
+  .collapsible .fieldset-title { position:relative; }
 
-  div.collapsible h2.fieldset-title span.icon {
+  .collapsible .fieldset-title span.icon {
     position:absolute;
     left:-20px;
     top:4px;
@@ -442,32 +442,32 @@ div.collapsible h2.fieldset-title a {
     display:block;
     }
 
-    div.collapsed h2.fieldset-title span.icon { background-position:0px 0px; }
+    .collapsed .fieldset-title span.icon { background-position:0px 0px; }
 
-    div.fieldset div.collapsible h2.fieldset-title span.icon { display:none; }
+    .fieldset .collapsible .fieldset-title span.icon { display:none; }
 
-  div.collapsed h2.fieldset-title a {
+  .collapsed .fieldset-title a {
     background:#eee;
     color:#999;
     }
 
-  div.collapsed h2.fieldset-title a:hover { color:#666; }
+  .collapsed .fieldset-title a:hover { color:#666; }
 
-  div.collapsible h2.fieldset-title {
+  .collapsible .fieldset-title {
     padding:0px;
     -moz-border-radius:0px;
     -webkit-border-radius:0px;
     background:transparent;
     }
 
-  div.collapsed h2.fieldset-title a {
+  .collapsed .fieldset-title a {
     -moz-border-radius:2px;
     -webkit-border-radius:2px;
     padding-bottom:4px;
     }
 
-div.block div.block-content,
-div.fieldset-content {
+.block .block-content,
+.fieldset-content {
   -moz-border-radius:0px 0px 2px 2px;
   -webkit-border-radius-bottom-left:2px;
   -webkit-border-radius-bottom-right:2px;
@@ -476,9 +476,9 @@ div.fieldset-content {
   background:#fff;
   }
 
-  div.collapsed div.fieldset-content { display:none; }
+  .collapsed .fieldset-content { display:none; }
 
-  div.fieldset div.fieldset div.fieldset-content { background:#fff; }
+  .fieldset .fieldset .fieldset-content { background:#fff; }
 
 /**
  * Form layout: Default ===============================================
