@@ -120,7 +120,7 @@ div.pager {
 div.help-items ul li,
 form.confirmation ul li,
 .item-list ul li,
-.prose div.item-list li,
+.prose .item-list li,
 ul.menu li {
   float:none;
   display:block;
@@ -131,7 +131,7 @@ ul.menu li {
   div.help-items ul li:last-child,
   form.confirmation ul li:last-child,
   .item-list ul li:last-child,
-  .prose div.item-list li:last-child,
+  .prose .item-list li:last-child,
   ul.menu li:last-child {
     border:0px;
     padding:5px 10px;
