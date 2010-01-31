@@ -609,14 +609,14 @@ body.rubik div#admin-toolbar span.menu-description span.icon {
   }
 
 /**
- * Views UI ===========================================================
+ * Form description exceptions ========================================
  */
 
 /**
- * These elements are loosely floated against each other, making overlap
- * between relative positioned form elements a bit hairy. We strip things
- * down to avoid any major collisions.
+ * Some form elements are either too weirdly positioned or really benefit
+ * from persistent descriptions. Reset for all of these.
  */
+#upload-attachments .description,
 #views-ajax-pad .form-item,
 #views-ajax-pad .form-item .description {
   background:transparent;
@@ -624,6 +624,7 @@ body.rubik div#admin-toolbar span.menu-description span.icon {
   position:static;
   }
 
+#upload-attachments .description,
 #views-ajax-pad .form-item .description {
   padding:0px;
   color:#666;
