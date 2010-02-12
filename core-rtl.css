@@ -1,0 +1,71 @@
+/**
+ * Generic ============================================================
+ */
+.page-content dl dt {}
+.page-content dl dd,
+.page-content dl dl {
+  margin-left:0;
+  margin-right:20px;
+  }
+
+/**
+ * Pagers =============================================================
+ */
+div.pager ul.pager-list { float:right; }
+div.pager ul.pager-links { float:left; }
+
+/**
+ * Menus, lists =======================================================
+ */
+ul.admin-list li a span.icon {
+  left:auto;
+  right:10px;
+  }
+
+ul.node-type-list li,
+ul.admin-list li { padding:10px 50px 9px 5px; }
+
+/**
+ * Tables =============================================================
+ */
+table th { text-align:right; }
+table td.permission { padding-right:19px; }
+
+/**
+ * Form layout: Default ===============================================
+ */
+div.form-layout-default { background-position:35% 0%; }
+
+div.column-main { float:right; }
+
+  div.column-main div.column-wrapper {
+    padding-left:10px;
+    padding-right:0;
+    }
+
+div.column-side { float:left; }
+
+  div.column-side div.column-wrapper {
+    padding-left:0;
+    padding-right:10px;
+    }
+
+/**
+ * Forms ==============================================================
+ */
+div.page-content div.form-item div.description {
+  left:auto;
+  right:0;
+  }
+
+div.admin-panel h3,
+h2.fieldset-title,
+div.collapsible h2.fieldset-title a { -moz-border-radius:2px 0px 0px 2px; }
+
+  div.collapsible h2.fieldset-title span.icon {
+    left:auto;
+    right:-20px;
+    background-image:url(images/sprite-rtl.png);
+    }
+
+div.fieldset-content { -moz-border-radius:0px 2px 2px 0px; }

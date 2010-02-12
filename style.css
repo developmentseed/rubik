@@ -219,6 +219,48 @@ div.content-wrapper { margin:5px; }
     }
 
 /**
+ * Help ===============================================================
+ */
+a#help-toggler {
+  position:absolute;
+  right:30px;
+  bottom:10px;
+  background:url(images/sprite.png) -20px 0px no-repeat;
+
+  height:20px;
+  width:20px;
+
+  text-indent:-999px;
+  overflow:hidden;
+  }
+
+  a#help-toggler.toggler-active { background-position:-20px -20px; }
+
+  a#help-toggler.toggler-disabled {
+    cursor:default;
+    background-position:-20px -40px;
+    }
+
+#help-text {
+  background:#fff url(images/vrule.png) 65% 0% repeat-y;
+  border-bottom:1px solid #ddd;
+  }
+
+  #help-text.with-tabs {
+    -moz-border-radius:2px 2px 0px 0px;
+    -webkit-border-radius-top-left:2px;
+    -webkit-border-radius-top-right:2px;
+    }
+
+  #help-text label.breadcrumb-label,
+  #help-text span.breadcrumb-link { display:block; }
+
+  #help-text span.breadcrumb-link {
+    background:url(images/sprite.png) -185px -180px no-repeat;
+    padding-left:20px;
+    }
+
+/**
  * Content ============================================================
  */
 div.help-page,
@@ -237,23 +279,23 @@ div.node {
   -webkit-border-radius:3px;
   }
 
-div#help-text div.column-main div.column-wrapper,
+#help-text div.column-main div.column-wrapper,
 div.help-page div.column-main div.column-wrapper,
 div.comment div.column-main div.column-wrapper,
 div.node div.column-main div.column-wrapper { padding:19px; }
 
-  div#help-text div.column-main div.column-wrapper {
+  #help-text div.column-main div.column-wrapper {
     padding-left:59px;
     position:relative;
     }
 
-    div#help-text div.column-main div.column-wrapper span.icon {
+    #help-text div.column-main div.column-wrapper span.icon {
       position:absolute;
       top:15px;
       left:15px;
       }
 
-div#help-text div.column-side div.column-wrapper,
+#help-text div.column-side div.column-wrapper,
 div.help-page div.column-side div.column-wrapper,
 div.comment div.column-side div.column-wrapper,
 div.node div.column-side div.column-wrapper {
@@ -261,7 +303,7 @@ div.node div.column-side div.column-wrapper {
   font-size:11px;
   }
 
-div#help-text div.column-side .help-links,
+#help-text div.column-side .help-links,
 div.help-page div.column-side .help-page-links,
 div.node-submitted,
 div.comment-submitted {

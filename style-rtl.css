@@ -1,0 +1,145 @@
+/**
+ * Branding ===========================================================
+ */
+#branding a { float:right; }
+
+#branding ul.links { float:left; }
+
+#branding div.breadcrumb { float:right; }
+
+  #branding div.breadcrumb a,
+  #branding div.breadcrumb strong { float:right; }
+
+  #branding div.breadcrumb span.breadcrumb-link {
+    float:right;
+    padding-left:5px;
+    padding-right:0px;
+    background-image:url(images/sprite-rtl.png);
+    background-position:0% 100%;
+    }
+
+/**
+ * Page title =========================================================
+ */
+  #page-title h2.page-title span.icon {
+    float:right;
+    margin-left:10px;
+    margin-right:0;
+    }
+
+/**
+ * Tabs ===============================================================
+ */
+ul.primary-tabs {
+  left:60px;
+  right:auto;
+  }
+
+ul.primary-tabs li {
+  padding-left:0;
+  padding-right:5px;
+}
+
+ul.primary-tabs li.active a,
+ul.primary-tabs li.active a.active {
+  -moz-border-radius:3px 0px 0px 3px;
+  }
+
+  ul.secondary-tabs { float:left; }
+
+/**
+ * Footer =============================================================
+ */
+#footer div.footer-message {
+  float:right;
+  }
+
+#footer div.feed-icons {
+  float:left;
+  }
+
+  #footer div.feed-icons label,
+  #footer div.feed-icons a {
+    float:right;
+    }
+
+/**
+ * Help ===============================================================
+ */
+a#help-toggler {
+  left:30px;
+  right:auto;
+  }
+
+  #help-text.with-tabs {
+    -moz-border-radius:2px 0px 0px 2px;
+    }
+
+  #help-text span.breadcrumb-link {
+    padding-left:0;
+    padding-right:20px;
+    }
+
+/**
+ * Content ============================================================
+ */
+#help-text,
+div.help-page,
+div.comment,
+div.node { background-position:35% 0%; }
+
+#help-text div.column-main div.column-wrapper {
+  padding-left:0px;
+  padding-right:59px;
+  }
+
+  #help-text div.column-main div.column-wrapper span.icon {
+    left:auto;
+    right:15px;
+    }
+
+/**
+ * System =============================================================
+ */
+div.admin .right {
+  padding-left:0;
+  padding-right:5px;
+  float:left;
+  }
+
+div.admin .left {
+  padding-left:5px;
+  padding-right:0;
+  float:right;
+  }
+
+/* admin/content/node & admin/user/user */
+#content dl.multiselect,
+#content dl.multiselect dt,
+#content dl.multiselect dd { margin:0px 0px 0px 10px; }
+
+/* update options */
+div.admin-options label,
+div.admin-options div.form-item {
+  margin-left:10px;
+  margin-right:0px;
+  float:right;
+  }
+
+/**
+ * Help pages =========================================================
+ */
+div.help-items { float:right; }
+
+/**
+ * Admin toolbar ======================================================
+ */
+body.rubik div#admin-toolbar span.menu-description {
+  padding-left:0px;
+  padding-right:50px;
+}
+
+body.rubik div#admin-toolbar span.menu-description span.icon {
+  left:auto;
+  right:10px;
+  }
