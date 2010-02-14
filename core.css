@@ -610,3 +610,7 @@ div.compact-link a {
   color:#666;
   background:#fff;
   }
+
+/* This is to make up for very bad CSS in the update.module */
+.update table.version td { padding:5px; }
+.update table.version ul.links a { padding:0px 5px; }
