@@ -399,7 +399,7 @@ select.form-select {
     display:block;
     }
 
-    .collapsed .fieldset-title span.icon { background-position:0px 0px; }
+    html.js .collapsed .fieldset-title span.icon { background-position:0px 0px; }
 
     .fieldset .collapsible .fieldset-title span.icon { display:none; }
 
@@ -433,7 +433,7 @@ select.form-select {
   background:#fff;
   }
 
-  .collapsed .fieldset-content { display:none; }
+  html.js .collapsed .fieldset-content { display:none; }
 
   .fieldset .fieldset .fieldset-content { background:#fff; }
 
