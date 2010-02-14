@@ -573,12 +573,14 @@ body.rubik div#admin-toolbar span.menu-description span.icon {
  * Some form elements are either too weirdly positioned or really benefit
  * from persistent descriptions. Reset for all of these.
  */
+.page-content .form-item .widget-edit .description,
 #upload-attachments .description,
 #views-ajax-pad .form-item,
 #views-ajax-pad .form-item .description {
   background:transparent;
   border:0px;
   position:static;
+  display:block;
   }
 
 #upload-attachments .description,
