@@ -314,7 +314,7 @@ input.form-submit {
   /* Teaser splitter */
   div.teaser-button-wrapper {
     position:relative;
-    z-index:1;
+    z-index:2;
     padding:5px 5px 0px;
     }
 
