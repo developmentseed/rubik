@@ -157,7 +157,6 @@ table th {
 
   table thead th { border-top-color:#ccc; }
 
-table tr.odd td { background:#fff; }
 table td.active { background:#e4f0f8; }
 table tr.odd td.active { background:#ecf8fc; }
 
