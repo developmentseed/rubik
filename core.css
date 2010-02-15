@@ -21,8 +21,6 @@ hr { display:none; }
  * Console ============================================================
  */
 div.messages {
-  -moz-border-radius:3px;
-  -moz-box-shadow:#ddd 0px 1px 3px;
   padding:15px;
   margin:5px;
 
@@ -64,13 +62,6 @@ div.pager {
 
   div.pager ul.pager-list { float:left; }
   div.pager ul.pager-links { float:right; }
-
-  ul.pager a:hover {
-    background:#eee;
-    border-color:#ccc #ddd #eee;
-    -moz-box-shadow:#fff 0px 1px 0px;
-    -webkit-box-shadow:#fff 0px 1px 0px;
-    }
 
 /**
  * Menus, lists =======================================================
@@ -133,9 +124,6 @@ table {
   border-color:#ccc #ddd #eee;
   border-width:1px;
   border-style:solid;
-
-  -moz-box-shadow:#fff 0px 1px 0px;
-  -webkit-box-shadow:#fff 0px 1px 0px;
   }
 
 table td,
@@ -189,11 +177,6 @@ form.confirmation ul,
   border-width:1px;
   border-style:solid;
   border-color:#ccc #ddd #eee;
-
-  -moz-border-radius:3px;
-  -moz-box-shadow:#fff 0px 1px 0px;
-  -webkit-border-radius:3px;
-  -webkit-box-shadow:#fff 0px 1px 0px;
   }
 
   .form-item {
@@ -210,8 +193,6 @@ form.confirmation ul,
 .form-item .form-item,
 .fieldset .form-item,
 table div.form-item {
-  -moz-box-shadow:none;
-  -webkit-box-shadow:none;
   background:transparent;
   padding:5px;
   margin:0px;
@@ -294,9 +275,6 @@ input.form-submit {
   border-style:solid;
   border-color:#ddd #ddd #ccc;
   background:#f4f4f4 url(images/bleeds.png) 0px -41px repeat-x;
-
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
   }
 
   input.form-submit:hover {
@@ -369,10 +347,6 @@ select.form-select {
 .admin-panel h3,
 .fieldset-title,
 .collapsible .fieldset-title a {
-  -moz-border-radius:2px 2px 0px 0px;
-  -webkit-border-radius-top-left:2px;
-  -webkit-border-radius-top-right:2px;
-
   display:block;
   font-size:11px;
   margin:0px;
@@ -411,23 +385,13 @@ select.form-select {
 
   .collapsible .fieldset-title {
     padding:0px;
-    -moz-border-radius:0px;
-    -webkit-border-radius:0px;
     background:transparent;
     }
 
-  .collapsed .fieldset-title a {
-    -moz-border-radius:2px;
-    -webkit-border-radius:2px;
-    padding-bottom:4px;
-    }
+  .collapsed .fieldset-title a { padding-bottom:4px; }
 
 .block .block-content,
 .fieldset-content {
-  -moz-border-radius:0px 0px 2px 2px;
-  -webkit-border-radius-bottom-left:2px;
-  -webkit-border-radius-bottom-right:2px;
-
   padding:10px 9px 9px;
   background:#fff;
   }
@@ -456,9 +420,6 @@ div.column-side {
   div.column-side div.column-wrapper { padding-left:10px; }
 
 form div.buttons {
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
-
   background:#eee;
   border:1px solid #ddd;
   padding:9px;
@@ -471,7 +432,7 @@ form div.buttons {
 /**
  * "Boxes" aka generic wrappers =======================================
  */
-h2.box-title {
+.box-title {
   font-weight:normal;
   font-size:10px;
   text-transform:uppercase;
@@ -480,9 +441,6 @@ h2.box-title {
   border:1px solid #ddd;
   padding:4px 9px;
   margin:0px 0px 10px;
-
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
   }
 
 /**
@@ -602,8 +560,6 @@ div.compact-link {
   }
 
 div.compact-link a {
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
   border:1px solid #ddd;
   padding:4px 9px;
   color:#666;

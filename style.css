@@ -14,6 +14,98 @@ a {
   }
 
 /**
+ * "Rounded" elements =================================================
+ */
+.block,
+.item-list,
+.help-items ul,
+.fieldset,
+.form-item,
+.admin-list,
+.node-type-list,
+.admin-panel,
+.box-title,
+div.messages,
+div.compact-link a,
+form.confirmation ul,
+form div.buttons,
+input.teaser-button,
+input.form-submit {
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  }
+
+.item-list h3,
+.block .block-title,
+.admin-panel h3,
+.fieldset-title,
+.collapsible .fieldset-title a {
+  -moz-border-radius:2px 2px 0px 0px;
+  -webkit-border-radius-top-left:2px;
+  -webkit-border-radius-top-right:2px;
+  }
+
+.collapsible .fieldset-title {
+  -moz-border-radius:0px;
+  -webkit-border-radius:0px;
+  }
+
+.collapsed .fieldset-title a {
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  }
+
+.block .block-content,
+.fieldset-content {
+  -moz-border-radius:0px 0px 2px 2px;
+  -webkit-border-radius-bottom-left:2px;
+  -webkit-border-radius-bottom-right:2px;
+  }
+
+/**
+ * "Popped" elements ==================================================
+ */
+div.messages {
+  -moz-box-shadow:#ddd 0px 1px 3px;
+  -webkit-box-shadow:#ddd 0px 1px 3px;
+  }
+
+input.teaser-button,
+input.form-submit {
+  -moz-box-shadow:#ddd 0px 1px 1px;
+  -webkit-box-shadow:#ddd 0px 1px 1px;
+  }
+
+/**
+ * "Embossed" elements ================================================
+ */
+table,
+.block,
+.item-list,
+.help-items ul,
+.fieldset,
+.form-item,
+.admin-list,
+.node-type-list,
+.admin-panel,
+ul.pager a:hover,
+form.confirmation ul {
+  -moz-box-shadow:#fff 0px 1px 0px;
+  -webkit-box-shadow:#fff 0px 1px 0px;
+  }
+
+.block .item-list,
+.block .form-item,
+.admin-panel .admin-list,
+.teaser-checkbox .form-item,
+.form-item .form-item,
+.fieldset .form-item,
+table div.form-item {
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  }
+
+/**
  * Branding ===========================================================
  */
 #branding {
@@ -121,6 +213,11 @@ ul.primary-tabs li a {
   border-style:solid;
   border-color:transparent;
   }
+
+  ul.pager a:hover {
+    background:#eee;
+    border-color:#ccc #ddd #eee;
+    }
 
 ul.pager li.pager-current,
 ul.primary-tabs li a:hover {

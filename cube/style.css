@@ -225,13 +225,6 @@ div.pager,
   -webkit-border-radius:3px;
   }
 
-#page * {
-  -moz-border-radius:0px;
-  -webkit-border-radius:0px;
-  -moz-box-shadow:none;
-  -webkit-box-shadow:none;
-  }
-
 div.page-content { padding:4px; }
 
 div.content-wrapper { margin:5px; }
