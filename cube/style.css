@@ -280,6 +280,7 @@ input.form-submit:hover {
 /**
  * Blocks
  */
+div.messages,
 .block { margin:5px; }
 
 .block .block-title {
