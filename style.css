@@ -105,6 +105,10 @@ table div.form-item {
   -webkit-box-shadow:none;
   }
 
+table th {
+  text-shadow:#fff 0px 1px 0px;
+  }
+
 /**
  * Branding ===========================================================
  */
