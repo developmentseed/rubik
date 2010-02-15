@@ -287,7 +287,9 @@ input.form-submit:hover {
 /**
  * Blocks
  */
-div.block h2.block-title {
+.block { margin:5px; }
+
+.block .block-title {
   background:#08c url(images/cube.png) 0px -190px repeat-x;
   color:#fff;
   }
