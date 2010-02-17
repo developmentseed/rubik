@@ -80,8 +80,8 @@ ul.menu li {
   .item-list ul li:last-child,
   .prose .item-list li:last-child,
   ul.menu li:last-child {
-    border:0px;
-    padding:5px 10px;
+    border-bottom:0px;
+    padding-bottom:5px;
     }
 
 ul.admin-list li a span.icon {
