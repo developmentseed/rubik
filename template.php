@@ -205,7 +205,7 @@ function rubik_preprocess_form_node(&$vars) {
     $sidebar_fields = module_invoke_all('node_form_sidebar', $vars['form'], $vars['form']['#node']) + array('taxonomy');
     foreach ($sidebar_fields as $field) {
       if (isset($vars['form'][$field])) {
-        $vars['sidebar'][] = $vars['form'][$field];
+        $vars['sidebar'][$field] = $vars['form'][$field];
         unset($vars['form'][$field]);
       }
     }
