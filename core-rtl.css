@@ -69,3 +69,5 @@ div.collapsible h2.fieldset-title a { -moz-border-radius:2px 0px 0px 2px; }
     }
 
 div.fieldset-content { -moz-border-radius:0px 2px 2px 0px; }
+
+html.js input.form-autocomplete { background-position: 2px 7px; }
