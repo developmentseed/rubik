@@ -511,9 +511,9 @@ div.help-items ul { margin:10px 5px; }
 /**
  * Admin toolbar ======================================================
  */
-body.rubik div#admin-toolbar span.menu-description { padding-left:50px; }
+body.rubik div#admin-toolbar a.menu-hover span.menu-description { padding-left:50px; }
 
-body.rubik div#admin-toolbar span.menu-description span.icon {
+body.rubik div#admin-toolbar a.menu-hover span.menu-description span.icon {
   position:absolute;
   left:10px;
   top:0px;
