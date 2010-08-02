@@ -492,7 +492,10 @@ function _rubik_user_links() {
   $user_links = array();
   if (empty($user->uid)) {
     $user_links['login'] = array('title' => t('Login'), 'href' => 'user');
-    $user_links['register'] = array('title' => t('Register'), 'href' => 'user/register');
+    // Do not display register link if registration is not allowed.
+    if (variable_get('user_register', 1)) {
+      $user_links['register'] = array('title' => t('Register'), 'href' => 'user/register');
+    }
   }
   else {
     $user_links['account'] = array('title' => t('Hello !username', array('!username' => $user->name)), 'href' => 'user', 'html' => TRUE);
