@@ -23,27 +23,27 @@ hr { display:none; }
 div.messages {
   padding:15px;
   color:#036;
-  background:#f8f8f8;
+  background-color:#f8f8f8;
   border:5px solid #fff;
   }
 
 table tr.warning th,
 div.warning {
   color:#a84;
-  background:#fff4c0;
+  background-color:#fff4c0;
   }
 
 table tr.error th,
 div.error {
   color:#965;
-  background:#ffe4e0;
+  background-color:#ffe4e0;
   }
 
 table tr.ok th,
 table tr.info th,
 div.status {
   color:#687;
-  background:#ecf8f4;
+  background-color:#ecf8f4;
   }
 
   div.error   { border-color:#fff8f4; }
