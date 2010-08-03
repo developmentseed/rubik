@@ -387,7 +387,7 @@ function rubik_admin_block_content($content, $get_runstate = FALSE) {
   $output = '';
   if (!empty($content)) {
     foreach ($content as $k => $item) {
-      $content[$k]['title'] = "<span class='icon'></span>{$item['title']}";
+      $content[$k]['title'] = "<span class='icon'></span>" . filter_xss_admin($item['title']);
       $content[$k]['localized_options']['html'] = TRUE;
       if (!empty($content[$k]['localized_options']['attributes']['class'])) {
         $content[$k]['localized_options']['attributes']['class'] .= _rubik_icon_classes($item['href']);
@@ -425,6 +425,7 @@ function rubik_admin_menu_item_link($link) {
   $link['description'] = check_plain(truncate_utf8(strip_tags($link['description']), 150, TRUE, TRUE));
   $link['description'] = "<span class='icon'></span>" . $link['description'];
   $link['title'] .= !empty($link['description']) ? "<span class='menu-description'>{$link['description']}</span>" : '';
+  $link['title'] = filter_xss_admin($link['title']);
   return l($link['title'], $link['href'], $link['localized_options']);
 }
 
@@ -507,7 +508,7 @@ function _rubik_user_links() {
     }
   }
   else {
-    $user_links['account'] = array('title' => t('Hello !username', array('!username' => $user->name)), 'href' => 'user', 'html' => TRUE);
+    $user_links['account'] = array('title' => t('Hello @username', array('@username' => $user->name)), 'href' => 'user', 'html' => TRUE);
     $user_links['logout'] = array('title' => t('Logout'), 'href' => "logout");
   }
   return $user_links;
