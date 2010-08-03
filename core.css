@@ -249,25 +249,25 @@ table div.form-item {
 
 .page-content .form-item div.description {
   position:absolute;
-  max-width:60%;
-  right:0px;
-  top:100%;
+  bottom:100%;
+  right:-15px;
   z-index:5;
 
   color:#687;
-  background:#e8f4f0;
-  border:5px solid #f0f8f4;
-  border-top:0px;
+  background:url(images/popup.png) 50% 100% no-repeat;
+  border-top:1px solid #d8e4e0;
 
-  margin:0px;
-  padding:10px;
+  width:240px;
+  margin:0px 0px -15px;
+  padding:9px 10px 20px;
   display:none;
   }
 
-  .page-content div.form-item:hover,
-  .page-content .fieldset div.form-item:hover { background-color:#f0f8f4; }
+  .page-content div.form-item:hover {
+    z-index:1;
+    height:auto; /* Fix for flicker in IE7 */
+    }
 
-  .page-content div.form-item:hover { z-index:1; }
   .page-content div.form-item:hover > div.description { display:block; }
 
 input.teaser-button,
@@ -584,9 +584,11 @@ body.rubik div#admin-toolbar a.menu-hover span.menu-description span.icon {
 #views-ajax-pad .form-item,
 #views-ajax-pad .form-item:hover,
 #views-ajax-pad .form-item .description {
+  width:auto;
   padding:0px;
-  background:transparent;
+  margin:0px;
   border:0px;
+  background:transparent;
   position:static;
   display:block;
   }
