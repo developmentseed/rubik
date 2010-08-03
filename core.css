@@ -297,13 +297,18 @@ input.form-submit {
     }
 
   /* Teaser splitter */
-  div.teaser-button-wrapper {
+  div.teaser-checkbox {
     position:relative;
     z-index:2;
-    padding:5px 5px 0px;
     }
 
-  input.teaser-button { font-size:11px; }
+  div.teaser-checkbox div { margin:5px 0px 0px; }
+
+  input.teaser-button {
+    padding:0px 5px;
+    font-size:11px;
+    }
+
   form input#edit-delete { color:#ccc; }
 
 input.form-autocomplete,
