@@ -573,6 +573,9 @@ body.rubik div#admin-toolbar a.menu-hover span.menu-description span.icon {
  * Some form elements are either too weirdly positioned or really benefit
  * from persistent descriptions. Reset for all of these.
  */
+.multiselect .form-item,
+.multiselect .form-item:hover,
+.multiselect .form-item .description,
 .page-content table .form-item,
 .page-content table .form-item:hover,
 .page-content table .form-item .description,
