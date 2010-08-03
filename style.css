@@ -19,7 +19,6 @@ a {
 .block,
 .item-list,
 .help-items ul,
-.fieldset,
 .form-item,
 .admin-list,
 .node-type-list,
@@ -38,25 +37,38 @@ input.form-submit {
 .item-list h3,
 .block .block-title,
 .admin-panel h3,
-.fieldset-title,
 .collapsible .fieldset-title a {
   -moz-border-radius:2px 2px 0px 0px;
   -webkit-border-radius-top-left:2px;
   -webkit-border-radius-top-right:2px;
   }
 
-.collapsible .fieldset-title {
-  -moz-border-radius:0px;
-  -webkit-border-radius:0px;
-  }
+  .fieldset-title {
+    -moz-border-radius:3px 3px 0px 0px;
+    -webkit-border-radius:3px 3px 0px 0px;
+    }
 
-.collapsed .fieldset-title a {
-  -moz-border-radius:2px;
-  -webkit-border-radius:2px;
-  }
+  .collapsed .fieldset-title {
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    }
 
-.block .block-content,
-.fieldset-content {
+  .collapsed .fieldset-title a {
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    }
+
+  .fieldset-content {
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    }
+
+  .titled .fieldset-content {
+    -moz-border-radius:0px 0px 3px 3px;
+    -webkit-border-radius:0px 0px 3px 3px;
+    }
+
+.block .block-content {
   -moz-border-radius:0px 0px 2px 2px;
   -webkit-border-radius-bottom-left:2px;
   -webkit-border-radius-bottom-right:2px;

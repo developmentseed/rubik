@@ -174,7 +174,6 @@ table tr.draggable span.tabledrag-changed { display:none; }
 .block,
 .item-list,
 .help-items ul,
-.fieldset,
 .form-item,
 form.confirmation ul,
 .admin-list,
@@ -353,6 +352,23 @@ select.form-select {
 .fieldset-title a,
 .fieldset-content { display:block; }
 
+.fieldset { margin:0px 0px 10px; }
+
+.fieldset.titled {
+  position:relative;
+  padding-top:30px;
+  }
+
+.fieldset-title {
+  position:absolute;
+  left:0px;
+  right:0px;
+  top:0px;
+  border-width:1px;
+  border-style:solid;
+  border-color:#ccc #ddd #eee;
+  }
+
 .item-list h3,
 .block .block-title,
 .admin-panel h3,
@@ -366,12 +382,13 @@ select.form-select {
   background:#f4f4f4;
   }
 
+  .fieldset-title,
+  .collapsible .fieldset-title a { padding-bottom:4px; }
+
   /* Explicit height for IE */
   .collapsible .fieldset-title a { height:20px; }
 
   .admin-panel h3 { background:#eee; }
-
-  .collapsible .fieldset-title { position:relative; }
 
   .collapsible .fieldset-title span.icon {
     position:absolute;
@@ -381,6 +398,7 @@ select.form-select {
     width:20px;
     height:20px;
     display:block;
+    cursor:pointer;
     }
 
     html.js .collapsed .fieldset-title span.icon { background-position:0px 0px; }
@@ -406,6 +424,14 @@ select.form-select {
   padding:10px 9px 9px;
   background:#fff;
   }
+
+  .fieldset-content {
+    border-width:1px;
+    border-style:solid;
+    border-color:#ccc #ddd #eee;
+    }
+
+  .titled .fieldset-content { border-width:0px 1px 1px; }
 
   html.js .collapsed .fieldset-content { display:none; }
 
@@ -550,6 +576,7 @@ body.rubik div#admin-toolbar a.menu-hover span.menu-description span.icon {
 #views-ajax-pad .form-item,
 #views-ajax-pad .form-item:hover,
 #views-ajax-pad .form-item .description {
+  padding:0px;
   background:transparent;
   border:0px;
   position:static;
