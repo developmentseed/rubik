@@ -125,7 +125,7 @@ function rubik_preprocess_page(&$vars) {
   $vars['user_links'] = _rubik_user_links();
 
   // Help text toggler link.
-  $vars['help_toggler'] = l(t('Help'), $_GET['q'], array('attributes' => array('id' => 'help-toggler', 'class' => 'toggler'), 'fragment' => 'help-text=1'));
+  $vars['help_toggler'] = l(t('Help'), $_GET['q'], array('attributes' => array('id' => 'help-toggler', 'class' => 'toggler'), 'fragment' => 'help-text'));
 
   // Clear out help text if empty.
   if (empty($vars['help']) || !(strip_tags($vars['help']))) {
@@ -228,8 +228,12 @@ function rubik_preprocess_help(&$vars) {
     $vars['is_prose'] = TRUE;
     $vars['layout'] = TRUE;
     $vars['content'] = "<span class='icon'></span>" . $help;
-    $vars['links'] = '<label class="breadcrumb-label">'. t('Help text for') .'</label>';
-    $vars['links'] .= theme('breadcrumb', drupal_get_breadcrumb(), FALSE);
+
+    // Link to help section.
+    $item = menu_get_item('admin/help');
+    if ($item && $item['path'] === 'admin/help' && $item['access']) {
+      $vars['links'] = l(t('More help topics'), 'admin/help');
+    }
   }
 }
 
@@ -290,7 +294,12 @@ function rubik_preprocess_comment_wrapper(&$vars) {
   $vars['title'] = t('Comments');
 
   $vars['attr']['id'] = 'comments';
-  $vars['attr']['class'] .= ' clear-block';
+  if (!isset($vars['attr']['class'])) {
+    $vars['attr']['class'] = ' clear-block';
+  }
+  else {
+    $vars['attr']['class'] .= ' clear-block';
+  }
 }
 
 /**
