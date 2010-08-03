@@ -331,7 +331,7 @@ div#help-text {
   border:0px;
   }
 
-div#help-text div.column-side .help-links { background:#222; }
+div#help-text div.column-side div.help-links { background:#222; }
 
 /**
  * Content ============================================================
