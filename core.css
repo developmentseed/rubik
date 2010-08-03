@@ -153,17 +153,8 @@ table tr.selected td {
   border-color:#eeb;
   }
 
-/* User permissions */
-table td.module { font-weight:bold; }
-table td.permission { padding-left:19px; }
-
 /* Block administration */
-table tr.region-populated { display:none; }
-table tr.region-empty { color:#ccc; }
-table tr.region td {
-  background:#f8f8f8;
-  font-weight:bold;
-  }
+table tr.region td { background:#f8f8f8; }
 
 /* Hide tabledrag markers */
 table tr.draggable span.tabledrag-changed { display:none; }
@@ -632,7 +623,3 @@ div.compact-link a {
   color:#666;
   background:#fff;
   }
-
-/* This is to make up for very bad CSS in the update.module */
-.update table.version td { padding:5px; }
-.update table.version ul.links a { padding:0px 5px; }
