@@ -24,10 +24,10 @@
         <?php if ($title) print $title ?>
       </h2>
     </div>
-    <div id='branding' class='limiter clear-block'>
+    <div id='branding'><div class='limiter clear-block'>
       <?php if ($user_links) print theme('links', $user_links) ?>
       <div class='breadcrumb clear-block'><?php print $breadcrumb ?></div>
-    </div>
+    </div></div>
   </div>
 
   <?php if ($tabs): ?>
