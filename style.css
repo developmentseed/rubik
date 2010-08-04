@@ -5,7 +5,7 @@ select { font-family:"Lucida","Lucida Grande","Trebuchet MS",Tahoma,Verdana,sans
 
 body.rubik {
   color:#333;
-  background:#ccc url(images/bleeds.png) 0px -80px repeat-x fixed;
+  background:#ccc url(images/bleeds.png) 0px -80px repeat-x;
   }
 
 a {
