@@ -351,11 +351,13 @@ select.form-select {
 .fieldset { margin:0px 0px 10px; }
 
 .fieldset.titled {
+  display:block;
   position:relative;
-  padding-top:30px;
+  min-height:30px;
   }
 
 .fieldset-title {
+  display:block;
   position:absolute;
   left:0px;
   right:0px;
@@ -363,6 +365,12 @@ select.form-select {
   border-width:1px;
   border-style:solid;
   border-color:#ccc #ddd #eee;
+  }
+
+.container-inline .fieldset-title .fieldset-content,
+.fieldset.titled .fieldset-content {
+  display:block;
+  padding-top:40px;
   }
 
 .item-list h3,
@@ -416,11 +424,13 @@ select.form-select {
   .collapsed .fieldset-title a { padding-bottom:4px; }
 
 .block .block-content,
+.container-inline .fieldset-content,
 .fieldset-content {
   padding:10px 9px 9px;
   background:#fff;
   }
 
+  .container-inline .fieldset-content,
   .fieldset-content {
     border-width:1px;
     border-style:solid;
