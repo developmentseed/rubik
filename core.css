@@ -574,6 +574,9 @@ body.rubik div#admin-toolbar a.menu-hover span.menu-description span.icon {
  * Some form elements are either too weirdly positioned or really benefit
  * from persistent descriptions. Reset for all of these.
  */
+.ctools-export-ui-row .form-item,
+.ctools-export-ui-row .form-item:hover,
+.ctools-export-ui-row .form-item .description,
 .multiselect .form-item,
 .multiselect .form-item:hover,
 .multiselect .form-item .description,
@@ -615,6 +618,8 @@ body.rubik div#admin-toolbar a.menu-hover span.menu-description span.icon {
   }
 
 .container-inline { margin:0px 0px 10px; }
+
+.buttons .container-inline { margin:0px; }
 
 /**
  * ORPHANED MARKUP ====================================================
