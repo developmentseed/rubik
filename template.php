@@ -614,6 +614,7 @@ function _rubik_filter_form_alter(&$form) {
       }
       $form[$id]['#type'] = 'select';
       $form[$id]['#options'] = $options;
+      $form[$id]['#value'] = $default_value;
       $form[$id]['#default_value'] = $default_value;
       $form[$id]['#theme'] = 'filter_form';
 
@@ -633,9 +634,9 @@ function _rubik_filter_form_alter(&$form) {
   }
   // If filter elements found, adjust parent element.
   if ($found) {
-    $form['#type'] = isset($form['#type']) ? $form['#type'] : 'item';
     foreach (element_children($form) as $element) {
       $form[$element]['#rubik_filter_form'] = TRUE;
     }
+    $form = array('#type' => 'item', $form);
   }
 }
