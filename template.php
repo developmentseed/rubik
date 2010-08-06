@@ -7,6 +7,9 @@
 function rubik_theme() {
   $items = array();
 
+  // theme('filter_form') for nicer filter forms.
+  $items['filter_form'] = array();
+
   // theme('blocks') targeted override for content region.
   $items['blocks_content'] = array();
 
@@ -70,6 +73,7 @@ function rubik_theme() {
     'preprocess functions' => array(
       'rubik_preprocess_form_buttons',
       'rubik_preprocess_form_legacy',
+      'rubik_preprocess_form_filter',
     ),
   );
 
@@ -87,8 +91,9 @@ function rubik_theme() {
     'path' => drupal_get_path('theme', 'rubik') .'/templates',
     'template' => 'form-default',
     'preprocess functions' => array(
+      'rubik_preprocess_form_filter',
       'rubik_preprocess_form_buttons',
-      'rubik_preprocess_form_node'
+      'rubik_preprocess_form_node',
     ),
   );
 
@@ -234,6 +239,22 @@ function rubik_preprocess_form_node(&$vars) {
         unset($vars['form'][$field]);
       }
     }
+  }
+}
+
+/**
+ * Preprocessor for formatting input filter forms.
+ */
+function rubik_preprocess_form_filter(&$vars) {
+  _rubik_filter_form_alter($vars['form']);
+}
+
+/**
+ * Preprocessor for theme('form_element').
+ */
+function rubik_preprocess_form_element(&$vars) {
+  if (!empty($vars['element']['#rubik_filter_form'])) {
+    $vars['attr']['class'] .= ' form-item-filter';
   }
 }
 
@@ -493,6 +514,24 @@ function rubik_comment_submitted($comment) {
 }
 
 /**
+ * Override of theme('filter_tips_more_info').
+ */
+function rubik_filter_tips_more_info() {
+  return '<div class="filter-help">'. l(t('Formatting help'), 'filter/tips', array('attributes' => array('target' => '_blank'))) .'</div>';
+}
+
+/**
+ * Theme a filter form element
+ */
+function rubik_filter_form($form) {
+  unset($form['#title']);
+  $select = !empty($form['#options']) ? theme('select', $form) : '';
+  $help = theme('filter_tips_more_info');
+  $output = "<div class='filter-options clear-block'>{$select}{$help}</div>";
+  return $output;
+}
+
+/**
  * Helper function for cloning and drupal_render()'ing elements.
  */
 function rubik_render_clone($elements) {
@@ -553,4 +592,50 @@ function _rubik_icon_classes($path) {
     return implode(' ', $classes);
   }
   return '';
+}
+
+/**
+ * Recurses through forms for input filter fieldsets and alters them.
+ */
+function _rubik_filter_form_alter(&$form) {
+  $found = FALSE;
+  foreach (element_children($form) as $id) {
+    // Filter form element found
+    if (is_array($form[$id]['#element_validate']) && in_array('filter_form_validate', $form[$id]['#element_validate'])) {
+      // Switch from radios to select.
+      $options = array();
+      $default_value = 0;
+      foreach (element_children($form[$id]) as $format) {
+        if (!empty($form[$id][$format]['#type']) && $form[$id][$format]['#type'] == 'radio') {
+          $default_value = empty($default_value) ? $form[$id][$format]['#default_value'] : $default_value;
+          $options[$format] = $form[$id][$format]['#title'];
+        }
+        unset($form[$id][$format]);
+      }
+      $form[$id]['#type'] = 'select';
+      $form[$id]['#options'] = $options;
+      $form[$id]['#default_value'] = $default_value;
+      $form[$id]['#theme'] = 'filter_form';
+
+      // We don't need a custom validator with selects
+      unset($form[$id]['#element_validate']);
+      $found = TRUE;
+    }
+    // Formatting guidelines element found
+    elseif ($id == 'format' && !empty($form[$id]['format']['guidelines'])) {
+      $form[$id]['#theme'] = 'filter_form';
+      $found = TRUE;
+    }
+    // Recurse down other elements
+    else {
+      _rubik_filter_form_alter($form[$id]);
+    }
+  }
+  // If filter elements found, adjust parent element.
+  if ($found) {
+    $form['#type'] = isset($form['#type']) ? $form['#type'] : 'item';
+    foreach (element_children($form) as $element) {
+      $form[$element]['#rubik_filter_form'] = TRUE;
+    }
+  }
 }

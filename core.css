@@ -199,7 +199,8 @@ table div.form-item {
   }
 
   .block .item-list,
-  .admin-panel .admin-list { padding:0px; }
+  .admin-panel .admin-list,
+  .form-item .form-item-filter { padding:0px; }
 
 .form-item label {
   margin:0px;
@@ -301,6 +302,13 @@ input.form-submit {
     }
 
   form input#edit-delete { color:#ccc; }
+
+/* Filter form */
+.filter-options .form-item,
+.filter-options .filter-help {
+  margin:10px 10px 0px 0px;
+  float:left;
+  }
 
 input.form-autocomplete,
 input.form-text,
