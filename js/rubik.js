@@ -36,6 +36,5 @@ Drupal.behaviors.rubik = function(context) {
     }
     // Mark as processed.
     $(this).addClass('rubik-processed');
-    return false;
   });
 };
