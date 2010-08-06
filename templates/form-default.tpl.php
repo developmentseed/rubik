@@ -7,4 +7,7 @@
     <div class='buttons'><?php print drupal_render($buttons); ?></div>
     <?php print drupal_render($sidebar); ?>
   </div></div>
+  <?php if (!empty($footer)): ?>
+    <div class='column-wrapper clear-block'><?php print drupal_render($footer); ?></div>
+  <?php endif; ?>
 </div>

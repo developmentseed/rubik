@@ -197,11 +197,36 @@ function rubik_preprocess_form_confirm(&$vars) {
  * Preprocessor for theme('node_form').
  */
 function rubik_preprocess_form_node(&$vars) {
+  $vars['sidebar'] = isset($vars['sidebar']) ? $vars['sidebar'] : array();
+
+  // Support nodeformcols if present.
+  if (module_exists('nodeformcols')) {
+    $map = array(
+      'nodeformcols_region_right' => 'sidebar',
+      'nodeformcols_region_footer' => 'footer',
+      'nodeformcols_region_main' => 'form',
+    );
+    foreach ($map as $region => $target) {
+      if (isset($vars['form'][$region])) {
+        if (isset($vars['form'][$region]['#prefix'], $vars['form'][$region]['#suffix'])) {
+          unset($vars['form'][$region]['#prefix']);
+          unset($vars['form'][$region]['#suffix']);
+        }
+        if (isset($vars['form'][$region]['buttons'], $vars['form'][$region]['buttons'])) {
+          $vars['buttons'] = $vars['form'][$region]['buttons'];
+          unset($vars['form'][$region]['buttons']);
+        }
+        if (isset($target)) {
+          $vars[$target] = $vars['form'][$region];
+          unset($vars['form'][$region]);
+        }
+      }
+    }
+  }
   // @TODO: Figure out a better way here. drupal_alter() is preferable.
   // Allow modules to insert form elements into the sidebar,
   // defaults to showing taxonomy in that location.
-  if (empty($vars['sidebar'])) {
-    $vars['sidebar'] = array();
+  else {
     $sidebar_fields = module_invoke_all('node_form_sidebar', $vars['form'], $vars['form']['#node']) + array('taxonomy');
     foreach ($sidebar_fields as $field) {
       if (isset($vars['form'][$field])) {
