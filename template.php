@@ -164,7 +164,7 @@ function rubik_preprocess_form_legacy(&$vars) {
  * Preprocessor for handling form button for most forms.
  */
 function rubik_preprocess_form_buttons(&$vars) {
-  if (empty($vars['buttons'])) {
+  if (!element_children($vars['buttons'])) {
     if (isset($vars['form']['buttons'])) {
       $vars['buttons'] = $vars['form']['buttons'];
       unset($vars['form']['buttons']);
@@ -203,13 +203,12 @@ function rubik_preprocess_form_confirm(&$vars) {
  */
 function rubik_preprocess_form_node(&$vars) {
   $vars['sidebar'] = isset($vars['sidebar']) ? $vars['sidebar'] : array();
-
   // Support nodeformcols if present.
   if (module_exists('nodeformcols')) {
     $map = array(
       'nodeformcols_region_right' => 'sidebar',
       'nodeformcols_region_footer' => 'footer',
-      'nodeformcols_region_main' => 'form',
+      'nodeformcols_region_main' => NULL,
     );
     foreach ($map as $region => $target) {
       if (isset($vars['form'][$region])) {
