@@ -626,14 +626,12 @@ function _rubik_filter_form_alter(&$form) {
   }
   // If filter elements found, adjust parent element.
   if ($found) {
-    $weight = 0;
     foreach (element_children($form) as $element) {
       $form[$element]['#rubik_filter_form'] = TRUE;
-      $weight = isset($form[$element]['#weight']) ? $form[$element]['#weight'] : $weight;
     }
     $form = array(
       '#type' => 'item',
-      '#weight' => $weight,
+      '#weight' => isset($form['#weight']) ? $form['#weight'] : 0,
       $form
     );
   }
