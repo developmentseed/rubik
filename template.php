@@ -238,9 +238,7 @@ function rubik_preprocess_form_node(&$vars) {
  * Preprocessor for formatting input filter forms.
  */
 function rubik_preprocess_form_filter(&$vars) {
-  if (!module_exists('wysiwyg')) {
-    _rubik_filter_form_alter($vars['form']);
-  }
+  _rubik_filter_form_alter($vars['form']);
 }
 
 /**
@@ -518,8 +516,15 @@ function rubik_filter_tips_more_info() {
  * Theme a filter form element
  */
 function rubik_filter_form($form) {
-  unset($form['#title']);
-  $select = !empty($form['#options']) ? theme('select', $form) : '';
+  if (isset($form['#title'])) {
+    unset($form['#title']);
+  }
+  $select = '';
+  foreach (element_children($form) as $key) {
+    if ($form[$key]['#type'] === 'radio') {
+      $select .= drupal_render($form[$key]);
+    }
+  }
   $help = theme('filter_tips_more_info');
   $output = "<div class='filter-options clear-block'>{$select}{$help}</div>";
   return $output;
@@ -596,24 +601,8 @@ function _rubik_filter_form_alter(&$form) {
   foreach (element_children($form) as $id) {
     // Filter form element found
     if (is_array($form[$id]['#element_validate']) && in_array('filter_form_validate', $form[$id]['#element_validate'])) {
-      // Switch from radios to select.
-      $options = array();
-      $default_value = 0;
-      foreach (element_children($form[$id]) as $format) {
-        if (!empty($form[$id][$format]['#type']) && $form[$id][$format]['#type'] == 'radio') {
-          $default_value = empty($default_value) ? $form[$id][$format]['#default_value'] : $default_value;
-          $options[$format] = $form[$id][$format]['#title'];
-        }
-        unset($form[$id][$format]);
-      }
-      $form[$id]['#type'] = 'select';
-      $form[$id]['#options'] = $options;
-      $form[$id]['#value'] = $default_value;
-      $form[$id]['#default_value'] = $default_value;
+      $form[$id]['#type'] = 'markup';
       $form[$id]['#theme'] = 'filter_form';
-
-      // We don't need a custom validator with selects
-      unset($form[$id]['#element_validate']);
       $found = TRUE;
     }
     // Formatting guidelines element found

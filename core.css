@@ -306,9 +306,13 @@ input.form-submit {
 /* Filter form */
 .filter-options .form-item,
 .filter-options .filter-help {
+  font-size:11px;
   margin:10px 10px 0px 0px;
+  padding:0px;
   float:left;
   }
+
+  .filter-options div.form-item:hover > div.description { display:none; }
 
 input.form-autocomplete,
 input.form-text,
