@@ -238,7 +238,9 @@ function rubik_preprocess_form_node(&$vars) {
  * Preprocessor for formatting input filter forms.
  */
 function rubik_preprocess_form_filter(&$vars) {
-  _rubik_filter_form_alter($vars['form']);
+  if (!module_exists('wysiwyg')) {
+    _rubik_filter_form_alter($vars['form']);
+  }
 }
 
 /**
