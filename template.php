@@ -227,17 +227,10 @@ function rubik_preprocess_form_node(&$vars) {
       }
     }
   }
-  // @TODO: Figure out a better way here. drupal_alter() is preferable.
-  // Allow modules to insert form elements into the sidebar,
-  // defaults to showing taxonomy in that location.
-  else {
-    $sidebar_fields = module_invoke_all('node_form_sidebar', $vars['form'], $vars['form']['#node']) + array('taxonomy');
-    foreach ($sidebar_fields as $field) {
-      if (isset($vars['form'][$field])) {
-        $vars['sidebar'][$field] = $vars['form'][$field];
-        unset($vars['form'][$field]);
-      }
-    }
+  // Default to showing taxonomy in sidebar if nodeformcols is not present.
+  elseif (isset($vars['form']['taxonomy'])) {
+    $vars['sidebar']['taxonomy'] = $vars['form']['taxonomy'];
+    unset($vars['form']['taxonomy']);
   }
 }
 
