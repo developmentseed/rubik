@@ -500,8 +500,7 @@ function rubik_node_submitted($node) {
  * Override of theme('comment_submitted').
  */
 function rubik_comment_submitted($comment) {
-  $vars = $comment;
-  $vars->created = $comment->timestamp;
+  $comment->created = $comment->timestamp;
   return _rubik_submitted($comment);
 }
 
