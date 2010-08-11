@@ -587,18 +587,14 @@ body.rubik div#admin-toolbar a.menu-hover span.menu-description span.icon {
  * from persistent descriptions. Reset for all of these.
  */
 .ctools-export-ui-row .form-item,
-.ctools-export-ui-row .form-item:hover,
 .ctools-export-ui-row .form-item .description,
 .multiselect .form-item,
-.multiselect .form-item:hover,
 .multiselect .form-item .description,
 .page-content table .form-item,
-.page-content table .form-item:hover,
 .page-content table .form-item .description,
 .page-content .form-item .widget-edit .description,
 #upload-attachments .description,
 #views-ajax-pad .form-item,
-#views-ajax-pad .form-item:hover,
 #views-ajax-pad .form-item .description {
   width:auto;
   padding:0px;
@@ -608,6 +604,11 @@ body.rubik div#admin-toolbar a.menu-hover span.menu-description span.icon {
   position:static;
   display:block;
   }
+
+.ctools-export-ui-row .form-item:hover,
+.multiselect .form-item:hover,
+.page-content table .form-item:hover,
+#views-ajax-pad .form-item:hover { position:static; }
 
 .page-content table .form-item .description,
 #upload-attachments .description,
