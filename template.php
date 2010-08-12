@@ -164,7 +164,7 @@ function rubik_preprocess_form_legacy(&$vars) {
  * Preprocessor for handling form button for most forms.
  */
 function rubik_preprocess_form_buttons(&$vars) {
-  if (!element_children($vars['buttons'])) {
+  if (empty($vars['buttons']) || !element_children($vars['buttons'])) {
     if (isset($vars['form']['buttons'])) {
       $vars['buttons'] = $vars['form']['buttons'];
       unset($vars['form']['buttons']);
@@ -599,7 +599,11 @@ function _rubik_filter_form_alter(&$form) {
   $found = FALSE;
   foreach (element_children($form) as $id) {
     // Filter form element found
-    if (is_array($form[$id]['#element_validate']) && in_array('filter_form_validate', $form[$id]['#element_validate'])) {
+    if (
+      isset($form[$id]['#element_validate']) &&
+      is_array($form[$id]['#element_validate']) &&
+      in_array('filter_form_validate', $form[$id]['#element_validate'])
+    ) {
       $form[$id]['#type'] = 'markup';
       $form[$id]['#theme'] = 'filter_form';
       $found = TRUE;
