@@ -8,10 +8,10 @@ function rubik_theme() {
   $items = array();
 
   // theme('filter_form') for nicer filter forms.
-  $items['filter_form'] = array();
+  $items['filter_form'] = array('arguments' => array());
 
   // theme('blocks') targeted override for content region.
-  $items['blocks_content'] = array();
+  $items['blocks_content'] = array('arguments' => array());
 
   // Content theming.
   $items['help'] =
