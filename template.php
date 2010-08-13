@@ -165,7 +165,7 @@ function rubik_preprocess_form_legacy(&$vars) {
  */
 function rubik_preprocess_form_buttons(&$vars) {
   if (empty($vars['buttons']) || !element_children($vars['buttons'])) {
-    if (isset($vars['form']['buttons'])) {
+    if (isset($vars['form']['buttons']) && element_children($vars['form']['buttons'])) {
       $vars['buttons'] = $vars['form']['buttons'];
       unset($vars['form']['buttons']);
     }
