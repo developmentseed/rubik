@@ -520,7 +520,7 @@ function rubik_filter_form($form) {
   }
   $select = '';
   foreach (element_children($form) as $key) {
-    if ($form[$key]['#type'] === 'radio') {
+    if (isset($form[$key]['#type']) && $form[$key]['#type'] === 'radio') {
       $select .= drupal_render($form[$key]);
     }
   }
