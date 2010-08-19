@@ -474,6 +474,8 @@ div.column-side {
 
   div.column-side div.column-wrapper { padding-left:10px; }
 
+div.column-footer { clear:both; }
+
 form div.buttons {
   background:#eee;
   border:1px solid #ddd;
