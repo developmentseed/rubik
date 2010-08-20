@@ -449,9 +449,9 @@ function rubik_admin_block_content($content, $get_runstate = FALSE) {
 }
 
 /**
- * Override of theme('admin_menu_item_link').
+ * Override of theme('admin_drilldown_menu_item_link').
  */
-function rubik_admin_menu_item_link($link) {
+function rubik_admin_drilldown_menu_item_link($link) {
   $link['localized_options'] = empty($link['localized_options']) ? array() : $link['localized_options'];
   $link['localized_options']['html'] = TRUE;
   if (!isset($link['localized_options']['attributes']['class'])) {
