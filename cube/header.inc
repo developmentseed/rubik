@@ -19,10 +19,10 @@
     <div id='page-title' class='limiter clear-block'>
       <!--<?php if ($help_toggler) print $help_toggler ?>-->
       <?php if ($primary_links) print theme('links', $primary_links) ?>
-      <h2 class='page-title <?php print $page_icon_class ?>'>
+      <h1 class='page-title <?php print $page_icon_class ?>'>
         <?php if (!empty($page_icon_class)): ?><span class='icon'></span><?php endif; ?>
         <?php if ($title) print $title ?>
-      </h2>
+      </h1>
     </div>
     <div id='branding'><div class='limiter clear-block'>
       <?php if ($user_links) print theme('links', $user_links) ?>

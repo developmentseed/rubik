@@ -25,9 +25,9 @@ a {
 .admin-panel,
 .box-title,
 div.messages,
-div.compact-link a,
-form.confirmation ul,
-form div.buttons,
+.compact-link a,
+.confirmation ul,
+form .buttons,
 input.teaser-button,
 input.form-submit {
   -moz-border-radius:3px;
@@ -100,8 +100,8 @@ table,
 .admin-list,
 .node-type-list,
 .admin-panel,
-ul.pager a:hover,
-form.confirmation ul {
+.pager a:hover,
+.confirmation ul {
   -moz-box-shadow:#fff 0px 1px 0px;
   -webkit-box-shadow:#fff 0px 1px 0px;
   }
@@ -112,7 +112,7 @@ form.confirmation ul {
 .teaser-checkbox .form-item,
 .form-item .form-item,
 .fieldset .form-item,
-table div.form-item {
+table .form-item {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   }
@@ -150,21 +150,21 @@ table th {
 
 #branding ul.links { float:right; }
 
-#branding div.breadcrumb {
+#branding .breadcrumb {
   padding:0px 5px;
   float:left;
   text-transform:uppercase;
   font-weight:normal;
   }
 
-  #branding div.breadcrumb a,
-  #branding div.breadcrumb strong {
+  #branding .breadcrumb a,
+  #branding .breadcrumb strong {
     font-weight:normal;
     float:left;
     padding:0px 5px;
     }
 
-  #branding div.breadcrumb span.breadcrumb-link {
+  #branding .breadcrumb .breadcrumb-link {
     float:left;
     padding-right:5px;
     background:url(images/sprite.png) 100% 100% no-repeat;
@@ -178,7 +178,7 @@ table th {
   padding:0px 30px;
   }
 
-  #page-title h2.page-title {
+  #page-title .page-title {
     padding:15px 10px;
     line-height:30px;
     min-height:30px;
@@ -191,7 +191,7 @@ table th {
     font-size:20px;
     }
 
-  #page-title h2.page-title span.icon {
+  #page-title .page-title span.icon {
     float:left;
     margin-right:10px;
     }
@@ -247,9 +247,7 @@ ul.primary-tabs li a:hover {
 ul.primary-tabs li.active a,
 ul.primary-tabs li.active a.active {
   -moz-border-radius:3px 3px 0px 0px;
-  -webkit-border-radius:0px;
-  -webkit-border-radius-top-left:3px;
-  -webkit-border-radius-top-right:3px;
+  -webkit-border-radius:3px 3px 0px 0px;
 
   padding:4px 14px 11px;
   color:#333;
@@ -294,9 +292,9 @@ div.secondary-tabs {
   -webkit-border-radius:3px;
   }
 
-div.page-content { padding:4px; }
+.page-content { padding:4px; }
 
-div.content-wrapper { margin:5px; }
+.content-wrapper { margin:5px; }
 
 div.messages,
 .block { margin:5px; }
@@ -310,12 +308,12 @@ div.messages,
   text-shadow:#fff 0px 1px 0px;
   }
 
-#footer div.footer-message {
+#footer .footer-message {
   padding:0px 10px;
   float:left;
   }
 
-#footer div.feed-icons {
+#footer .feed-icons {
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
 
@@ -326,10 +324,10 @@ div.messages,
   float:right;
   }
 
-  #footer div.feed-icons img { display:block; }
+  #footer .feed-icons img { display:block; }
 
-  #footer div.feed-icons label,
-  #footer div.feed-icons a {
+  #footer .feed-icons label,
+  #footer .feed-icons a {
     padding:0px 5px;
     float:left;
     }
@@ -368,10 +366,10 @@ a#help-toggler {
     -webkit-border-radius-top-right:2px;
     }
 
-  #help-text label.breadcrumb-label,
-  #help-text span.breadcrumb-link { display:block; }
+  #help-text .breadcrumb-label,
+  #help-text .breadcrumb-link { display:block; }
 
-  #help-text span.breadcrumb-link {
+  #help-text .breadcrumb-link {
     background:url(images/sprite.png) -185px -180px no-repeat;
     padding-left:20px;
     }
@@ -379,7 +377,7 @@ a#help-toggler {
 /**
  * Content ============================================================
  */
-div.help-page,
+.help-page,
 div.comment,
 div.node {
   border-style:solid;
@@ -395,71 +393,71 @@ div.node {
   -webkit-border-radius:3px;
   }
 
-#help-text div.column-main div.column-wrapper,
-div.help-page div.column-main div.column-wrapper,
-div.comment div.column-main div.column-wrapper,
-div.node div.column-main div.column-wrapper { padding:19px; }
+#help-text .column-main .column-wrapper,
+.help-page .column-main .column-wrapper,
+div.comment .column-main .column-wrapper,
+div.node .column-main .column-wrapper { padding:19px; }
 
-  #help-text div.column-main div.column-wrapper {
+  #help-text .column-main .column-wrapper {
     padding-left:59px;
     position:relative;
     }
 
-    #help-text div.column-main div.column-wrapper span.icon {
+    #help-text .column-main .column-wrapper span.icon {
       position:absolute;
       top:15px;
       left:15px;
       }
 
-#help-text div.column-side div.column-wrapper,
-div.help-page div.column-side div.column-wrapper,
-div.comment div.column-side div.column-wrapper,
-div.node div.column-side div.column-wrapper {
+#help-text .column-side .column-wrapper,
+.help-page .column-side .column-wrapper,
+div.comment .column-side .column-wrapper,
+div.node .column-side .column-wrapper {
   padding:9px;
   font-size:11px;
   }
 
-#help-text div.column-side .help-links,
-div.help-page div.column-side .help-page-links,
-div.node-submitted,
-div.comment-submitted {
+#help-text .column-side .help-links,
+.help-page .column-side .help-page-links,
+.node-submitted,
+.comment-submitted {
   padding:10px;
   background:#f8f8f8;
   }
 
-div.comment-links,
-div.node-links { padding:10px 0px; }
+.comment-links,
+.node-links { padding:10px 0px; }
 
-div.help-page div.help-page-links ul.links {
+.help-page .help-page-links ul.links {
   -moz-column-count:2;
   -webkit-column-count:2;
   }
 
-div.column-side ul.links li,
-div.column-side ul.links a,
-div.column-side ul.links span {
+.column-side ul.links li,
+.column-side ul.links a,
+.column-side ul.links span {
   display:block;
   float:none;
   }
 
-div.column-side ul.links a,
-div.column-side ul.links span {
+.column-side ul.links a,
+.column-side ul.links span {
   padding:0px 10px;
   display:block;
   float:none;
   }
 
-  div.column-side ul.links span a {
+  .column-side ul.links span a {
     padding:0px;
     display:inline;
     }
 
-  div.column-side ul.links a.active,
-  div.column-side ul.links a:hover { background:#fff; }
-  div.comment-links ul.links a:hover { background:#f4f4f4; }
+  .column-side ul.links a.active,
+  .column-side ul.links a:hover { background:#fff; }
+  .comment-links ul.links a:hover { background:#f4f4f4; }
 
-h2.comment-title,
-h2.node-title {
+.comment-title,
+.node-title {
   margin:0px 0px 20px;
   font-weight:normal;
   font-size:16px;

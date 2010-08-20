@@ -13,7 +13,7 @@ a {
   text-decoration:none;
   }
 
-div.limiter { width:960px; }
+.limiter { width:960px; }
 
 #top { background:url(images/cube.png) 0px -60px repeat-x; }
 
@@ -49,20 +49,20 @@ div.limiter { width:960px; }
   padding:5px 10px;
   }
 
-#branding div.breadcrumb {
+#branding .breadcrumb {
   padding:5px 10px 4px 5px;
   float:left;
   font-weight:normal;
   }
 
-  #branding div.breadcrumb span.breadcrumb-link {
+  #branding .breadcrumb span.breadcrumb-link {
     float:left;
     background:url(images/cube.png) 100% -35px no-repeat;
     padding:0px 20px 0px 5px;
     }
 
-  #branding div.breadcrumb a,
-  #branding div.breadcrumb strong {
+  #branding .breadcrumb a,
+  #branding .breadcrumb strong {
     font-weight:normal;
     float:left;
     padding:0px 5px;
@@ -80,7 +80,7 @@ div.limiter { width:960px; }
 
   #page-title a { color:#fff; }
 
-  #page-title h2.page-title {
+  #page-title .page-title {
     padding:10px;
     line-height:30px;
     min-height:30px;
@@ -89,7 +89,7 @@ div.limiter { width:960px; }
     font-weight:300;
     }
 
-  #page-title h2.page-title span.icon {
+  #page-title .page-title span.icon {
     float:left;
     margin-right:10px;
     }
@@ -123,7 +123,7 @@ div.pager,
 #header,
 #footer,
 #page,
-#tabs div.page-tabs {
+#tabs .page-tabs {
   background:#f8f8f8;
   -moz-box-shadow:#ccc 0px 0px 3px;
   -webkit-box-shadow:#ccc 0px 0px 3px;
@@ -140,7 +140,7 @@ div.pager,
 /**
  * Tabs, pagers =======================================================
  */
-#tabs div.page-tabs {
+#tabs .page-tabs {
   -moz-border-radius:5px;
   -webkit-border-radius:5px;
   margin:10px auto;
@@ -159,21 +159,21 @@ div.pager,
     border-color:#ccc #ddd #eee;
     }
 
-  #tabs div.page-tabs ul.links {
+  #tabs .page-tabs ul.links {
     float:none;
     height:30px;
     position:static;
     padding:0px;
     }
 
-  #tabs div.page-tabs li { padding:0px; }
+  #tabs .page-tabs li { padding:0px; }
 
-  div.pager a,
-  div.pager li.pager-current,
-  #tabs div.page-tabs li a,
-  #tabs div.page-tabs li a:hover,
-  #tabs div.page-tabs li.active a,
-  #tabs div.page-tabs li a.active {
+  .pager a,
+  .pager li.pager-current,
+  #tabs .page-tabs li a,
+  #tabs .page-tabs li a:hover,
+  #tabs .page-tabs li.active a,
+  #tabs .page-tabs li a.active {
     color:#888;
     font-weight:normal;
     font-size:13px;
@@ -184,32 +184,32 @@ div.pager,
     background:transparent;
     }
 
-    div.pager a,
-    div.pager li.pager-current { padding:5px 10px; }
+    .pager a,
+    .pager li.pager-current { padding:5px 10px; }
 
-  #page div.pager a:hover,
-  #tabs div.page-tabs li a:hover {
+  #page .pager a:hover,
+  #tabs .page-tabs li a:hover {
     background:#fff;
     color:#333;
     }
 
-    #page div.pager a:hover { background:#eee; }
+    #page .pager a:hover { background:#eee; }
 
-  #page div.pager ul.pager-list li:first-child a,
-  #page div.pager ul.pager-list li.pager-current:first-child,
-  #tabs div.page-tabs li:first-child a {
+  #page .pager ul.pager-list li:first-child a,
+  #page .pager ul.pager-list li.pager-current:first-child,
+  #tabs .page-tabs li:first-child a {
     -moz-border-radius:5px 0px 0px 5px;
     -webkit-border-radius:5px 0px 0px 5px;
     }
 
-  #page div.pager ul.pager-links li:last-child a {
+  #page .pager ul.pager-links li:last-child a {
     -moz-border-radius:0px 5px 5px 0px;
     -webkit-border-radius:0px 5px 5px 0px;
     }
 
-  div.pager li.pager-current,
-  #tabs div.page-tabs li.active a,
-  #tabs div.page-tabs li a.active {
+  .pager li.pager-current,
+  #tabs .page-tabs li.active a,
+  #tabs .page-tabs li a.active {
     background:#08c url(images/cube.png) 0px -190px repeat-x;
     color:#fff;
     }
@@ -225,9 +225,9 @@ div.pager,
   -webkit-border-radius:3px;
   }
 
-div.page-content { padding:4px; }
+.page-content { padding:4px; }
 
-div.content-wrapper { margin:5px; }
+.content-wrapper { margin:5px; }
 
 /**
  * Footer =============================================================
@@ -242,12 +242,12 @@ div.content-wrapper { margin:5px; }
   text-shadow:#fff 0px 1px 0px;
   }
 
-#footer div.footer-message {
+#footer .footer-message {
   padding:0px 10px;
   float:left;
   }
 
-#footer div.feed-icons {
+#footer .feed-icons {
   margin:0px;
   padding:2px 5px;
   background:transparent;
@@ -260,10 +260,10 @@ div.content-wrapper { margin:5px; }
   float:right;
   }
 
-  #footer div.feed-icons img { display:block; }
+  #footer .feed-icons img { display:block; }
 
-  #footer div.feed-icons label,
-  #footer div.feed-icons a {
+  #footer .feed-icons label,
+  #footer .feed-icons a {
     padding:0px 5px;
     float:left;
     }
@@ -293,7 +293,7 @@ div.messages,
  */
 #page-help { background:#404040; }
 
-#page-help div.limiter {
+#page-help .limiter {
   z-index:1;
   position:relative;
   }
@@ -331,12 +331,12 @@ div#help-text {
   border:0px;
   }
 
-div#help-text div.column-side div.help-links { background:#222; }
+div#help-text .column-side .help-links { background:#222; }
 
 /**
  * Content ============================================================
  */
-div.help-page,
+.help-page,
 div.comment,
 div.node {
   border-style:solid;
@@ -352,71 +352,71 @@ div.node {
   -webkit-border-radius:3px;
   }
 
-div#help-text div.column-main div.column-wrapper,
-div.help-page div.column-main div.column-wrapper,
-div.comment div.column-main div.column-wrapper,
-div.node div.column-main div.column-wrapper { padding:19px; }
+#help-text .column-main .column-wrapper,
+.help-page .column-main .column-wrapper,
+div.comment .column-main .column-wrapper,
+div.node .column-main .column-wrapper { padding:19px; }
 
-  div#help-text div.column-main div.column-wrapper {
+  #help-text .column-main .column-wrapper {
     padding-left:59px;
     position:relative;
     }
 
-    div#help-text div.column-main div.column-wrapper span.icon {
+    #help-text .column-main .column-wrapper span.icon {
       position:absolute;
       top:15px;
       left:15px;
       }
 
-div#help-text div.column-side div.column-wrapper,
-div.help-page div.column-side div.column-wrapper,
-div.comment div.column-side div.column-wrapper,
-div.node div.column-side div.column-wrapper {
+#help-text .column-side .column-wrapper,
+.help-page .column-side .column-wrapper,
+div.comment .column-side .column-wrapper,
+div.node .column-side .column-wrapper {
   padding:9px;
   font-size:11px;
   }
 
-div#help-text div.column-side .help-links,
-div.help-page div.column-side .help-page-links,
-div.node-submitted,
-div.comment-submitted {
+#help-text .column-side .help-links,
+.help-page .column-side .help-page-links,
+.node-submitted,
+.comment-submitted {
   padding:10px;
   background:#f8f8f8;
   }
 
-div.comment-links,
-div.node-links { padding:10px 0px; }
+.comment-links,
+.node-links { padding:10px 0px; }
 
-div.help-page div.help-page-links ul.links {
+.help-page .help-page-links ul.links {
   -moz-column-count:2;
   -webkit-column-count:2;
   }
 
-div.column-side ul.links li,
-div.column-side ul.links a,
-div.column-side ul.links span {
+.column-side ul.links li,
+.column-side ul.links a,
+.column-side ul.links span {
   display:block;
   float:none;
   }
 
-div.column-side ul.links a,
-div.column-side ul.links span {
+.column-side ul.links a,
+.column-side ul.links span {
   padding:0px 10px;
   display:block;
   float:none;
   }
 
-  div.column-side ul.links span a {
+  .column-side ul.links span a {
     padding:0px;
     display:inline;
     }
 
-  div.column-side ul.links a.active,
-  div.column-side ul.links a:hover { background:#fff; }
-  div.comment-links ul.links a:hover { background:#f4f4f4; }
+  .column-side ul.links a.active,
+  .column-side ul.links a:hover { background:#fff; }
+  .comment-links ul.links a:hover { background:#f4f4f4; }
 
-h2.comment-title,
-h2.node-title {
+.comment-title,
+.node-title {
   margin:0px 0px 20px;
   font-weight:normal;
   font-size:16px;

@@ -1,13 +1,13 @@
 <style type='text/css'>
-div.block h2.block-title,
+.block .block-title,
 #page-title ul.links li.active a,
 #page-title ul.links li a.active {
   background-color:<?php print $background ?>;
   }
 
-div.pager li.pager-current,
-#tabs div.page-tabs li.active a,
-#tabs div.page-tabs li a.active {
+.pager li.pager-current,
+#tabs .page-tabs li.active a,
+#tabs .page-tabs li a.active {
   background-color:<?php print $background ?>;
   }
 

@@ -53,55 +53,55 @@ div.status {
 /**
  * Pagers =============================================================
  */
-div.pager {
+.pager {
   font-weight:normal;
   font-size:11px;
   }
 
-  div.pager ul.pager-list { float:left; }
-  div.pager ul.pager-links { float:right; }
+  .pager ul.pager-list { float:left; }
+  .pager ul.pager-links { float:right; }
 
 /**
  * Menus, lists =======================================================
  */
-div.help-items ul li,
-form.confirmation ul li,
+.help-items ul li,
+.confirmation ul li,
 .item-list ul li,
 .prose .item-list li,
-ul.menu li {
+.menu li {
   float:none;
   display:block;
   padding:5px 10px 4px;
   border-bottom:1px solid #f4f4f4;
   }
 
-  div.help-items ul li:last-child,
-  form.confirmation ul li:last-child,
+  .help-items ul li:last-child,
+  .confirmation ul li:last-child,
   .item-list ul li:last-child,
   .prose .item-list li:last-child,
-  ul.menu li:last-child {
+  .menu li:last-child {
     border-bottom:0px;
     padding-bottom:5px;
     }
 
-ul.admin-list li a span.icon {
+.admin-list li a span.icon {
   position:absolute;
   left:10px;
   top:10px;
   }
 
-  ul.admin-list-compact li a span.icon { top:5px; }
+  .admin-list-compact li a span.icon { top:5px; }
 
-ul.node-type-list li,
-ul.admin-list li {
+.node-type-list li,
+.admin-list li {
   position:relative;
   padding:10px 5px 9px 50px;
   margin:0px;
   border-bottom:1px solid #e8e8e8;
   }
 
-  ul.node-type-list li:last-child,
-  ul.admin-list li:last-child {
+  .node-type-list li:last-child,
+  .admin-list li:last-child {
     padding-bottom:10px;
     border:0px;
     }
@@ -166,7 +166,7 @@ table tr.draggable span.tabledrag-changed { display:none; }
 .item-list,
 .help-items ul,
 .form-item,
-form.confirmation ul,
+.confirmation ul,
 .admin-list,
 .node-type-list,
 .admin-panel {
@@ -191,7 +191,7 @@ form.confirmation ul,
 .teaser-checkbox .form-item,
 .form-item .form-item,
 .fieldset .form-item,
-table div.form-item {
+table .form-item {
   background:transparent;
   padding:5px;
   margin:0px;
@@ -220,8 +220,8 @@ table div.form-item {
 
 .page-content .password-description,
 .page-content .password-strength,
-.page-content div.description,
-.page-content .form-item div.description {
+.page-content .description,
+.page-content .form-item .description {
   line-height:15px;
   font-size:11px;
   white-space:normal;
@@ -237,9 +237,9 @@ table div.form-item {
     margin:0px;
     }
 
-.fieldset div.description { margin:0px 0px 10px; }
+.fieldset .description { margin:0px 0px 10px; }
 
-.page-content .form-item div.description {
+.page-content .form-item .description {
   position:absolute;
   bottom:100%;
   right:-15px;
@@ -255,12 +255,12 @@ table div.form-item {
   display:none;
   }
 
-  .page-content div.form-item:hover {
+  .page-content .form-item:hover {
     z-index:1;
     height:auto; /* Fix for flicker in IE7 */
     }
 
-  .page-content div.form-item:hover > div.description { display:block; }
+  .page-content .form-item:hover > .description { display:block; }
 
 input.teaser-button,
 input.form-submit {
@@ -289,12 +289,12 @@ input.form-submit {
     }
 
   /* Teaser splitter */
-  div.teaser-checkbox {
+  .teaser-checkbox {
     position:relative;
     z-index:2;
     }
 
-  div.teaser-checkbox div { margin:5px 0px 0px; }
+  .teaser-checkbox div { margin:5px 0px 0px; }
 
   input.teaser-button {
     padding:0px 5px;
@@ -312,7 +312,7 @@ input.form-submit {
   float:left;
   }
 
-  .filter-options div.form-item:hover > div.description { display:none; }
+  .filter-options .form-item:hover > .description { display:none; }
 
 input.form-autocomplete,
 input.form-text,
@@ -352,7 +352,7 @@ select.form-select {
 
   /* Exceptions */
   #diff-inline-form select,
-  #content div.filter-options select { padding:0px; }
+  #content .filter-options select { padding:0px; }
 
 /* Fieldsets */
 .fieldset,
@@ -458,33 +458,33 @@ select.form-select {
 /**
  * Form layout: Default ===============================================
  */
-div.form-layout-default { background:url(images/vrule.png) 65% 0% repeat-y; }
+.form-layout-default { background:url(images/vrule.png) 65% 0% repeat-y; }
 
-div.column-main {
+.column-main {
   float:left;
   width:65%;
   }
 
-  div.column-main div.column-wrapper { padding-right:10px; }
+  .column-main .column-wrapper { padding-right:10px; }
 
-div.column-side {
+.column-side {
   float:right;
   width:34.99%;
   }
 
-  div.column-side div.column-wrapper { padding-left:10px; }
+  .column-side .column-wrapper { padding-left:10px; }
 
-div.column-footer { clear:both; }
+.column-footer { clear:both; }
 
-form div.buttons {
+form .buttons {
   background:#eee;
   border:1px solid #ddd;
   padding:9px;
   }
 
-  div.form-layout-default div.column-main div.buttons { display:none; }
-  div.form-layout-default div.column-side div.buttons { margin:0px 0px 10px; }
-  div.form-layout-default div.column-side div.buttons input.form-submit { margin:1px 0px; }
+  .form-layout-default .column-main .buttons { display:none; }
+  .form-layout-default .column-side .buttons { margin:0px 0px 10px; }
+  .form-layout-default .column-side .buttons input.form-submit { margin:1px 0px; }
 
 /**
  * "Boxes" aka generic wrappers =======================================
@@ -503,18 +503,18 @@ form div.buttons {
 /**
  * System =============================================================
  */
-div.admin .right {
+.admin .right {
   padding-left:5px;
   float:right;
   }
 
-div.admin .left {
+.admin .left {
   padding-right:5px;
   float:left;
   }
 
-div.admin .right,
-div.admin .left {
+.admin .right,
+.admin .left {
   box-sizing:border-box;
   -moz-box-sizing:border-box;
   -webkit-box-sizing:border-box;
@@ -536,7 +536,7 @@ div.admin .left {
   }
 
 /* update options */
-div.admin-options {
+.admin-options {
   background:#f8f8f8;
   line-height:30px;
   height:30px;
@@ -545,36 +545,36 @@ div.admin-options {
   margin:0px 0px 10px;
   }
 
-div.admin-options label,
-div.admin-options div.form-item {
+.admin-options label,
+.admin-options .form-item {
   margin-right:10px;
   float:left;
   }
 
-div.admin-options div.form-item {
+.admin-options .form-item {
   padding:0px;
   border:0px;
   }
 
 /* dependency colors */
-div.admin-dependencies,
-div.admin-required { color: #666; }
-span.admin-disabled { color: #900; }
-span.admin-enabled { color: #099; }
-span.admin-missing { color: #c30; }
+.admin-dependencies,
+.admin-required { color: #666; }
+.admin-disabled { color: #900; }
+.admin-enabled { color: #099; }
+.admin-missing { color: #c30; }
 
 /**
  * Help pages =========================================================
  */
-div.help-items { float:left; width:25%; }
-div.help-items ul { margin:10px 5px; }
+.help-items { float:left; width:25%; }
+.help-items ul { margin:10px 5px; }
 
 /**
  * Admin toolbar ======================================================
  */
-body.rubik div#admin-toolbar a.menu-hover span.menu-description { padding-left:50px; }
+body.rubik #admin-toolbar a.menu-hover span.menu-description { padding-left:50px; }
 
-body.rubik div#admin-toolbar a.menu-hover span.menu-description span.icon {
+body.rubik #admin-toolbar a.menu-hover span.menu-description span.icon {
   position:absolute;
   left:10px;
   top:0px;
@@ -624,7 +624,6 @@ body.rubik div#admin-toolbar a.menu-hover span.menu-description span.icon {
 /**
  * Form containers ====================================================
  */
-.container-inline h2,
 .container-inline div {
   display:inline;
   border:0px;
@@ -642,12 +641,12 @@ body.rubik div#admin-toolbar a.menu-hover span.menu-description span.icon {
  * exactly 1 or extremely few instances. It will make a great future
  * hitlist of markup to consolidate and generalize.
  */
-div.compact-link {
+.compact-link {
   font-size:11px;
   margin:0px 0px 10px;
   }
 
-div.compact-link a {
+.compact-link a {
   border:1px solid #ddd;
   padding:4px 9px;
   color:#666;

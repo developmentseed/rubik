@@ -5,12 +5,12 @@
 
 #branding ul.links { float:left; }
 
-#branding div.breadcrumb { float:right; }
+#branding .breadcrumb { float:right; }
 
-  #branding div.breadcrumb a,
-  #branding div.breadcrumb strong { float:right; }
+  #branding .breadcrumb a,
+  #branding .breadcrumb strong { float:right; }
 
-  #branding div.breadcrumb span.breadcrumb-link {
+  #branding .breadcrumb .breadcrumb-link {
     float:right;
     padding-left:5px;
     padding-right:0px;
@@ -21,7 +21,7 @@
 /**
  * Page title =========================================================
  */
-  #page-title h2.page-title span.icon {
+  #page-title .page-title span.icon {
     float:right;
     margin-left:10px;
     margin-right:0;
@@ -50,16 +50,16 @@ ul.primary-tabs li.active a.active {
 /**
  * Footer =============================================================
  */
-#footer div.footer-message {
+#footer .footer-message {
   float:right;
   }
 
-#footer div.feed-icons {
+#footer .feed-icons {
   float:left;
   }
 
-  #footer div.feed-icons label,
-  #footer div.feed-icons a {
+  #footer .feed-icons label,
+  #footer .feed-icons a {
     float:right;
     }
 
@@ -75,7 +75,7 @@ a#help-toggler {
     -moz-border-radius:2px 0px 0px 2px;
     }
 
-  #help-text span.breadcrumb-link {
+  #help-text .breadcrumb-link {
     padding-left:0;
     padding-right:20px;
     }
@@ -84,16 +84,16 @@ a#help-toggler {
  * Content ============================================================
  */
 #help-text,
-div.help-page,
+.help-page,
 div.comment,
 div.node { background-position:35% 0%; }
 
-#help-text div.column-main div.column-wrapper {
+#help-text .column-main .column-wrapper {
   padding-left:0px;
   padding-right:59px;
   }
 
-  #help-text div.column-main div.column-wrapper span.icon {
+  #help-text .column-main .column-wrapper span.icon {
     left:auto;
     right:15px;
     }
@@ -101,13 +101,13 @@ div.node { background-position:35% 0%; }
 /**
  * System =============================================================
  */
-div.admin .right {
+.admin .right {
   padding-left:0;
   padding-right:5px;
   float:left;
   }
 
-div.admin .left {
+.admin .left {
   padding-left:5px;
   padding-right:0;
   float:right;
@@ -119,27 +119,9 @@ div.admin .left {
 #content dl.multiselect dd { margin:0px 0px 0px 10px; }
 
 /* update options */
-div.admin-options label,
-div.admin-options div.form-item {
+.admin-options label,
+.admin-options .form-item {
   margin-left:10px;
   margin-right:0px;
   float:right;
-  }
-
-/**
- * Help pages =========================================================
- */
-div.help-items { float:right; }
-
-/**
- * Admin toolbar ======================================================
- */
-body.rubik div#admin-toolbar span.menu-description {
-  padding-left:0px;
-  padding-right:50px;
-}
-
-body.rubik div#admin-toolbar span.menu-description span.icon {
-  left:auto;
-  right:10px;
   }
