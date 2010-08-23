@@ -199,7 +199,7 @@ table th {
 /**
  * Tabs ===============================================================
  */
-ul.primary-tabs {
+.primary-tabs {
   position:absolute;
   right:60px;
   bottom:-1px;
@@ -209,11 +209,11 @@ ul.primary-tabs {
   line-height:20px;
   }
 
-ul.primary-tabs li { padding-left:5px; }
+.primary-tabs li { padding-left:5px; }
 
-ul.pager a,
-ul.pager li.pager-current,
-ul.primary-tabs li a {
+.pager a,
+.pager li.pager-current,
+.primary-tabs li a {
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
 
@@ -230,13 +230,13 @@ ul.primary-tabs li a {
   border-color:transparent;
   }
 
-  ul.pager a:hover {
+  .pager a:hover {
     background:#eee;
     border-color:#ccc #ddd #eee;
     }
 
-ul.pager li.pager-current,
-ul.primary-tabs li a:hover {
+.pager li.pager-current,
+.primary-tabs li a:hover {
   -moz-box-shadow:#fff 0px 1px 0px;
   -webkit-box-shadow:#fff 0px 1px 0px;
   border-color:#999;
@@ -244,8 +244,8 @@ ul.primary-tabs li a:hover {
   color:#fff;
   }
 
-ul.primary-tabs li.active a,
-ul.primary-tabs li.active a.active {
+.primary-tabs li.active a,
+.primary-tabs li.active a.active {
   -moz-border-radius:3px 3px 0px 0px;
   -webkit-border-radius:3px 3px 0px 0px;
 
@@ -264,18 +264,18 @@ div.secondary-tabs {
 
   ul.secondary-tabs { float:right; }
 
-  ul.secondary-tabs li a,
-  ul.secondary-tabs li a:hover {
+  .secondary-tabs li a,
+  .secondary-tabs li a:hover {
     color:#333;
     padding:0px 10px;
     -moz-border-radius:3px;
     -webkit-border-radius:3px;
     }
 
-  ul.secondary-tabs li a:hover { background:#ddd; }
+  .secondary-tabs li a:hover { background:#ddd; }
 
-  ul.secondary-tabs li a.active,
-  ul.secondary-tabs li.active a {
+  .secondary-tabs li a.active,
+  .secondary-tabs li.active a {
     background:#888 url(images/bleeds.png) 0px 0px repeat-x;
     color:#fff;
     }
