@@ -27,7 +27,7 @@ a {
 div.messages,
 .compact-link a,
 .confirmation ul,
-form .buttons,
+form .form-actions,
 input.teaser-button,
 input.form-submit {
   -moz-border-radius:3px;

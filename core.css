@@ -476,15 +476,15 @@ select.form-select {
 
 .column-footer { clear:both; }
 
-form .buttons {
+form .form-actions {
   background:#eee;
   border:1px solid #ddd;
   padding:9px;
   }
 
-  .form-layout-default .column-main .buttons { display:none; }
-  .form-layout-default .column-side .buttons { margin:0px 0px 10px; }
-  .form-layout-default .column-side .buttons input.form-submit { margin:1px 0px; }
+  .form-layout-default .column-main .form-actions { display:none; }
+  .form-layout-default .column-side .form-actions { margin:0px 0px 10px; }
+  .form-layout-default .column-side .form-actions input.form-submit { margin:1px 0px; }
 
 /**
  * "Boxes" aka generic wrappers =======================================

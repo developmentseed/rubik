@@ -10,9 +10,6 @@ function rubik_theme() {
   // theme('filter_form') for nicer filter forms.
   $items['filter_form'] = array('arguments' => array('form' => array()));
 
-  // theme('blocks') targeted override for content region.
-  $items['blocks_content'] = array('arguments' => array('doit' => FALSE));
-
   // Content theming.
   $items['help'] =
   $items['node'] =
@@ -35,10 +32,7 @@ function rubik_theme() {
     'arguments' => array('form' => array()),
     'path' => drupal_get_path('theme', 'rubik') .'/templates',
     'template' => 'form-simple',
-    'preprocess functions' => array(
-      'rubik_preprocess_form_buttons',
-      'rubik_preprocess_form_legacy'
-    ),
+    'preprocess functions' => array('rubik_preprocess_form_buttons'),
   );
 
   // Form layout: default (2 column).
@@ -67,19 +61,17 @@ function rubik_theme() {
   $items['user_register'] =
   $items['user_profile_form'] =
   $items['user_admin_access_add_form'] = array(
-    'arguments' => array('form' => array()),
+    'render element' => 'form',
     'path' => drupal_get_path('theme', 'rubik') .'/templates',
     'template' => 'form-default',
     'preprocess functions' => array(
       'rubik_preprocess_form_buttons',
-      'rubik_preprocess_form_legacy',
-      'rubik_preprocess_form_filter',
     ),
   );
 
   // These forms require additional massaging.
   $items['confirm_form'] = array(
-    'arguments' => array('form' => array()),
+    'render element' => 'form',
     'path' => drupal_get_path('theme', 'rubik') .'/templates',
     'template' => 'form-simple',
     'preprocess functions' => array(
@@ -87,11 +79,10 @@ function rubik_theme() {
     ),
   );
   $items['node_form'] = array(
-    'arguments' => array('form' => array()),
+    'render element' => 'form',
     'path' => drupal_get_path('theme', 'rubik') .'/templates',
     'template' => 'form-default',
     'preprocess functions' => array(
-      'rubik_preprocess_form_filter',
       'rubik_preprocess_form_buttons',
       'rubik_preprocess_form_node',
     ),
@@ -147,36 +138,12 @@ function rubik_preprocess_fieldset(&$vars) {
 }
 
 /**
- * Attempts to render a non-template based form for template rendering.
- */
-function rubik_preprocess_form_legacy(&$vars) {
-  if (isset($vars['form']['#theme']) && function_exists("theme_{$vars['form']['#theme']}")) {
-    $function = "theme_{$vars['form']['#theme']}";
-    $vars['form'] = array(
-      '#type' => 'markup',
-      '#value' => $function($vars['form'])
-    );
-  }
-}
-
-/**
  * Preprocessor for handling form button for most forms.
  */
 function rubik_preprocess_form_buttons(&$vars) {
-  if (empty($vars['buttons']) || !element_children($vars['buttons'])) {
-    if (isset($vars['form']['buttons']) && element_children($vars['form']['buttons'])) {
-      $vars['buttons'] = $vars['form']['buttons'];
-      unset($vars['form']['buttons']);
-    }
-    else {
-      $vars['buttons'] = array();
-      foreach (element_children($vars['form']) as $key) {
-        if (isset($vars['form'][$key]['#type']) && in_array($vars['form'][$key]['#type'], array('submit', 'button'))) {
-          $vars['buttons'][$key] = $vars['form'][$key];
-          unset($vars['form'][$key]);
-        }
-      }
-    }
+  if (!empty($vars['form']['actions'])) {
+    $vars['actions'] = $vars['form']['actions'];
+    unset($vars['form']['actions']);
   }
 }
 
@@ -339,19 +306,6 @@ function rubik_preprocess_comment_wrapper(&$vars) {
 }
 
 /**
- * Override of theme_blocks() for content region. Allows content blocks
- * to be split away from page content in page template. See tao_blocks()
- * for how this function is called.
- */
-function rubik_blocks_content($doit = FALSE) {
-  static $blocks;
-  if (!isset($blocks)) {
-    $blocks = module_exists('context') && function_exists('context_blocks') ? context_blocks('content') : theme_blocks('content');
-  }
-  return $doit ? $blocks : '';
-}
-
-/**
  * Override of theme('breadcrumb').
  */
 function rubik_breadcrumb($vars) {
@@ -387,9 +341,11 @@ function rubik_breadcrumb($vars) {
 }
 
 /**
- * Display the list of available node types for node creation.
+ * Override of theme('node_add_list').
  */
-function rubik_node_add_list($content) {
+function rubik_node_add_list($vars) {
+  $content = $vars['content'];
+
   $output = "<ul class='admin-list'>";
   if ($content) {
     foreach ($content as $item) {
@@ -414,12 +370,9 @@ function rubik_node_add_list($content) {
 /**
  * Override of theme_admin_block_content().
  */
-function rubik_admin_block_content($content, $get_runstate = FALSE) {
-  static $has_run = FALSE;
-  if ($get_runstate) {
-    return $has_run;
-  }
-  $has_run = TRUE;
+function rubik_admin_block_content($vars) {
+  $content = $vars['content'];
+
   $output = '';
   if (!empty($content)) {
     foreach ($content as $k => $item) {
@@ -466,25 +419,13 @@ function rubik_admin_drilldown_menu_item_link($link) {
 }
 
 /**
- * Override of theme('textfield').
+ * Preprocessor for theme('textfield').
  */
-function rubik_textfield($element) {
-  if ($element['#size'] >= 30) {
-    $element['#size'] = '';
-    $element['#attributes']['class'] = isset($element['#attributes']['class']) ? "{$element['#attributes']['class']} fluid" : "fluid";
+function rubik_preprocess_textfield(&$vars) {
+  if ($vars['element']['#size'] >= 30) {
+    $vars['element']['#size'] = '';
+    $vars['element']['#attributes']['class'][] = 'fluid';
   }
-  return theme_textfield($element);
-}
-
-/**
- * Override of theme('password').
- */
-function rubik_password($element) {
-  if ($element['#size'] >= 30 || $element['#maxlength'] >= 30) {
-    $element['#size'] = '';
-    $element['#attributes']['class'] = isset($element['#attributes']['class']) ? "{$element['#attributes']['class']} fluid" : "fluid";
-  }
-  return theme_password($element);
 }
 
 /**
