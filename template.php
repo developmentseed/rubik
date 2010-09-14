@@ -101,6 +101,14 @@ function rubik_theme() {
 }
 
 /**
+ * Preprocessor for theme('html').
+ */
+function rubik_preprocess_html(&$vars) {
+  // Add body class for theme.
+  $vars['classes_array'][] = 'rubik';
+}
+
+/**
  * Preprocessor for theme('page').
  */
 function rubik_preprocess_page(&$vars) {
@@ -109,17 +117,8 @@ function rubik_preprocess_page(&$vars) {
     drupal_set_message(t('The Rubik theme requires the !tao base theme in order to work properly.', array('!tao' => l('Tao', 'http://code.developmentseed.org/tao'))), 'warning');
   }
 
-  // Split page content & content blocks.
-  $vars['content_region'] = theme('blocks_content', TRUE);
-
   // Set a page icon class.
   $vars['page_icon_class'] = ($item = menu_get_item()) ? _rubik_icon_classes($item['href']) : '';
-
-  // Add body class for theme.
-  $vars['attr']['class'] .= ' rubik';
-
-  // Body class for admin module.
-  $vars['attr']['class'] .= ' admin-static';
 
   // Help pages. They really do need help.
   if (strpos($_GET['q'], 'admin/help/') === 0) {
@@ -130,7 +129,7 @@ function rubik_preprocess_page(&$vars) {
   $vars['user_links'] = _rubik_user_links();
 
   // Help text toggler link.
-  $vars['help_toggler'] = l(t('Help'), $_GET['q'], array('attributes' => array('id' => 'help-toggler', 'class' => 'toggler'), 'fragment' => 'help-text'));
+  $vars['help_toggler'] = l(t('Help'), $_GET['q'], array('attributes' => array('id' => 'help-toggler', 'class' => array('toggler')), 'fragment' => 'help-text'));
 
   // Clear out help text if empty.
   if (empty($vars['help']) || !(strip_tags($vars['help']))) {
@@ -306,7 +305,6 @@ function rubik_preprocess_help_page(&$vars) {
 function rubik_preprocess_node(&$vars) {
   $vars['layout'] = TRUE;
   $vars['title'] = menu_get_object() === $vars['node'] ? '' : $vars['title'];
-  $vars['attr']['class'] .= ' clear-block';
 
   // Clear out template file suggestions if we are the active theme.
   // Other subthemes will need to manage template suggestions on their own.
@@ -356,33 +354,33 @@ function rubik_blocks_content($doit = FALSE) {
 /**
  * Override of theme('breadcrumb').
  */
-function rubik_breadcrumb($breadcrumb, $prepend = TRUE) {
+function rubik_breadcrumb($vars) {
   $output = '';
 
   // Add current page onto the end.
   if (!drupal_is_front_page()) {
     $item = menu_get_item();
-    $end = end($breadcrumb);
+    $end = end($vars['breadcrumb']);
     if ($end && strip_tags($end) !== $item['title']) {
-      $breadcrumb[] = "<strong>". check_plain($item['title']) ."</strong>";
+      $vars['breadcrumb'][] = "<strong>". check_plain($item['title']) ."</strong>";
     }
   }
 
   // Remove the home link.
-  foreach ($breadcrumb as $key => $link) {
+  foreach ($vars['breadcrumb'] as $key => $link) {
     if (strip_tags($link) === t('Home')) {
-      unset($breadcrumb[$key]);
+      unset($vars['breadcrumb'][$key]);
       break;
     }
   }
 
   // Optional: Add the site name to the front of the stack.
-  if ($prepend) {
-    $site_name = empty($breadcrumb) ? "<strong>". check_plain(variable_get('site_name', '')) ."</strong>" : l(variable_get('site_name', ''), '<front>', array('purl' => array('disabled' => TRUE)));
-    array_unshift($breadcrumb, $site_name);
+  if (!empty($vars['prepend'])) {
+    $site_name = empty($vars['breadcrumb']) ? "<strong>". check_plain(variable_get('site_name', '')) ."</strong>" : l(variable_get('site_name', ''), '<front>', array('purl' => array('disabled' => TRUE)));
+    array_unshift($vars['breadcrumb'], $site_name);
   }
 
-  foreach ($breadcrumb as $link) {
+  foreach ($vars['breadcrumb'] as $link) {
     $output .= "<span class='breadcrumb-link'>{$link}</span>";
   }
   return $output;

@@ -2,7 +2,7 @@
 name = "Rubik"
 description = "Clean admin theme."
 base theme = "tao"
-core = "6.x"
+core = "7.x"
 engine = "phptemplate"
 
 scripts[] = "js/rubik.js"
