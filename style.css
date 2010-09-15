@@ -3,31 +3,24 @@ input,
 textarea,
 select { font-family:"Lucida","Lucida Grande","Trebuchet MS",Tahoma,Verdana,sans-serif; }
 
+html { overflow-y:scroll; }
+
 body.rubik {
   color:#333;
-  background:#ccc url(images/bleeds.png) 0px -80px repeat-x;
+  background:#fff;
   }
 
 a {
-  color:#39c;
+  color:#59a;
   text-decoration:none;
   }
+
+.limiter { margin:0px 20px; }
 
 /**
  * "Rounded" elements =================================================
  */
-.block,
-.item-list,
-.help-items ul,
-.form-item,
-.admin-list,
-.node-type-list,
-.admin-panel,
-.box-title,
-div.messages,
 .compact-link a,
-.confirmation ul,
-form .form-actions,
 input.teaser-button,
 input.form-submit {
   -moz-border-radius:3px;
@@ -125,61 +118,68 @@ table th {
  * Branding ===========================================================
  */
 #branding {
-  margin:0px 30px;
-  padding:5px 0px 4px;
-  border-bottom:1px solid #e0e0e0;
-  overflow:hidden;
-  height:20px;
-  position:relative;
-
+  background:url(images/bleeds.png) 0px -140px repeat-x;
+  color:#ccc;
   font-size:11px;
-  text-shadow:#fff 0px 1px 0px;
-  line-height:20px;
-  color:#999;
   }
 
-#branding a {
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
-  color:#333;
-  float:left;
-  padding:0px 10px;
-  }
-
-#branding a:hover { background:#ddd; }
+#branding .limiter { margin-left:0px; /* LTR */ }
 
 #branding ul.links { float:right; }
 
+#branding ul.links a {
+  background:url(images/bleeds.png) 0% -170px no-repeat;
+  color:#fff;
+  float:left;
+  padding:5px 10px;
+  }
+
+#branding ul.links a:hover { background-position:0% -200px; }
+
 #branding .breadcrumb {
-  padding:0px 5px;
+  padding:0px;
   float:left;
   text-transform:uppercase;
   font-weight:normal;
   }
 
-  #branding .breadcrumb a,
-  #branding .breadcrumb strong {
-    font-weight:normal;
+  #branding .breadcrumb-link {
     float:left;
-    padding:0px 5px;
+    position:relative;
     }
 
-  #branding .breadcrumb .breadcrumb-link {
+  #branding .breadcrumb-depth-0 { z-index:10; }
+  #branding .breadcrumb-depth-1 { z-index:9; }
+  #branding .breadcrumb-depth-2 { z-index:8; }
+  #branding .breadcrumb-depth-3 { z-index:7; }
+  #branding .breadcrumb-depth-4 { z-index:6; }
+  #branding .breadcrumb-depth-5 { z-index:5; }
+  #branding .breadcrumb-depth-6 { z-index:4; }
+  #branding .breadcrumb-depth-7 { z-index:3; }
+  #branding .breadcrumb-depth-8 { z-index:2; }
+
+  #branding .breadcrumb a,
+  #branding .breadcrumb strong {
+    color:#fff;
+    font-weight:normal;
     float:left;
-    padding-right:5px;
-    background:url(images/sprite.png) 100% 100% no-repeat;
+    margin-right:-10px;
+    padding:5px 20px;
+    background:url(images/bleeds.png) 100% -170px no-repeat;
     }
+
+  #branding .breadcrumb a:hover { background-position:100% -200px; }
 
 /**
  * Page title =========================================================
  */
 #page-title {
-  position:relative;
-  padding:0px 30px;
+  background:url(images/bleeds.png) 0px -230px repeat-x;
   }
 
   #page-title .page-title {
-    padding:15px 10px;
+    float:left;
+    padding:10px 10px 10px 0px;
     line-height:30px;
     min-height:30px;
 
@@ -196,24 +196,96 @@ table th {
     margin-right:10px;
     }
 
+  #page-title .action-links {
+    padding:15px 0px 15px 10px;
+    float:left;
+    font-size:11px;
+    }
+
+  #page-title .action-links a {
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+
+    margin:0px 5px 0px 0px;
+    padding:0px 8px;
+    background:#7bc;
+    color:#fff;
+    }
+
 /**
  * Tabs ===============================================================
  */
 .primary-tabs {
-  position:absolute;
-  right:60px;
-  bottom:-1px;
-  overflow:hidden;
-  height:36px;
-  padding:0px;
-  line-height:20px;
+  float:right;
+  border-right:1px solid #e8e8e8;
+  height:50px;
   }
 
-.primary-tabs li { padding-left:5px; }
+.primary-tabs li a {
+  min-width:80px;
+  text-align:center;
+  padding:15px 10px;
+  border-left:1px solid #e8e8e8;
+  }
+
+.primary-tabs li.active a,
+.primary-tabs li.active a.active {
+
+  color:#fff;
+  background:url(images/bleeds.png) 50% -80px no-repeat;
+  padding-left:11px;
+  border:0px;
+  padding-bottom:25px;
+  }
+
+.secondary-tabs ul.links {
+  background:#666;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  position:absolute;
+  right:-10px;
+  top:-10px;
+  opacity:.9;
+  }
+
+  .secondary-tabs li a,
+  .secondary-tabs li a:hover {
+    min-width:70px;
+    font-size:11px;
+    color:#fff;
+    padding:2px 10px 3px;
+    border-right:1px solid #999;
+    text-align:center;
+    }
+
+  .secondary-tabs li a.active,
+  .secondary-tabs li.active a {
+    background:#333;
+    color:#fff;
+    }
+
+  .secondary-tabs li:first-child a {
+    border-radius:3px 0px 0px 3px;
+    -moz-border-radius:3px 0px 0px 3px;
+    -webkit-border-radius:3px 0px 0px 3px;
+    }
+
+  .secondary-tabs li:last-child a {
+    border-radius:0px 3px 3px 0px;
+    -moz-border-radius:0px 3px 3px 0px;
+    -webkit-border-radius:0px 3px 3px 0px;
+    border:0px;
+    }
+
+/**
+ * Page tools =================================================================
+ */
+#page-tools .limiter { position:relative; }
 
 .pager a,
-.pager li.pager-current,
-.primary-tabs li a {
+.pager li.pager-current {
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
 
@@ -235,8 +307,7 @@ table th {
     border-color:#ccc #ddd #eee;
     }
 
-.pager li.pager-current,
-.primary-tabs li a:hover {
+.pager li.pager-current {
   -moz-box-shadow:#fff 0px 1px 0px;
   -webkit-box-shadow:#fff 0px 1px 0px;
   border-color:#999;
@@ -244,57 +315,10 @@ table th {
   color:#fff;
   }
 
-.primary-tabs li.active a,
-.primary-tabs li.active a.active {
-  -moz-border-radius:3px 3px 0px 0px;
-  -webkit-border-radius:3px 3px 0px 0px;
-
-  padding:4px 14px 11px;
-  color:#333;
-  border-bottom:0px;
-  border-color:#fff;
-  background:#f4f4f4 url(images/bleeds.png) 0px -41px repeat-x;
-  }
-
-div.secondary-tabs {
-  font-size:11px;
-  padding:4px;
-  border-bottom:1px solid #e8e8e8;
-  }
-
-  ul.secondary-tabs { float:right; }
-
-  .secondary-tabs li a,
-  .secondary-tabs li a:hover {
-    color:#333;
-    padding:0px 10px;
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
-    }
-
-  .secondary-tabs li a:hover { background:#ddd; }
-
-  .secondary-tabs li a.active,
-  .secondary-tabs li.active a {
-    background:#888 url(images/bleeds.png) 0px 0px repeat-x;
-    color:#fff;
-    }
-
 /**
  * Page layout ========================================================
  */
-#page {
-  margin:0px 30px;
-  border:1px solid #fff;
-  background:#f4f4f4;
-
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
-  }
-
-.page-content { padding:4px; }
-
-.content-wrapper { margin:5px; }
+#page .limiter { padding:20px 0px; }
 
 div.messages,
 .block { margin:5px; }
@@ -330,48 +354,6 @@ div.messages,
   #footer .feed-icons a {
     padding:0px 5px;
     float:left;
-    }
-
-/**
- * Help ===============================================================
- */
-a#help-toggler {
-  position:absolute;
-  right:30px;
-  bottom:10px;
-  background:url(images/sprite.png) -20px 0px no-repeat;
-
-  height:20px;
-  width:20px;
-
-  text-indent:-999px;
-  overflow:hidden;
-  }
-
-  a#help-toggler.toggler-active { background-position:-20px -20px; }
-
-  a#help-toggler.toggler-disabled {
-    cursor:default;
-    background-position:-20px -40px;
-    }
-
-#help-text {
-  background:#fff url(images/vrule.png) 65% 0% repeat-y;
-  border-bottom:1px solid #ddd;
-  }
-
-  #help-text.with-tabs {
-    -moz-border-radius:2px 2px 0px 0px;
-    -webkit-border-radius-top-left:2px;
-    -webkit-border-radius-top-right:2px;
-    }
-
-  #help-text .breadcrumb-label,
-  #help-text .breadcrumb-link { display:block; }
-
-  #help-text .breadcrumb-link {
-    background:url(images/sprite.png) -185px -180px no-repeat;
-    padding-left:20px;
     }
 
 /**

@@ -327,8 +327,10 @@ function rubik_breadcrumb($vars) {
     array_unshift($vars['breadcrumb'], $site_name);
   }
 
+  $depth = 0;
   foreach ($vars['breadcrumb'] as $link) {
-    $output .= "<span class='breadcrumb-link'>{$link}</span>";
+    $output .= "<span class='breadcrumb-link breadcrumb-depth-{$depth}'>{$link}</span>";
+    $depth++;
   }
   return $output;
 }
