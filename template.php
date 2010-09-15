@@ -103,6 +103,9 @@ function rubik_preprocess_page(&$vars) {
   if (empty($vars['help']) || !(strip_tags($vars['help']))) {
     $vars['help'] = '';
   }
+
+  // Overlay is enabled.
+  $vars['overlay'] = (module_exists('overlay') && overlay_get_mode() === 'child');
 }
 
 /**

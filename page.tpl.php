@@ -1,3 +1,5 @@
+<?php if (!$overlay): ?>
+
 <div id='branding'><div class='limiter clearfix'>
   <div class='breadcrumb clearfix'><?php print $breadcrumb ?></div>
   <?php if (isset($secondary_menu)) : ?>
@@ -22,8 +24,15 @@
   <?php endif; ?>
 </div></div>
 
-<?php if ($secondary_local_tasks): ?>
+<?php endif; ?>
+
+<?php if ($secondary_local_tasks || ($overlay && $action_links)): ?>
 <div id='page-tools'><div class='limiter clearfix'>
+  <?php if ($overlay && $action_links): ?>
+  <div class='action-links clearfix'>
+    <ul class='links clearfix'><?php print render($action_links) ?></ul>
+  </div>
+  <?php endif; ?>
   <div class='secondary-tabs clearfix'>
     <ul class='links clearfix'><?php print render($secondary_local_tasks) ?></ul>
   </div>

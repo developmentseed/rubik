@@ -125,13 +125,14 @@ table th {
     margin-right:10px;
     }
 
-  #page-title .action-links {
-    padding:15px 0px 15px 10px;
+  #page-title .action-links { padding:15px 0px 15px 10px; }
+
+  .action-links {
     float:left;
     font-size:11px;
     }
 
-  #page-title .action-links a {
+  .action-links a {
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
     border-radius:5px;
@@ -142,7 +143,7 @@ table th {
     color:#fff;
     }
 
-    #page-title .action-links a:active { background-position:-400px 50%; }
+    .action-links a:active { background-position:-400px 50%; }
 
 /**
  * Tabs ===============================================================
@@ -169,6 +170,8 @@ table th {
   border:0px;
   padding-bottom:25px;
   }
+
+#page-tools .limiter { position:relative; }
 
 .secondary-tabs ul.links {
   background:#666;
@@ -213,8 +216,6 @@ table th {
 /**
  * Page tools =================================================================
  */
-#page-tools .limiter { position:relative; }
-
 .pager a,
 .pager li.pager-current {
   -moz-border-radius:3px;
@@ -368,4 +369,14 @@ div.node .column-side .column-wrapper {
   margin:0px 0px 20px;
   font-weight:normal;
   font-size:16px;
+  }
+
+/**
+ * Overlay ============================================================
+ */
+body.overlay .limiter { margin:0px 10px; }
+
+body.overlay .secondary-tabs ul.links {
+  position:static;
+  float:right;
   }
