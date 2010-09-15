@@ -194,6 +194,7 @@ table tr.draggable span.tabledrag-changed { display:none; }
 
 .block .item-list,
 .block .form-item,
+.admin-panel .item-list,
 .admin-panel .admin-list,
 .teaser-checkbox .form-item,
 .form-item .form-item,
@@ -206,6 +207,7 @@ table .form-item {
   }
 
   .block .item-list,
+  .admin-panel .item-list,
   .admin-panel .admin-list { padding:0px; }
 
 .form-item label {
