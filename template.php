@@ -27,7 +27,6 @@ function rubik_theme() {
   );
 
   // Form layout: simple.
-  $items['filter_admin_overview'] =
   $items['user_admin_perm'] = array(
     'arguments' => array('form' => array()),
     'path' => drupal_get_path('theme', 'rubik') .'/templates',
@@ -56,9 +55,6 @@ function rubik_theme() {
   $items['system_actions_configure'] =
   $items['taxonomy_form_term'] =
   $items['taxonomy_form_vocabulary'] =
-  $items['user_pass'] =
-  $items['user_login'] =
-  $items['user_register'] =
   $items['user_profile_form'] =
   $items['user_admin_access_add_form'] = array(
     'render element' => 'form',

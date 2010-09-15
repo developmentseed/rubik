@@ -113,13 +113,11 @@ div.status {
  */
 table {
   width:100%;
-  font-size:11px;
-  line-height:15px;
   margin:0px 0px 10px;
   background-color:#fff;
 
   border-collapse:collapse;
-  border-color:#ccc #ddd #eee;
+  border-color:#ddd;
   border-width:1px;
   border-style:solid;
   }
@@ -175,7 +173,7 @@ table tr.draggable span.tabledrag-changed { display:none; }
 
   border-width:1px;
   border-style:solid;
-  border-color:#ccc #ddd #eee;
+  border-color:#ddd;
   }
 
   .form-item {
@@ -199,8 +197,7 @@ table .form-item {
   }
 
   .block .item-list,
-  .admin-panel .admin-list,
-  .form-item .form-item-filter { padding:0px; }
+  .admin-panel .admin-list { padding:0px; }
 
 .form-item label {
   margin:0px;
@@ -303,25 +300,14 @@ input.form-submit {
 
   form input#edit-delete { color:#ccc; }
 
-/* Filter form */
-.filter-options .form-item,
-.filter-options .filter-help {
-  font-size:11px;
-  margin:10px 10px 0px 0px;
-  padding:0px;
-  float:left;
-  }
-
-  .filter-options .form-item:hover > .description { display:none; }
-
 input.form-autocomplete,
 input.form-text,
 textarea.form-textarea,
 select.form-select {
-  padding:2px;
-  border-width:2px;
+  padding:3px;
+  border-width:1px;
   border-style:solid;
-  border-color:#e8e8e8 #f0f0f0 #f8f8f8;
+  border-color:#eee;
   background:#fff;
   color:#666;
   max-width:100%;
@@ -337,6 +323,7 @@ select.form-select {
   select.form-select:focus {
     color:#333;
     border-color:#ace;
+    -webkit-box-shadow:#ace 0px 0px 5px;
     }
 
   input.fluid {
@@ -376,7 +363,7 @@ select.form-select {
   top:0px;
   border-width:1px;
   border-style:solid;
-  border-color:#ccc #ddd #eee;
+  border-color:#ddd #ddd #eee;
   }
 
 .container-inline .fieldset-legend .fieldset-content,
@@ -446,7 +433,7 @@ select.form-select {
   .fieldset-content {
     border-width:1px;
     border-style:solid;
-    border-color:#ccc #ddd #eee;
+    border-color:#ddd;
     }
 
   .titled .fieldset-content { border-width:0px 1px 1px; }
@@ -454,6 +441,27 @@ select.form-select {
   html.js .collapsed .fieldset-content { display:none; }
 
   .fieldset .fieldset .fieldset-content { background:#fff; }
+
+/* Filter form */
+.filter-wrapper {
+  font-size:11px;
+  margin-top:-10px;
+  }
+
+.filter-wrapper .fieldset-content {
+  background:#f8f8f8;
+  border-top:0px;
+  }
+
+.filter-options .form-item,
+.filter-options .filter-help {
+  font-size:11px;
+  margin:10px 10px 0px 0px;
+  padding:0px;
+  float:left;
+  }
+
+  .filter-options .form-item:hover > .description { display:none; }
 
 /**
  * Form layout: Default ===============================================
