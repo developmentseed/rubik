@@ -30,13 +30,13 @@
 </div></div>
 <?php endif; ?>
 
+<?php if ($show_messages && $messages): ?>
+<div id='console'><?php print $messages; ?></div>
+<?php endif; ?>
+
 <div id='page'><div class='limiter clearfix'>
   <?php if ($page['help']) print $page['help'] ?>
   <div id='main-content' class='page-content clearfix'>
-    <?php if ($show_messages && $messages): ?>
-      <div id='console' class='clearfix'><?php print $messages; ?></div>
-    <?php endif; ?>
-
     <div id='content'>
       <?php if (!empty($page['content'])): ?>
         <div class='content-wrapper clearfix'><?php print render($page['content']) ?></div>
