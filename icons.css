@@ -31,10 +31,12 @@
  */
 .path-admin span.icon                           { background-position:0px 0px; }
 .path-admin-content span.icon                   { background-position:-30px 0px; }
-.path-admin-build span.icon                     { background-position:-60px 0px; }
-.path-admin-user span.icon                      { background-position:-90px 0px; }
+.path-admin-structure span.icon                 { background-position:-60px 0px; }
 .path-admin-reports span.icon                   { background-position:-120px 0px; }
-.path-admin-settings span.icon                  { background-position:-150px 0px; }
+.path-admin-appearance span.icon                { background-position:-120px -30px; }
+.path-admin-config span.icon                    { background-position:-150px 0px; }
+.path-admin-people span.icon                    { background-position:-90px 0px; }
+.path-admin-modules span.icon                   { background-position:-210px -30px; }
 
 /**
  * Help
@@ -49,36 +51,25 @@
 .path-admin-content-book span.icon              { background-position:-90px -60px; }
 .path-admin-content-comment span.icon           { background-position:-90px -30px; }
 .path-admin-content-node span.icon              { background-position:0px -30px; }
-.path-admin-content-types span.icon,
-.path-admin-content-node-type span.icon         { background-position:-30px -30px; }
 .path-admin-content-taxonomy span.icon          { background-position:-60px -30px; }
 .path-admin-content-node-settings span.icon     { background-position:0px -360px; }
-.path-admin-content-rss-publishing span.icon    { background-position:-180px -330px; }
 
 /**
  * Building
  */
-.path-admin-settings-filters span.icon          { background-position:-210px -60px; }
-.path-admin-build-translate span.icon           { background-position:0px -90px; }
-.path-admin-build-menu span.icon,
-.path-admin-build-menu-customize span.icon      { background-position:-150px -30px; }
-.path-admin-build-modules span.icon             { background-position:-210px -30px; }
-.path-admin-build-themes span.icon              { background-position:-120px -30px; }
+.path-admin-structure-menu span.icon            { background-position:-150px -30px; }
 .path-admin-build-contact span.icon             { background-position:-60px -90px; }
-.path-admin-build-block span.icon               { background-position:-180px -30px; }
-.path-admin-settings-actions span.icon,
-.path-admin-build-trigger span.icon             { background-position:-180px -60px; }
-.path-admin-build-path span.icon                { background-position:-120px -90px; }
+.path-admin-structure-block span.icon           { background-position:-180px -30px; }
+.path-admin-structure-types span.icon           { background-position:-30px -30px; }
 
 /**
  * User
  */
-.path-admin-user-permissions span.icon          { background-position:-30px -90px; }
-.path-admin-user-rules span.icon                { background-position:0px -120px; }
-.path-admin-user-roles span.icon                { background-position:-30px -120px; }
-.path-admin-user-profile span.icon              { background-position:-60px -120px; }
-.path-admin-user-user span.icon                 { background-position:-210px -90px; }
-.path-admin-user-settings span.icon             { background-position:-120px -360px; }
+.path-admin-people span.icon                    { background-position:-210px -90px; }
+.path-admin-people-permissions span.icon        { background-position:-30px -90px; }
+.path-admin-people-permissions-roles span.icon  { background-position:-30px -120px; }
+.path-admin-config-people-accounts span.icon    { background-position:-60px -120px; }
+.path-admin-config-people-ip-blocking span.icon { background-position:0px -120px; }
 
 /**
  * Reports
@@ -98,21 +89,28 @@
 /**
  * Settings
  */
+.path-admin-config-regional-settings span.icon,
+.path-admin-config-regional-date-time span.icon { background-position:-150px -360px; }
+.path-admin-config-regional-language span.icon  { background-position:-60px -330px; }
+.path-admin-config-regional-translate span.icon { background-position:0px -90px; }
+.path-admin-config-development-devel span.icon  { background-position:-30px -330px; }
+.path-admin-config-development-performance span.icon { background-position:0px -60px; }
+.path-admin-config-development-maintenance span.icon { background-position:-180px -90px; }
+.path-admin-config-development-logging span.icon{ background-position:-120px -60px; }
+.path-admin-config-content-formats span.icon    { background-position:-210px -60px; }
+.path-admin-config-media-file-system span.icon  { background-position:-180px -360px; }
+.path-admin-config-media-image-toolkit span.icon{ background-position:-210px -330px; }
+.path-admin-config-system-site-information span.icon { background-position:-120px -330px; }
+.path-admin-config-system-actions span.icon     { background-position:-180px -60px; }
+.path-admin-config-search-path span.icon        { background-position:-120px -90px; }
+.path-admin-config-search-clean-urls span.icon  { background-position:-60px -360px; }
+.path-admin-config-services-rss-publishing span.icon { background-position:-180px -330px; }
+
 .path-admin-settings-wysiwyg span.icon,
 .path-admin-settings-fckeditor span.icon,
 .path-admin-settings-tinymce span.icon          { background-position:-150px -330px; }
-.path-admin-settings-date-time span.icon        { background-position:-150px -360px; }
-.path-admin-settings-language span.icon         { background-position:-60px -330px; }
-.path-admin-settings-performance span.icon      { background-position:0px -60px; }
 .path-admin-settings-search span.icon           { background-position:-30px -60px; }
-.path-admin-settings-devel span.icon            { background-position:-30px -330px; }
-.path-admin-settings-site-maintenance span.icon { background-position:-180px -90px; }
-.path-admin-settings-image-toolkit span.icon    { background-position:-210px -330px; }
 .path-admin-settings-uploads span.icon          { background-position:-210px -360px; }
-.path-admin-settings-logging span.icon          { background-position:-120px -60px; }
-.path-admin-settings-clean-urls span.icon       { background-position:-60px -360px; }
-.path-admin-settings-file-system span.icon      { background-position:-180px -360px; }
 .path-admin-settings-error-reporting span.icon  { background-position:-90px -360px; }
-.path-admin-settings-site-information span.icon { background-position:-120px -330px; }
 .path-admin-settings-blogapi span.icon          { background-position:-30px -360px; }
 .path-admin-settings-throttle span.icon         { background-position:-150px -90px; }
