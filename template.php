@@ -7,9 +7,6 @@
 function rubik_theme() {
   $items = array();
 
-  // theme('filter_form') for nicer filter forms.
-  $items['filter_form'] = array('arguments' => array('form' => array()));
-
   // Content theming.
   $items['help'] =
   $items['node'] =
@@ -21,17 +18,14 @@ function rubik_theme() {
 
   // Help pages really need help. See preprocess_page().
   $items['help_page'] = array(
-    'arguments' => array('content' => array()),
+    'variables' => array('content' => array()),
     'path' => drupal_get_path('theme', 'rubik') .'/templates',
     'template' => 'object',
-  );
-
-  // Form layout: simple.
-  $items['user_admin_perm'] = array(
-    'arguments' => array('form' => array()),
-    'path' => drupal_get_path('theme', 'rubik') .'/templates',
-    'template' => 'form-simple',
-    'preprocess functions' => array('rubik_preprocess_form_buttons'),
+    'preprocess functions' => array(
+      'template_preprocess',
+      'rubik_preprocess_help_page',
+    ),
+    'process functions' => array('template_process'),
   );
 
   // Form layout: default (2 column).
@@ -108,15 +102,9 @@ function rubik_preprocess_page(&$vars) {
   $vars['page_icon_class'] = ($item = menu_get_item()) ? _rubik_icon_classes($item['href']) : '';
 
   // Help pages. They really do need help.
-  if (strpos($_GET['q'], 'admin/help/') === 0) {
-    $vars['content'] = theme('help_page', $vars['content']);
+  if (strpos($_GET['q'], 'admin/help/') === 0 && isset($vars['page']['content']['system_main']['main']['#markup'])) {
+    $vars['page']['content']['system_main']['main']['#markup'] = theme('help_page', array('content' => $vars['page']['content']['system_main']['main']['#markup']));
   }
-
-  // Display user account links.
-  $vars['user_links'] = _rubik_user_links();
-
-  // Help text toggler link.
-  $vars['help_toggler'] = l(t('Help'), $_GET['q'], array('attributes' => array('id' => 'help-toggler', 'class' => array('toggler')), 'fragment' => 'help-text'));
 
   // Clear out help text if empty.
   if (empty($vars['help']) || !(strip_tags($vars['help']))) {
@@ -235,12 +223,18 @@ function rubik_preprocess_help(&$vars) {
  */
 function rubik_preprocess_help_page(&$vars) {
   $vars['hook'] = 'help-page';
-  $vars['is_prose'] = TRUE;
+
+  $vars['title_attributes_array']['class'][] = 'help-page-title';
+  $vars['title_attributes_array']['class'][] = 'clearfix';
+
+  $vars['content_attributes_array']['class'][] = 'help-page-content';
+  $vars['content_attributes_array']['class'][] = 'clearfix';
+  $vars['content_attributes_array']['class'][] = 'prose';
+
   $vars['layout'] = TRUE;
-  $vars['attr'] = array('class' => 'help-page clear-block');
 
   // Truly hackish way to navigate help pages.
-  $module_info = module_rebuild_cache();
+  $module_info = system_rebuild_module_data();
   $modules = array();
   foreach (module_implements('help', TRUE) as $module) {
     if (module_invoke($module, 'help', "admin/help#$module", NULL)) {
@@ -248,11 +242,12 @@ function rubik_preprocess_help_page(&$vars) {
     }
   }
   asort($modules);
+
   $links = array();
   foreach ($modules as $module => $name) {
     $links[] = array('title' => $name, 'href' => "admin/help/{$module}");
   }
-  $vars['links'] = theme('links', $links);
+  $vars['links'] = theme('links', array('links' => $links));
 }
 
 /**
@@ -329,6 +324,13 @@ function rubik_breadcrumb($vars) {
     $depth++;
   }
   return $output;
+}
+
+/**
+ * Override of theme('filter_guidelines').
+ */
+function rubik_filter_guidelines($variables) {
+  return '';
 }
 
 /**
@@ -458,27 +460,6 @@ function _rubik_submitted($node) {
   $byline = t('Posted by !username', array('!username' => theme('username', $node)));
   $date = format_date($node->created, 'small');
   return "<div class='byline'>{$byline}</div><div class='date'>$date</div>";
-}
-
-/**
- * User/account related links.
- */
-function _rubik_user_links() {
-  // Add user-specific links
-  global $user;
-  $user_links = array();
-  if (empty($user->uid)) {
-    $user_links['login'] = array('title' => t('Login'), 'href' => 'user');
-    // Do not display register link if registration is not allowed.
-    if (variable_get('user_register', 1)) {
-      $user_links['register'] = array('title' => t('Register'), 'href' => 'user/register');
-    }
-  }
-  else {
-    $user_links['account'] = array('title' => t('Hello @username', array('@username' => $user->name)), 'href' => 'user', 'html' => TRUE);
-    $user_links['logout'] = array('title' => t('Logout'), 'href' => "logout");
-  }
-  return $user_links;
 }
 
 /**

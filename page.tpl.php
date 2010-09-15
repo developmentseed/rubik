@@ -1,6 +1,8 @@
 <div id='branding'><div class='limiter clearfix'>
   <div class='breadcrumb clearfix'><?php print $breadcrumb ?></div>
-  <?php if ($user_links) print theme('links', array('links' => $user_links)) ?>
+  <?php if (isset($secondary_menu)) : ?>
+    <?php print theme('links', array('links' => $secondary_menu, 'attributes' => array('class' => 'links secondary-menu'))) ?>
+  <?php endif; ?>
 </div></div>
 
 <div id='page-title'><div class='limiter clearfix'>
