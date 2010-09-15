@@ -25,7 +25,7 @@
 
   <?php if (!empty($title_prefix)) print render($title_prefix); ?>
 
-  <?php if (!empty($title) && !$page): ?>
+  <?php if (!empty($title)): ?>
     <h2 <?php if (!empty($title_attributes)) print $title_attributes ?>>
       <?php if (!empty($new)): ?><span class='new'><?php print $new ?></span><?php endif; ?>
       <?php print $title ?>

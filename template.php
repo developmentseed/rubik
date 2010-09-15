@@ -10,7 +10,8 @@ function rubik_theme() {
   // Content theming.
   $items['help'] =
   $items['node'] =
-  $items['comment'] = array(
+  $items['comment'] =
+  $items['comment_wrapper'] = array(
     'path' => drupal_get_path('theme', 'rubik') .'/templates',
     'template' => 'object',
   );
@@ -142,10 +143,6 @@ function rubik_preprocess_form_confirm(&$vars) {
     "<strong>{$title}</strong>" :
     "<strong>{$title}</strong><p>{$vars['form']['description']['#value']}</p>";
   drupal_set_title(t('Please confirm'));
-
-  // Button setup
-  $vars['buttons'] = $vars['form']['actions'];
-  unset($vars['form']['actions']);
 }
 
 /**
@@ -256,13 +253,7 @@ function rubik_preprocess_help_page(&$vars) {
 function rubik_preprocess_node(&$vars) {
   $vars['layout'] = TRUE;
   $vars['title'] = menu_get_object() === $vars['node'] ? '' : $vars['title'];
-
-  // Clear out template file suggestions if we are the active theme.
-  // Other subthemes will need to manage template suggestions on their own.
-  global $theme_key;
-  if (in_array($theme_key, array('rubik', 'cube'), TRUE)) {
-    $vars['template_files'] = array();
-  }
+  $vars['submitted'] = _rubik_submitted($vars['node']);
 }
 
 /**
@@ -270,7 +261,7 @@ function rubik_preprocess_node(&$vars) {
  */
 function rubik_preprocess_comment(&$vars) {
   $vars['layout'] = TRUE;
-  $vars['attr']['class'] .= ' clear-block';
+  $vars['submitted'] = _rubik_submitted($vars['comment']);
 }
 
 /**
@@ -278,15 +269,19 @@ function rubik_preprocess_comment(&$vars) {
  */
 function rubik_preprocess_comment_wrapper(&$vars) {
   $vars['hook'] = 'box';
+  $vars['layout'] = FALSE;
   $vars['title'] = t('Comments');
 
-  $vars['attr']['id'] = 'comments';
-  if (!isset($vars['attr']['class'])) {
-    $vars['attr']['class'] = ' clear-block';
-  }
-  else {
-    $vars['attr']['class'] .= ' clear-block';
-  }
+  $vars['attributes_array']['id'] = 'comments';
+
+  $vars['title_attributes_array']['class'][] = 'box-title';
+  $vars['title_attributes_array']['class'][] = 'clearfix';
+
+  $vars['content_attributes_array']['class'][] = 'box-content';
+  $vars['content_attributes_array']['class'][] = 'clearfix';
+  $vars['content_attributes_array']['class'][] = 'prose';
+
+  $vars['content'] = drupal_render_children($vars['content']);
 }
 
 /**
@@ -457,7 +452,7 @@ function rubik_render_clone($elements) {
  * Helper function to submitted info theming functions.
  */
 function _rubik_submitted($node) {
-  $byline = t('Posted by !username', array('!username' => theme('username', $node)));
+  $byline = t('Posted by !username', array('!username' => theme('username', array('name' => $node))));
   $date = format_date($node->created, 'small');
   return "<div class='byline'>{$byline}</div><div class='date'>$date</div>";
 }
