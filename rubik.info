@@ -1,11 +1,15 @@
 ; $Id$
-name = "Rubik"
-description = "Clean admin theme."
-base theme = "tao"
-core = "7.x"
-engine = "phptemplate"
+name = Rubik
+description = Clean admin theme.
+base theme = tao
+core = 7.x
+engine = phptemplate
 
-scripts[] = "js/rubik.js"
-stylesheets[screen][] = "core.css"
-stylesheets[screen][] = "icons.css"
-stylesheets[screen][] = "style.css"
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+
+scripts[] = js/rubik.js
+stylesheets[screen][] = core.css
+stylesheets[screen][] = icons.css
+stylesheets[screen][] = style.css

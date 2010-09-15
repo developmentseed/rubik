@@ -23,7 +23,7 @@
     </div>
   <?php endif; ?>
 
-  <?php if ($help) print $help ?>
+  <?php if ($page['help']) print $page['help'] ?>
   <div id='main-content' class='page-content clear-block'>
     <?php if ($show_messages && $messages): ?>
       <div id='console' class='clear-block'><?php print $messages; ?></div>
