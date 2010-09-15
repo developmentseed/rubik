@@ -368,7 +368,7 @@ select.form-select {
   min-height:30px;
   }
 
-.fieldset-title {
+.fieldset-legend {
   display:block;
   position:absolute;
   left:0px;
@@ -379,7 +379,7 @@ select.form-select {
   border-color:#ccc #ddd #eee;
   }
 
-.container-inline .fieldset-title .fieldset-content,
+.container-inline .fieldset-legend .fieldset-content,
 .fieldset.titled .fieldset-content {
   display:block;
   padding-top:40px;
@@ -389,7 +389,7 @@ select.form-select {
 .block .block-title,
 .admin-panel h3,
 .fieldset-title,
-.collapsible .fieldset-title a {
+.collapsible .fieldset-legend a {
   display:block;
   font-size:11px;
   margin:0px;
@@ -398,15 +398,15 @@ select.form-select {
   background:#f4f4f4;
   }
 
-  .fieldset-title,
-  .collapsible .fieldset-title a { padding-bottom:4px; }
+  .fieldset-legend,
+  .collapsible .fieldset-legend a { padding-bottom:4px; }
 
   /* Explicit height for IE */
-  .collapsible .fieldset-title a { height:20px; }
+  .collapsible .fieldset-legend a { height:20px; }
 
   .admin-panel h3 { background:#eee; }
 
-  .collapsible .fieldset-title span.icon {
+  .collapsible .fieldset-legend span.icon {
     position:absolute;
     left:-20px;
     top:4px;
@@ -417,23 +417,23 @@ select.form-select {
     cursor:pointer;
     }
 
-    html.js .collapsed .fieldset-title span.icon { background-position:0px 0px; }
+    html.js .collapsed .fieldset-legend span.icon { background-position:0px 0px; }
 
-    .fieldset .collapsible .fieldset-title span.icon { display:none; }
+    .fieldset .collapsible .fieldset-legend span.icon { display:none; }
 
-  .collapsed .fieldset-title a {
+  .collapsed .fieldset-legend a {
     background:#eee;
     color:#999;
     }
 
-  .collapsed .fieldset-title a:hover { color:#666; }
+  .collapsed .fieldset-legend a:hover { color:#666; }
 
-  .collapsible .fieldset-title {
+  .collapsible .fieldset-legend {
     padding:0px;
     background:transparent;
     }
 
-  .collapsed .fieldset-title a { padding-bottom:4px; }
+  .collapsed .fieldset-legend a { padding-bottom:4px; }
 
 .block .block-content,
 .container-inline .fieldset-content,

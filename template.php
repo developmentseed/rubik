@@ -201,13 +201,6 @@ function rubik_preprocess_form_node(&$vars) {
 }
 
 /**
- * Preprocessor for formatting input filter forms.
- */
-function rubik_preprocess_form_filter(&$vars) {
-  _rubik_filter_form_alter($vars['form']);
-}
-
-/**
  * Preprocessor for theme('form_element').
  */
 function rubik_preprocess_form_element(&$vars) {
@@ -444,31 +437,6 @@ function rubik_comment_submitted($comment) {
 }
 
 /**
- * Override of theme('filter_tips_more_info').
- */
-function rubik_filter_tips_more_info() {
-  return '<div class="filter-help">'. l(t('Formatting help'), 'filter/tips', array('attributes' => array('target' => '_blank'))) .'</div>';
-}
-
-/**
- * Theme a filter form element
- */
-function rubik_filter_form($form) {
-  if (isset($form['#title'])) {
-    unset($form['#title']);
-  }
-  $select = '';
-  foreach (element_children($form) as $key) {
-    if (isset($form[$key]['#type']) && $form[$key]['#type'] === 'radio') {
-      $select .= drupal_render($form[$key]);
-    }
-  }
-  $help = theme('filter_tips_more_info');
-  $output = "<div class='filter-options clear-block'>{$select}{$help}</div>";
-  return $output;
-}
-
-/**
  * Helper function for cloning and drupal_render()'ing elements.
  */
 function rubik_render_clone($elements) {
@@ -529,43 +497,4 @@ function _rubik_icon_classes($path) {
     return implode(' ', $classes);
   }
   return '';
-}
-
-/**
- * Recurses through forms for input filter fieldsets and alters them.
- */
-function _rubik_filter_form_alter(&$form) {
-  $found = FALSE;
-  foreach (element_children($form) as $id) {
-    // Filter form element found
-    if (
-      isset($form[$id]['#element_validate']) &&
-      is_array($form[$id]['#element_validate']) &&
-      in_array('filter_form_validate', $form[$id]['#element_validate'])
-    ) {
-      $form[$id]['#type'] = 'markup';
-      $form[$id]['#theme'] = 'filter_form';
-      $found = TRUE;
-    }
-    // Formatting guidelines element found
-    elseif ($id == 'format' && !empty($form[$id]['format']['guidelines'])) {
-      $form[$id]['#theme'] = 'filter_form';
-      $found = TRUE;
-    }
-    // Recurse down other elements
-    else {
-      _rubik_filter_form_alter($form[$id]);
-    }
-  }
-  // If filter elements found, adjust parent element.
-  if ($found) {
-    foreach (element_children($form) as $element) {
-      $form[$element]['#rubik_filter_form'] = TRUE;
-    }
-    $form = array(
-      '#type' => 'item',
-      '#weight' => isset($form['#weight']) ? $form['#weight'] : 0,
-      $form
-    );
-  }
 }
