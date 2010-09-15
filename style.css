@@ -5,7 +5,7 @@ select { font-family:"Lucida","Lucida Grande","Trebuchet MS",Tahoma,Verdana,sans
 
 html { overflow-y:scroll; }
 
-body.rubik {
+body.tao {
   color:#333;
   background:#fff;
   }
@@ -47,7 +47,7 @@ table th {
  * Branding ===========================================================
  */
 #branding {
-  background:url(images/bleeds.png) 0px -140px repeat-x;
+  background:url(images/bleeds.png) 0px -120px repeat-x;
   color:#ccc;
   font-size:11px;
   }
@@ -57,13 +57,13 @@ table th {
 #branding ul.links { float:right; }
 
 #branding ul.links a {
-  background:url(images/bleeds.png) 0% -170px no-repeat;
+  background:url(images/bleeds.png) 0% -150px no-repeat;
   color:#fff;
   float:left;
   padding:5px 10px;
   }
 
-#branding ul.links a:hover { background-position:0% -200px; }
+#branding ul.links a:hover { background-position:0% -180px; }
 
 #branding .breadcrumb {
   padding:0px;
@@ -94,16 +94,16 @@ table th {
     float:left;
     margin-right:-10px;
     padding:5px 20px;
-    background:url(images/bleeds.png) 100% -170px no-repeat;
+    background:url(images/bleeds.png) 100% -150px no-repeat;
     }
 
-  #branding .breadcrumb a:hover { background-position:100% -200px; }
+  #branding .breadcrumb a:hover { background-position:100% -180px; }
 
 /**
  * Page title =========================================================
  */
 #page-title {
-  background:url(images/bleeds.png) 0px -230px repeat-x;
+  background:url(images/bleeds.png) 0px 0px repeat-x;
   }
 
   #page-title .page-title {
@@ -137,10 +137,12 @@ table th {
     border-radius:5px;
 
     margin:0px 5px 0px 0px;
-    padding:0px 8px;
-    background:#7bc;
+    padding:0px 5px 0px 25px;
+    background:#7bc url(images/buttons.png) 0px 50% no-repeat;
     color:#fff;
     }
+
+    #page-title .action-links a:active { background-position:-400px 50%; }
 
 /**
  * Tabs ===============================================================
@@ -160,9 +162,9 @@ table th {
 
 .primary-tabs li.active a,
 .primary-tabs li.active a.active {
-
   color:#fff;
-  background:url(images/bleeds.png) 50% -80px no-repeat;
+  text-shadow:#38a 0px 1px 0px;
+  background:url(images/bleeds.png) 50% -60px no-repeat;
   padding-left:11px;
   border:0px;
   padding-bottom:25px;

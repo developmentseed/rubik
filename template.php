@@ -83,14 +83,6 @@ function rubik_theme() {
 }
 
 /**
- * Preprocessor for theme('html').
- */
-function rubik_preprocess_html(&$vars) {
-  // Add body class for theme.
-  $vars['classes_array'][] = 'rubik';
-}
-
-/**
  * Preprocessor for theme('page').
  */
 function rubik_preprocess_page(&$vars) {
@@ -182,11 +174,23 @@ function rubik_preprocess_form_node(&$vars) {
 }
 
 /**
- * Preprocessor for theme('form_element').
+ * Preprocessor for theme('button').
  */
-function rubik_preprocess_form_element(&$vars) {
-  if (!empty($vars['element']['#rubik_filter_form'])) {
-    $vars['attr']['class'] .= ' form-item-filter';
+function rubik_preprocess_button(&$vars) {
+  if (isset($vars['element']['#value'])) {
+    $classes = array(
+      t('Save') => 'yes',
+      t('Submit') => 'yes',
+      t('Add') => 'yes',
+      t('Delete') => 'no',
+      t('Cancel') => 'no',
+    );
+    foreach ($classes as $search => $class) {
+      if (strpos($vars['element']['#value'], $search) !== FALSE) {
+        $vars['element']['#attributes']['class'][] = 'button-' . $class;
+        break;
+      }
+    }
   }
 }
 

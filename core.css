@@ -282,19 +282,29 @@ input.form-submit {
   border-width:1px;
   border-style:solid;
   border-color:#ddd #ddd #ccc;
-  background:#f4f4f4 url(images/bleeds.png) 0px -41px repeat-x;
+  background:#f4f4f4 url(images/buttons.png) -801px 50% no-repeat;
   }
 
-  input.form-submit:hover {
-    border-color:#999 #999 #888;
-    background:#888 url(images/bleeds.png) 0px 0px repeat-x;
-    color:#fff;
+  input.form-submit:active {
+    border-color:#555 #555 #666;
+    background:#888 url(images/buttons.png) -2001px 50% repeat-x;
+    color:#222;
+    text-shadow:#999 0px 1px 0px;
     }
 
-  input.form-submit:active {
-    background:#666;
-    color:#fff;
+  input.button-yes {
+    background-position:-1201px 50%;
+    padding-left:25px;
     }
+
+  input.button-yes:active { background-position:-2401px 50%; }
+
+  input.button-no {
+    background-position:-1601px 50%;
+    padding-left:25px;
+    }
+
+  input.button-no:active { background-position:-2801px 50%; }
 
   /* Teaser splitter */
   .teaser-checkbox {
@@ -308,8 +318,6 @@ input.form-submit {
     padding:0px 5px;
     font-size:11px;
     }
-
-  form input#edit-delete { color:#ccc; }
 
 input.form-autocomplete,
 input.form-text,
@@ -404,14 +412,14 @@ select.form-select {
     position:absolute;
     left:-20px;
     top:4px;
-    background:url(images/sprite.png) 0px -20px no-repeat;
+    background:url(images/bleeds.png) 0px -230px no-repeat;
     width:20px;
     height:20px;
     display:block;
     cursor:pointer;
     }
 
-    html.js .collapsed .fieldset-legend span.icon { background-position:0px 0px; }
+    html.js .collapsed .fieldset-legend span.icon { background-position:0px -210px; }
 
     .fieldset .collapsible .fieldset-legend span.icon { display:none; }
 
@@ -506,9 +514,17 @@ form .form-actions {
   padding:9px;
   }
 
+  form .form-actions.container-inline {
+    background:transparent;
+    border:0px;
+    padding:0px;
+    }
+
+  form .form-actions input.form-submit { margin-right:5px; }
+
   .form-layout-default .column-main .form-actions { display:none; }
   .form-layout-default .column-side .form-actions { margin:0px 0px 10px; }
-  .form-layout-default .column-side .form-actions input.form-submit { margin:1px 0px; }
+  .form-layout-default .column-side .form-actions input.form-submit { margin:1px 5px 1px 0px; }
 
 /**
  * "Boxes" aka generic wrappers =======================================
@@ -656,8 +672,6 @@ body.rubik #admin-toolbar a.menu-hover span.menu-description span.icon {
   }
 
 .container-inline { margin:0px 0px 10px; }
-
-.buttons .container-inline { margin:0px; }
 
 /**
  * Vertical tabs=======================================================
