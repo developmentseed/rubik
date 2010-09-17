@@ -285,6 +285,11 @@ input.form-submit {
   background:#f4f4f4 url(images/buttons.png) -801px 50% no-repeat;
   }
 
+  input.form-submit:hover {
+    border-color:#ace;
+    -webkit-box-shadow:#ace 0px 0px 5px;
+    }
+
   input.form-submit:active {
     border-color:#555 #555 #666;
     background:#888 url(images/buttons.png) -2001px 50% repeat-x;
