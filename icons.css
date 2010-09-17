@@ -51,7 +51,6 @@
 .path-admin-content-book span.icon              { background-position:-90px -60px; }
 .path-admin-content-comment span.icon           { background-position:-90px -30px; }
 .path-admin-content-node span.icon              { background-position:0px -30px; }
-.path-admin-content-taxonomy span.icon          { background-position:-60px -30px; }
 .path-admin-content-node-settings span.icon     { background-position:0px -360px; }
 
 /**
@@ -61,6 +60,7 @@
 .path-admin-build-contact span.icon             { background-position:-60px -90px; }
 .path-admin-structure-block span.icon           { background-position:-180px -30px; }
 .path-admin-structure-types span.icon           { background-position:-30px -30px; }
+.path-admin-structure-taxonomy span.icon        { background-position:-60px -30px; }
 
 /**
  * User
