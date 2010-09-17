@@ -628,6 +628,16 @@ form .form-actions {
 .admin-enabled { color: #099; }
 .admin-missing { color: #c30; }
 
+/* progressbar styles */
+.progress .bar {
+  -webkit-box-shadow:inset #ddd 0px 1px 3px;
+  -moz-box-shadow:inset #ddd 0px 1px 3px;
+  background:#eee;
+  border:1px solid #ccc;
+  }
+
+.progress .filled { background:#666; }
+
 /**
  * Help pages =========================================================
  */
