@@ -259,7 +259,6 @@ function rubik_preprocess_help_page(&$vars) {
  */
 function rubik_preprocess_node(&$vars) {
   $vars['layout'] = TRUE;
-  $vars['title'] = menu_get_object() === $vars['node'] ? '' : $vars['title'];
   $vars['submitted'] = _rubik_submitted($vars['node']);
 }
 
