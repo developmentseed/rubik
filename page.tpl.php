@@ -43,14 +43,10 @@
 <div id='console'><?php print $messages; ?></div>
 <?php endif; ?>
 
-<div id='page'><div class='limiter clearfix'>
+<div id='page'><div id='main-content' class='limiter clearfix'>
   <?php if ($page['help']) print render($page['help']) ?>
-  <div id='main-content' class='page-content clearfix'>
-    <div id='content'>
-      <?php if (!empty($page['content'])): ?>
-        <div class='content-wrapper clearfix'><?php print render($page['content']) ?></div>
-      <?php endif; ?>
-    </div>
+  <div id='content' class='page-content clearfix'>
+    <?php if (!empty($page['content'])) print render($page['content']) ?>
   </div>
 </div></div>
 
