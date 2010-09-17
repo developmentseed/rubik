@@ -44,7 +44,7 @@
 <?php endif; ?>
 
 <div id='page'><div class='limiter clearfix'>
-  <?php if ($page['help']) print $page['help'] ?>
+  <?php if ($page['help']) print render($page['help']) ?>
   <div id='main-content' class='page-content clearfix'>
     <div id='content'>
       <?php if (!empty($page['content'])): ?>
