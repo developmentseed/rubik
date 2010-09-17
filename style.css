@@ -18,6 +18,33 @@ a {
 .limiter { margin:0px 20px; }
 
 /**
+ * Skip to content link ===============================================
+ */
+#skip-link {
+  width:200px;
+  height:0px;
+  left:50%;
+  margin-left:-100px;
+  }
+
+#skip-link a:hover,
+#skip-link a:active,
+#skip-link a:focus {
+  left:0px;
+  z-index:20;
+  text-align:center;
+  width:200px;
+  background:#333;
+  color:#fff;
+  opacity:.9;
+  padding:10px 0px;
+
+  border-radius:0px 0px 5px 5px;
+  -moz-border-radius:0px 0px 5px 5px;
+  -webkit-border-radius:0px 0px 5px 5px;
+  }
+
+/**
  * "Rounded" elements =================================================
  */
 .compact-link a,
@@ -50,6 +77,8 @@ table th {
   background:url(images/bleeds.png) 0px -120px repeat-x;
   color:#ccc;
   font-size:11px;
+  height:30px;
+  overflow:hidden;
   }
 
 #branding .limiter { margin-left:0px; /* LTR */ }
