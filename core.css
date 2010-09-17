@@ -562,6 +562,31 @@ form .form-actions {
   margin:0px;
   }
 
+/* admin/appearance */
+.theme-selector {
+  position:relative;
+  padding:9px 9px 9px 139px;
+  border:1px solid #ddd;
+  margin:10px 0px;
+  min-height:80px;
+  text-shadow:#fff 0px 1px 0px;
+  }
+
+.theme-selector img {
+  left:10px;
+  top:10px;
+  position:absolute;
+  clip:rect(0px 120px 80px 0px); /* IE6, IE7 */
+  clip:rect(0px,120px,80px,0px);
+  }
+
+.theme-selector .operations a { margin-right:20px; }
+
+.system-themes-list-disabled .theme-selector {
+  background:#eee;
+  color:#999;
+  }
+
 /* admin/content/node & admin/user/user */
 #content dl.multiselect,
 #content dl.multiselect dt,
@@ -612,9 +637,9 @@ form .form-actions {
 /**
  * Admin toolbar ======================================================
  */
-body.rubik #admin-toolbar a.menu-hover span.menu-description { padding-left:50px; }
+body.tao #admin-toolbar a.menu-hover span.menu-description { padding-left:50px; }
 
-body.rubik #admin-toolbar a.menu-hover span.menu-description span.icon {
+body.tao #admin-toolbar a.menu-hover span.menu-description span.icon {
   position:absolute;
   left:10px;
   top:0px;
