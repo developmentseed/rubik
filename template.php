@@ -104,6 +104,13 @@ function rubik_preprocess_page(&$vars) {
     $vars['help'] = '';
   }
 
+  // Process local tasks. Only do this processing if the current theme is
+  // indeed Rubik. Subthemes must reimplement this call.
+  global $theme;
+  if ($theme === 'rubik') {
+    _rubik_local_tasks($vars);
+  }
+
   // Overlay is enabled.
   $vars['overlay'] = (module_exists('overlay') && overlay_get_mode() === 'child');
 }
@@ -423,18 +430,33 @@ function rubik_preprocess_textfield(&$vars) {
 }
 
 /**
- * Override of theme('node_submitted').
+ * Override of theme('menu_local_task').
  */
-function rubik_node_submitted($node) {
-  return _rubik_submitted($node);
-}
+function rubik_menu_local_task($variables) {
+  $link = $variables['element']['#link'];
+  $link_text = $link['title'];
 
-/**
- * Override of theme('comment_submitted').
- */
-function rubik_comment_submitted($comment) {
-  $comment->created = $comment->timestamp;
-  return _rubik_submitted($comment);
+  if (!empty($variables['element']['#active'])) {
+    // Add text to indicate active tab for non-visual users.
+    $active = '<span class="element-invisible">' . t('(active tab)') . '</span>';
+
+    // If the link does not contain HTML already, check_plain() it now.
+    // After we set 'html'=TRUE the link will not be sanitized by l().
+    if (empty($link['localized_options']['html'])) {
+      $link['title'] = check_plain($link['title']);
+    }
+    $link['localized_options']['html'] = TRUE;
+    $link_text = t('!local-task-title!active', array('!local-task-title' => $link['title'], '!active' => $active));
+  }
+
+  // Render child tasks if available.
+  $children = '';
+  if (element_children($variables['element'])) {
+    $children = drupal_render_children($variables['element']);
+    $children = "<ul class='secondary-tabs links clearfix'>{$children}</ul>";
+  }
+
+  return '<li' . (!empty($variables['element']['#active']) ? ' class="active"' : '') . '>' . l($link_text, $link['href'], $link['localized_options']) . $children . "</li>\n";
 }
 
 /**
@@ -478,3 +500,15 @@ function _rubik_icon_classes($path) {
   }
   return '';
 }
+
+function _rubik_local_tasks(&$vars) {
+  if (!empty($vars['secondary_local_tasks'])) {
+    foreach ($vars['primary_local_tasks'] as $key => $element) {
+      if (!empty($element['#active'])) {
+        $vars['primary_local_tasks'][$key] = $vars['primary_local_tasks'][$key] + $vars['secondary_local_tasks'];
+        break;
+      }
+    }
+  }
+}
+
