@@ -74,7 +74,7 @@ table th {
  * Branding ===========================================================
  */
 #branding {
-  background:url(images/bleeds.png) 0px -90px repeat-x;
+  background:url(images/bleeds.png) 0px -30px repeat-x;
   color:#ccc;
   font-size:11px;
   height:30px;
@@ -84,13 +84,13 @@ table th {
 #branding ul.links { float:right; }
 
 #branding ul.links a {
-  background:url(images/bleeds.png) 0% -120px no-repeat;
+  background:url(images/bleeds.png) 0% -30px no-repeat;
   color:#fff;
   float:left;
   padding:5px 10px;
   }
 
-#branding ul.links a:hover { background-position:0% -150px; }
+#branding ul.links a:hover { background-position:0% -90px; }
 
 #branding .breadcrumb {
   padding:0px;
@@ -121,18 +121,19 @@ table th {
     float:left;
     margin-right:-10px;
     padding:5px 20px;
-    background:url(images/bleeds.png) 100% -120px no-repeat;
+    background:url(images/bleeds.png) 100% -60px no-repeat;
     }
 
     #branding .breadcrumb-depth-0 a,
     #branding .breadcrumb-depth-0 strong { padding-left:10px; }
 
-  #branding .breadcrumb a:hover { background-position:100% -150px; }
+  #branding .breadcrumb a:hover { background-position:100% -90px; }
 
 /**
  * Page title =========================================================
  */
-#page-title { background:#fff url(images/bleeds.png) 0px 0px repeat-x; }
+#page-title { background:#fff url(images/bleeds.png) 0px -350px repeat-x; }
+#page-title .limiter { position:relative; }
 
   #page-title .page-title {
     float:left;
@@ -168,7 +169,10 @@ table th {
 /**
  * Tabs ===============================================================
  */
-.tabs { float:right; }
+.tabs {
+  position:absolute;
+  right:0px;
+  }
 
 .primary-tabs {
   float:left;
@@ -182,12 +186,12 @@ table th {
 .primary-tabs li {
   height:30px;
   position:relative;
-  background:#eee url(images/bleeds.png) 50% -60px no-repeat;
+  background:#eee url(images/bleeds.png) 50% 0px no-repeat;
   }
 
 .primary-tabs a {
   text-align:center;
-  min-width:80px;
+  min-width:70px;
   padding:5px 10px;
   color:#333;
   text-shadow:#fff 0px 1px 0px;
@@ -199,14 +203,14 @@ table th {
   border-radius:5px 0px 0px 5px;
   -moz-border-radius:5px 0px 0px 5px;
   -webkit-border-radius:5px 0px 0px 5px;
-  background-position:0% -60px;
+  background-position:0% 0px;
   }
 
 .primary-tabs li:last-child {
   border-radius:0px 5px 5px 0px;
   -moz-border-radius:0px 5px 5px 0px;
   -webkit-border-radius:0px 5px 5px 0px;
-  background-position:100% -60px;
+  background-position:100% 0px;
   }
 
 .primary-tabs li.active { background-color:#7bc; }
@@ -218,7 +222,7 @@ table th {
 
 /* Secondary tabs, nested */
 .secondary-tabs {
-  min-width:120px;
+  min-width:100px;
   float:left;
   position:relative;
   margin:5px 5px 5px 0px;
