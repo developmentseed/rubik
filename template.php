@@ -524,6 +524,9 @@ function rubik_filter_form($form) {
       $select .= drupal_render($form[$key]);
     }
   }
+  if (!$select) {
+    $select = drupal_render($form['format']);
+  }
   $help = theme('filter_tips_more_info');
   $output = "<div class='filter-options clear-block'>{$select}{$help}</div>";
   return $output;
