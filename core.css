@@ -682,6 +682,8 @@ body.tao #admin-toolbar a.menu-hover span.menu-description span.icon {
  * Some form elements are either too weirdly positioned or really benefit
  * from persistent descriptions. Reset for all of these.
  */
+.page-content .form-item-files-feeds,
+.page-content .form-item-files-feeds .description,
 .ctools-export-ui-row .form-item,
 .ctools-export-ui-row .form-item .description,
 .multiselect .form-item,
@@ -701,11 +703,13 @@ body.tao #admin-toolbar a.menu-hover span.menu-description span.icon {
   display:block;
   }
 
+.page-content .form-item-files-feeds:hover,
 .ctools-export-ui-row .form-item:hover,
 .multiselect .form-item:hover,
 .page-content table .form-item:hover,
 #views-ajax-pad .form-item:hover { position:static; }
 
+.page-content .form-item-files-feeds .description,
 .page-content table .form-item .description,
 #upload-attachments .description,
 #views-ajax-pad .form-item .description {
