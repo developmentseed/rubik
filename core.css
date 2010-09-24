@@ -607,16 +607,15 @@ form .form-actions {
   }
 
 /* admin/content/node & admin/user/user */
-#content dl.multiselect,
-#content dl.multiselect dt,
-#content dl.multiselect dd { margin:0px 10px 0px 0px; }
+.exposed-filters .form-item label {
+  float:left;
+  width:120px;
+  }
 
-#content dl.multiselect select {
+.exposed-filters .additional-filters {
+  padding:5px;
   font-size:11px;
-  background:#fff;
-  border-style:solid;
-  border-width:2px;
-  border-color:#e8e8e8 #f0f0f0 #f8f8f8;
+  color:#666;
   }
 
 /* update options */
