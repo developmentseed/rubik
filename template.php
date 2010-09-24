@@ -165,9 +165,9 @@ function rubik_preprocess_form_node(&$vars) {
           unset($vars['form'][$region]['#prefix']);
           unset($vars['form'][$region]['#suffix']);
         }
-        if (isset($vars['form'][$region]['buttons'], $vars['form'][$region]['buttons'])) {
-          $vars['buttons'] = $vars['form'][$region]['buttons'];
-          unset($vars['form'][$region]['buttons']);
+        if (isset($vars['form'][$region]['actions'], $vars['form'][$region]['actions'])) {
+          $vars['actions'] = $vars['form'][$region]['actions'];
+          unset($vars['form'][$region]['actions']);
         }
         if (isset($target)) {
           $vars[$target] = $vars['form'][$region];
