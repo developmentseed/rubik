@@ -59,6 +59,7 @@ input.form-submit {
  */
 input.teaser-button,
 input.form-submit {
+  box-shadow:#ddd 0px 1px 1px;
   -moz-box-shadow:#ddd 0px 1px 1px;
   -webkit-box-shadow:#ddd 0px 1px 1px;
   }
@@ -183,13 +184,22 @@ table th {
   -webkit-border-radius:5px;
   }
 
+div.pager {
+  margin:10px 0px 0px;
+  height:30px;
+  }
+
+.pager li,
 .primary-tabs li {
   height:30px;
   position:relative;
   background:#eee url(images/bleeds.png) 50% 0px no-repeat;
   }
 
+.pager a,
+.pager span,
 .primary-tabs a {
+  float:left;
   text-align:center;
   min-width:70px;
   padding:5px 10px;
@@ -197,8 +207,16 @@ table th {
   text-shadow:#fff 0px 1px 0px;
   }
 
+.pager a,
+.pager span {
+  min-width:10px;
+  padding:5px 15px;
+  }
+
+.pager li:hover,
 .primary-tabs li:hover { background-color:#f8f8f8; }
 
+.pager li:first-child,
 .primary-tabs li:first-child {
   border-radius:5px 0px 0px 5px;
   -moz-border-radius:5px 0px 0px 5px;
@@ -206,6 +224,7 @@ table th {
   background-position:0% 0px;
   }
 
+.pager li:last-child,
 .primary-tabs li:last-child {
   border-radius:0px 5px 5px 0px;
   -moz-border-radius:0px 5px 5px 0px;
@@ -213,8 +232,10 @@ table th {
   background-position:100% 0px;
   }
 
+.pager li.pager-current,
 .primary-tabs li.active { background-color:#7bc; }
 
+.pager li.pager-current span,
 .primary-tabs li.active a {
   color:#fff;
   text-shadow:#38a 0px 1px 0px;  
@@ -271,40 +292,6 @@ ul.secondary-tabs li a {
     -moz-border-radius:3px 3px 0px 0px;
     -webkit-border-radius:3px 3px 0px 0px;
     }
-
-/**
- * Page tools =================================================================
- */
-.pager a,
-.pager li.pager-current {
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
-
-  padding:4px 9px;
-
-  font-size:11px;
-  font-weight:normal;
-
-  color:#999;
-  background:transparent;
-
-  border-width:1px;
-  border-style:solid;
-  border-color:transparent;
-  }
-
-  .pager a:hover {
-    background:#eee;
-    border-color:#ccc #ddd #eee;
-    }
-
-.pager li.pager-current {
-  -moz-box-shadow:#fff 0px 1px 0px;
-  -webkit-box-shadow:#fff 0px 1px 0px;
-  border-color:#999;
-  background:#888 url(images/bleeds.png) 0px 0px repeat-x;
-  color:#fff;
-  }
 
 /**
  * Page layout ========================================================
