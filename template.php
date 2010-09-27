@@ -9,6 +9,9 @@ function rubik_css_alter(&$css) {
   if (isset($css['modules/overlay/overlay-child.css'])) {
     $css['modules/overlay/overlay-child.css']['data'] = drupal_get_path('theme', 'rubik') . '/overlay-child.css';
   }
+  if (isset($css['modules/shortcut/shortcut.css'])) {
+    $css['modules/shortcut/shortcut.css']['data'] = drupal_get_path('theme', 'rubik') . '/shortcut.css';
+  }
 }
 
 /**

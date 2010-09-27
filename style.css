@@ -155,16 +155,23 @@ table th {
     margin-right:10px;
     }
 
-  #page-title .action-links { padding:20px 0px 20px 10px; }
-
+  .add-or-remove-shortcuts,
   .action-links {
     float:left;
     font-size:11px;
     }
 
+    .add-or-remove-shortcuts { padding:20px 0px; }
+    .action-links { padding:20px 0px 20px 10px; }
+
   .action-links a {
     background-color:#7bc;
     text-shadow:#38a 0px 1px 0px;
+    }
+
+  .add-or-remove-shortcuts a {
+    background-color:#999;
+    text-shadow:#666 0px 1px 0px;
     }
 
 /**

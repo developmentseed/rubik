@@ -296,7 +296,7 @@ input.form-submit {
   border-width:1px;
   border-style:solid;
   border-color:#ddd #ddd #ccc;
-  background:#fff url(images/buttons.png) -801px 50% no-repeat;
+  background:#fff url(images/buttons.png) -1px 50% no-repeat;
   }
 
   input.form-submit:hover {
@@ -306,24 +306,24 @@ input.form-submit {
 
   input.form-submit:active {
     border-color:#666 #666 #555;
-    background:#666 url(images/buttons.png) -2001px 50% repeat-x;
+    background:#666 url(images/buttons.png) -401px 50% repeat-x;
     color:#222;
     text-shadow:#999 0px 1px 0px;
     }
 
   input.button-yes {
-    background-position:-1201px 50%;
+    background-position:-2401px 50%;
     padding-left:25px;
     }
 
-  input.button-yes:active { background-position:-2401px 50%; }
+  input.button-yes:active { background-position:-2801px 50%; }
 
   input.button-no {
-    background-position:-1601px 50%;
+    background-position:-3201px 50%;
     padding-left:25px;
     }
 
-  input.button-no:active { background-position:-2801px 50%; }
+  input.button-no:active { background-position:-3601px 50%; }
 
   /* Teaser splitter */
   .teaser-checkbox {
@@ -771,7 +771,7 @@ body.tao #admin-toolbar a.menu-hover span.menu-description span.icon {
 
   margin:0px 5px 0px 0px;
   padding:0px 5px 0px 25px;
-  background:#999 url(images/buttons.png) 0px 50% no-repeat;
+  background:#999 url(images/buttons.png) -800px 50% no-repeat;
   color:#fff;
   text-shadow:#666 0px 1px 0px;
   }
@@ -779,7 +779,7 @@ body.tao #admin-toolbar a.menu-hover span.menu-description span.icon {
   .action-links a:active {
     color:#222;
     background-color:#666;
-    background-position:-400px 50%;
+    background-position:-1200px 50%;
     text-shadow:#999 0px 1px 0px;
     }
 
