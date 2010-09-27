@@ -1,8 +1,6 @@
-<?php if (!$overlay): ?>
-
 <div id='branding'><div class='limiter clearfix'>
   <div class='breadcrumb clearfix'><?php print $breadcrumb ?></div>
-  <?php if (isset($secondary_menu)) : ?>
+  <?php if (!$overlay && isset($secondary_menu)) : ?>
     <?php print theme('links', array('links' => $secondary_menu, 'attributes' => array('class' => 'links secondary-menu'))) ?>
   <?php endif; ?>
 </div></div>
@@ -21,19 +19,6 @@
     <ul class='action-links links clearfix'><?php print render($action_links) ?></ul>
   <?php endif; ?>
 </div></div>
-
-<?php endif; ?>
-
-<?php if ($overlay && ($secondary_local_tasks ||  $action_links)): ?>
-<div id='page-tools'><div class='limiter clearfix'>
-  <?php if ($action_links): ?>
-    <ul class='action-links links clearfix'><?php print render($action_links) ?></ul>
-  <?php endif; ?>
-  <?php if ($secondary_local_tasks): ?>
-    <ul class='secondary-tabs links clearfix'><?php print render($secondary_local_tasks) ?></ul>
-  <?php endif; ?>
-</div></div>
-<?php endif; ?>
 
 <?php if ($show_messages && $messages): ?>
 <div id='console'><div class='limiter clearfix'><?php print $messages; ?></div></div>

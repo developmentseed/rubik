@@ -2,6 +2,16 @@
 // $Id$
 
 /**
+ * Implements hook_css_alter().
+ * @TODO: Do this in .info once http://drupal.org/node/575298 is committed.
+ */
+function rubik_css_alter(&$css) {
+  if (isset($css['modules/overlay/overlay-child.css'])) {
+    $css['modules/overlay/overlay-child.css']['data'] = drupal_get_path('theme', 'rubik') . '/overlay-child.css';
+  }
+}
+
+/**
  * Implementation of hook_theme().
  */
 function rubik_theme() {

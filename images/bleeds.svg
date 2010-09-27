@@ -17,11 +17,35 @@
    version="1.0"
    sodipodi:docname="bleeds.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   inkscape:export-filename="/home/devseed/d7/profiles/reliefweb/themes/rubik/images/bleeds.png"
+   inkscape:export-filename="/home/devseed/reliefweb/profiles/reliefweb/themes/rubik/images/bleeds.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
      id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3240">
+      <stop
+         style="stop-color:#505050;stop-opacity:1;"
+         offset="0"
+         id="stop3242" />
+      <stop
+         style="stop-color:#404040;stop-opacity:1"
+         offset="1"
+         id="stop3245" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3231">
+      <stop
+         style="stop-color:#808080;stop-opacity:1;"
+         offset="0"
+         id="stop3233" />
+      <stop
+         style="stop-color:#808080;stop-opacity:0;"
+         offset="1"
+         id="stop3236" />
+    </linearGradient>
     <linearGradient
        inkscape:collect="always"
        id="linearGradient3242">
@@ -245,6 +269,35 @@
        y1="400"
        x2="400"
        y2="0" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3231"
+       id="linearGradient3308"
+       gradientUnits="userSpaceOnUse"
+       x1="80"
+       y1="85"
+       x2="80"
+       y2="79"
+       gradientTransform="matrix(1,0,0,0.95,0,4.25)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3240"
+       id="linearGradient3310"
+       gradientUnits="userSpaceOnUse"
+       x1="60"
+       y1="75"
+       x2="60"
+       y2="89"
+       gradientTransform="matrix(1,0,0,0.9,0,7.5)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3157"
+       id="linearGradient3312"
+       gradientUnits="userSpaceOnUse"
+       x1="73.5"
+       y1="71.5"
+       x2="73.5"
+       y2="75" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -257,11 +310,11 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="188.69011"
-     inkscape:cy="227.98504"
+     inkscape:cx="72.759907"
+     inkscape:cy="273.9005"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     showgrid="true">
+     showgrid="false">
     <inkscape:grid
        type="xygrid"
        id="grid2383"
@@ -483,5 +536,32 @@
        width="400"
        id="rect3268"
        style="opacity:1;fill:#000000;fill-opacity:0.07843137;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <g
+       id="g3303"
+       transform="translate(0,55)">
+      <rect
+         rx="5"
+         style="opacity:1;fill:url(#linearGradient3308);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         id="rect3299"
+         width="20"
+         height="19"
+         x="60"
+         y="66"
+         ry="5" />
+      <rect
+         ry="5"
+         y="66"
+         x="60"
+         height="18"
+         width="20"
+         id="rect3281"
+         style="opacity:1;fill:url(#linearGradient3310);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         rx="5" />
+      <path
+         sodipodi:nodetypes="ccccccccccccc"
+         id="path3251"
+         d="M 67.5,71.5 L 66.5,72.5 L 69,75 L 66.5,77.5 L 67.5,78.5 L 70,76 L 72.5,78.5 L 73.5,77.5 L 71,75 L 73.5,72.5 L 72.5,71.5 L 70,74 L 67.5,71.5 z"
+         style="opacity:1;fill:url(#linearGradient3312);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    </g>
   </g>
 </svg>

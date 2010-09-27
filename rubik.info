@@ -14,3 +14,4 @@ scripts[] = js/rubik.js
 stylesheets[screen][] = core.css
 stylesheets[screen][] = icons.css
 stylesheets[screen][] = style.css
+; stylesheets[screen][] = overlay-child.css

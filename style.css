@@ -302,7 +302,6 @@ ul.secondary-tabs li a {
  * Footer =============================================================
  */
 #footer {
-  padding:10px 30px 30px;
   font-size:11px;
   text-shadow:#fff 0px 1px 0px;
   }
@@ -413,26 +412,6 @@ div.node .column-side .column-wrapper {
   margin:0px 0px 20px;
   font-weight:normal;
   font-size:16px;
-  }
-
-/**
- * Overlay ============================================================
- */
-body.overlay #overlay-content { padding:20px; }
-
-body.overlay .limiter { margin:0px auto; }
-
-body.overlay #page-tools .limiter {
-  height:20px;
-  position:relative;
-  margin:0px 0px 10px;
-  }
-
-body.overlay #page-tools .secondary-tabs {
-  background-color:#7bc;
-  margin:0px;
-  position:absolute;
-  right:0px;
   }
 
 /**
