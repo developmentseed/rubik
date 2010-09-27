@@ -312,14 +312,6 @@ function rubik_breadcrumb($vars) {
     }
   }
 
-  // Remove the home link.
-  foreach ($vars['breadcrumb'] as $key => $link) {
-    if (strip_tags($link) === t('Home')) {
-      unset($vars['breadcrumb'][$key]);
-      break;
-    }
-  }
-
   // Optional: Add the site name to the front of the stack.
   if (!empty($vars['prepend'])) {
     $site_name = empty($vars['breadcrumb']) ? "<strong>". check_plain(variable_get('site_name', '')) ."</strong>" : l(variable_get('site_name', ''), '<front>', array('purl' => array('disabled' => TRUE)));
