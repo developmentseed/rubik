@@ -105,10 +105,7 @@ div.status {
   .admin-list-compact li { min-height:20px; }
 
   .node-type-list li:last-child,
-  .admin-list li:last-child {
-    padding-bottom:10px;
-    border:0px;
-    }
+  .admin-list li:last-child { border:0px; }
 
   ul.node-type-list label { font-size:15px; }
 
