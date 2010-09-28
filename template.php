@@ -524,7 +524,7 @@ function rubik_filter_form($form) {
       $select .= drupal_render($form[$key]);
     }
   }
-  if (!$select) {
+  if (!$select && isset($form['format'])) {
     $select = drupal_render($form['format']);
   }
   $help = theme('filter_tips_more_info');
