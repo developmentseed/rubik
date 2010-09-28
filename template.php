@@ -471,7 +471,7 @@ function rubik_admin_drilldown_menu_item_link($link) {
  * Override of theme('textfield').
  */
 function rubik_textfield($element) {
-  if ($element['#size'] >= 30) {
+  if ($element['#size'] >= 30 && empty($element['#field_prefix']) && empty($element['#field_suffix'])) {
     $element['#size'] = '';
     $element['#attributes']['class'] = isset($element['#attributes']['class']) ? "{$element['#attributes']['class']} fluid" : "fluid";
   }
