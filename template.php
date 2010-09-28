@@ -428,7 +428,7 @@ function rubik_admin_drilldown_menu_item_link($link) {
  * Preprocessor for theme('textfield').
  */
 function rubik_preprocess_textfield(&$vars) {
-  if ($vars['element']['#size'] >= 30) {
+  if ($vars['element']['#size'] >= 30 && empty($vars['element']['#field_prefix']) && empty($vars['element']['#field_suffix'])) {
     $vars['element']['#size'] = '';
     $vars['element']['#attributes']['class'][] = 'fluid';
   }
